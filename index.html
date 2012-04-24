@@ -1,132 +1,309 @@
-<!doctype html>  
+<!DOCTYPE html>
 <html lang="en">
 
-    <head>
-	<meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
 
-	<title>Debian GNU/Linux - Administration Unix - Gnuside</title>
+		<title>Debian GNU/Linux - Administration Unix - Gnuside</title>
 
-	<meta name="description" content="Gnuside - Admin Debian GNU/Linux">
-	<meta name="author" content="Gnuside">
+		<meta name="description" content="Gnuside - Admin Debian GNU/Linux">
+		<meta name="author" content="Gnuside">
 
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/zenburn.css">
 
-	<!-- gnuside css -->
-	<link rel="stylesheet" href="css/presentation.css">
+		<!-- gnuside css -->
+		<link rel="stylesheet" href="css/presentation.css">
 
-    </head>
+	</head>
 
-    <body>
+	<body>
 
-	<div id="reveal">
+		<div id="reveal">
 
-	    <!-- Any section element inside of this container is displayed as a slide -->
-	    <div class="slides">
-		<section data-state="title">
-		<h1>Title</h1>
-		<h3 class="inverted">Subtitle</h3>
-		<script>
-		    // Delicously hacky. Look away.
-		    if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) )
-		    document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
-		</script>
-
-		<br><br>
-		<p>YYYY-MM-DD</p>
-		<br><br>
-		<i><small>
-			<a href="http://www.gnuside.com">Gnuside</a> / 
-			<a href="http://twitter.com/gnuside">@gnuside</a></small></i>
-		</section>	
-
-		<section>
-		    <section>
-			<h2>Subslide 1</h2>
-			<p>Something</p>
-<ul>
-			<li class="fragment"><a href="#2/3">topic 1</a> - explanation A</li>
-			<li class="fragment"><a href="#2/4">topic 2</a> - explanation B</li>
-			<li class="fragment"><a href="#2/4">topic 3</a> - explanation C</li>
-</ul>
-		    </section>
-		    <section>
-			<h2>Subslide 2</h2>
-			<p>Something else</p>
-			<p><small>
-			    <b>username</b> :
-			    <b>password</b> : 
-			    <b>UID</b> : 
-			    <b>GID</b> : 
-			    <b>description</b> : 
-			    <b>home</b> : 
-			    <b>shell</b>
-			</small>
-			</p>
-		    </section>
-		    <section>
-			<h2>/etc/shadow</h2>
-			<p>FIXME</p>
-		    </section>
-		</section>
-
-
-		<section>
-		    <h2>Thanks !</h2>
-		    <p class="fragment">Questions ?</p>
-		</section>
-	    </div>
-
-	    <!-- The navigational controls UI -->
-	    <aside class="controls">
-	    <a class="left" href="#">&#x25C4;</a>
-	    <a class="right" href="#">&#x25BA;</a>
-	    <a class="up" href="#">&#x25B2;</a>
-	    <a class="down" href="#">&#x25BC;</a>
-	    </aside>
-
-	    <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
-	    <div class="progress"><span></span></div>
-	</div>
-
-	<script src="js/reveal.js"></script>
-	<script src="lib/highlight.js"></script>
-	<script>
-	    // Parse the query string into a key/value object
-	    var query = {};
-	    location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
-		query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
-	    } );
-
-	    Reveal.initialize({
-		// Display controls in the bottom right corner
-		controls: true,
-
-		// Display a presentation progress bar
-		progress: true,
-
-		// If true; each slide will be pushed to the browser history
-		history: true,
-
-		// Flags if mouse wheel navigation should be enabled
-		mouseWheel: true,
-
-		// Apply a 3D roll to links on hover
-		rollingLinks: false,
-		//true,
-
-		// UI style
-		theme: query.theme || 'default', // default/neon
-
-		// Transition style
-		transition: query.transition || 'linear'  //default' // default/cube/page/concave/linear(2d)
-	    });
-
-	    hljs.initHighlightingOnLoad();
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-state="title">
+					<h1>Debian GNU/Linux</h1>
+					<h3 class="inverted">Bases d'administration unix</h3>
+					<script>
+						// Delicously hacky. Look away.
+if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) )
+	document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')<'+'/p>' );
 	</script>
 
-    </body>
-</html>
+	<br/>
+	<p>2012-05</p>
+	<br/>
+	<p>
+		<i><small>
+				<a href="http://www.glenux.net">Glenn Y. Rolland</a> / 
+				<a href="http://twitter.com/glenux">@glenux</a>
+		</small></i>
+	</p>
+</section>	
+
+<section>
+	<section>
+		<h2>Utilisateurs et groupes</h2>
+		<p>Quelques fichiers importants</p>
+		<ul>
+			<li class="fragment"><a href="#2/3">/etc/passwd</a> - utilisateurs</li>
+			<li class="fragment"><a href="#2/4">/etc/shadow</a> - mots de passe</li>
+			<li class="fragment"><a href="#2/4">/etc/groups</a> - groupes</li>
+		</ul>
+	</section>
+	<section>
+		<h2>/etc/passwd</h2>
+		<div class="fragment">
+			<p>Un format super-simple</p>
+			<p><small>
+					<b>username</b> :
+					<b>password</b> : 
+					<b>user id (UID)</b> : 
+					<b>group id (GID)</b> : 
+					<b>description</b> : 
+					<b>home</b> : 
+					<b>shell</b>
+				</small>
+			</p>
+		</div>
+		<div class="fragment">
+			<p>Exemple (réel)</p>
+			<pre>
+			<code>
+root:x:0:0:root:/root:/bin/bash 
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh 
+bin:x:2:2:bin:/bin:/bin/sh 
+sys:x:3:3:sys:/dev:/bin/sh 
+sync:x:4:65534:sync:/bin:/bin/sync 
+games:x:5:60:games:/usr/games:/bin/sh 
+man:x:6:12:man:/var/cache/man:/bin/sh 
+lp:x:7:7:lp:/var/spool/lpd:/bin/sh
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh 
+
+...
+
+batman:x:1001:1001:Bruce Wayne:/home/batman:/bin/bash
+			</code>
+			</pre>
+		</div>
+	</section>
+
+	<section>
+		<h2>/etc/shadow</h2>
+		<div class="fragment">
+			<p>Un format super-simple :</p>
+			<p><small>
+					<b>username</b> :
+					<b>password</b> : 
+					<b>date du password</b> : 
+					<b>etc (age min, age max...)</b>
+				</small>
+			</p>
+		</div>
+		<div class="fragment">
+			<p>Exemple (réel) :</p>
+<pre><code>
+root:$6$gjBGnh.Q$RPnyfdvkhXHTP4xtcrVO4I7lGIyp8G3IZiQjjj8cBDikCE3ePuPBuzAex1ip1KVLFbe5GYKiGNxAybPU783Bk0:15174:0:99999:7:::
+daemon:*:15172:0:99999:7:::
+bin:*:15172:0:99999:7:::
+sys:*:15172:0:99999:7:::
+sync:*:15172:0:99999:7:::
+games:*:15172:0:99999:7:::
+man:*:15172:0:99999:7:::
+lp:*:15172:0:99999:7:::
+mail:*:15172:0:99999:7:::
+news:*:15172:0:99999:7:::
+
+...
+
+batman:$6$MdCbGr5F$PfyMqt8MC2EQjzczwdLuqwTxAbm/BqfErwU7gvd02vGQbxL.ZIg5tSNacfp/4pmfwodDYioXTSon2VxTZnQYW/:15174:0:99999:7:::
+</code></pre>
+		</div>
+	</section>
+	<section>
+		<h2>/etc/group</h2>
+		<div class="fragment">
+			<p>Un format super-simple :</p>
+			<p><small>
+					<b>group name</b> :
+					<b>password</b> : 
+					<b>group id (GID)</b> : 
+					<b>group list</b>
+				</small>
+			</p>
+			<div class="fragment">
+				<p>Exemple (réel) :</p>
+<pre><code>
+root:x:0:
+daemon:x:1:
+
+...
+
+lp:x:7:
+mail:x:8:
+news:x:9:
+cdrom:x:24:batman
+floppy:x:25:batman
+audio:x:29:batman,pulse
+
+...
+
+batman:x:1002:
+robin:x:1003:
+batteam:x:1004:batman,robin,batgirl
+</code></pre>
+			</div>
+		</section>
+		<section>
+			<h2>Allocation des UIDs et GIDs</h2>
+			<div class="fragment">
+				<p>UIDs de 0 à 65534</p>
+				<ul>
+					<li class="fragment"><b>0</b> : root (administrateur)</li>
+					<li class="fragment"><b>1-99</b> :
+						Utilisateurs système, alloués par le projet Debian
+					</li>
+					<li class="fragment"><b>100-999</b> :
+						Utilisateurs système, non-alloués par le projet Debian</li>
+					<li class="fragment"><b>1000-59999</b> : Utilisateurs “normaux”</li>
+					<li class="fragment"><b>60000-64999</b> : Utilisateurs “normaux” gérés par Debian</li>
+					<li class="fragment"><b>65000-65533</b> : Réservé</li>
+					<li class="fragment"><b>65534</b> : Utilisateur "nobody" (sans droits ni permissions)
+					</li>
+				</ul>
+			</section>
+
+		</section>
+		<section>
+			<section>
+				<h2>Utilisateurs : ajout et suppression</h2>
+				<div class="fragment">
+					<p>Pour ajouter<p>
+							<ul>
+								<li><b>useradd</b> (minimaliste et standart)</li>
+								<li><b>adduser</b> (polyvalent mais spécifique Debian)</li>
+							</ul>
+					<pre><code>root@batcave:~# useradd batman</code></pre>
+						</div>
+						<div class="fragment">
+							<p>Pour supprimer<p>
+									<ul>
+										<li><b>userdel</b> (minimaliste et standart)</li>
+										<li><b>deluser</b> (polyvalent mais spécifique Debian)</li>
+									</ul>
+						<pre><code>root@batcave:~# userdel batman</code></pre>
+								</div>
+
+							</section>
+							<section>
+								<h2>Utilisateurs : modification</h2>
+								<div class="fragment">
+									<p>Changer le mot de passe : <b>passwd</b></p>
+									<pre><code>batman@batcave:~$ passwd
+Changement du mot de passe pour batman.
+Mot de passe UNIX (actuel) : 
+Entrez le nouveau mot de passe UNIX : 
+Retapez le nouveau mot de passe UNIX : 
+passwd : le mot de passe a été mis à jour avec succès
+batman@batcave:~#
+</code></pre>
+								</div>
+								<div class="fragment">
+									<p>Modifier les propriétés : <b>usermod</b></p>
+			<pre><code># usermod batman -c "Bat-Like Avenger"</code></pre>
+								</div>
+							</section>
+
+							<section>
+								<h2>Groupes : ajout et suppression</h2>
+								<div class="fragment">
+									<p>Pour ajouter<p>
+											<ul>
+												<li><b>groupadd</b> (minimaliste et standart)</li>
+												<li><b>addgroup</b> (polyvalent mais spécifique Debian)</li>
+											</ul>
+											<pre><code>root@batcave:~# groupadd batteam
+</code></pre>
+										</div>
+										<div class="fragment">
+											<p>Pour supprimer<p>
+													<ul>
+														<li><b>groupdel</b> (minimaliste et standart)</li>
+														<li><b>delgroup</b> (polyvalent mais spécifique Debian)</li>
+													</ul>
+													<pre><code>root@batcave:~# groupdel batteam
+</code></pre>
+												</div>
+											</section>
+										</section>
+
+										<section>
+											<h2>Références</h2>
+											<ul>
+												<li><a href="http://www.debian.org/doc/debian-policy/ch-opersys.html">Debian policy Manual</a></li>
+											</ul>
+										</section>
+
+										<section>
+											<h2>Merci !</h2>
+											<p class="fragment">Des questions ?</p>
+										</section>
+
+									</div>
+
+									<!-- The navigational controls UI -->
+									<aside class="controls">
+										<a class="left" href="#">&#x25C4;</a>
+										<a class="right" href="#">&#x25BA;</a>
+										<a class="up" href="#">&#x25B2;</a>
+										<a class="down" href="#">&#x25BC;</a>
+									</aside>
+
+									<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+									<div class="progress"><span></span></div>
+								</div>
+
+								<script src="js/reveal.js"></script>
+								<script src="lib/highlight.js"></script>
+								<script>
+									// Parse the query string into a key/value object
+								var query = {};
+location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+		query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+		} );
+
+Reveal.initialize({
+		// Display controls in the bottom right corner
+controls: true,
+
+// Display a presentation progress bar
+progress: true,
+
+// If true; each slide will be pushed to the browser history
+history: true,
+
+// Flags if mouse wheel navigation should be enabled
+mouseWheel: true,
+
+// Apply a 3D roll to links on hover
+rollingLinks: false,
+//true,
+
+// UI style
+theme: query.theme || 'default', // default/neon
+
+// Transition style
+transition: query.transition || 'linear'  //default' // default/cube/page/concave/linear(2d)
+});
+
+hljs.initHighlightingOnLoad();
+</script>
+
+						</body>
+					</html>
