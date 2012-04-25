@@ -33,47 +33,48 @@
 						// Delicously hacky. Look away.
 if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) )
 	document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')<'+'/p>' );
-	</script>
+					</script>
 
-	<br/>
-	<p>2012-05</p>
-	<br/>
-	<p>
-		<i><small>
-				<a href="http://www.glenux.net">Glenn Y. Rolland</a> / 
-				<a href="http://twitter.com/glenux">@glenux</a>
-		</small></i>
-	</p>
-</section>	
+					<br/>
+					<p>2012-05</p>
+					<br/>
+					<p>
+						<i><small>
+								<a href="http://www.glenux.net">Glenn Y. Rolland</a> / 
+								<a href="http://twitter.com/glenux">@glenux</a>
+						</small></i>
+					</p>
+				</section>	
 
-<section>
-	<section>
-		<h2>Utilisateurs et groupes</h2>
-		<p>Quelques fichiers importants</p>
-		<ul>
-			<li class="fragment"><a href="#2/3">/etc/passwd</a> - utilisateurs</li>
-			<li class="fragment"><a href="#2/4">/etc/shadow</a> - mots de passe</li>
-			<li class="fragment"><a href="#2/4">/etc/groups</a> - groupes</li>
-		</ul>
-	</section>
-	<section>
-		<h2>/etc/passwd</h2>
-		<div class="fragment">
-			<p>Un format super-simple</p>
-			<p><small>
-					<b>username</b> :
-					<b>password</b> : 
-					<b>user id (UID)</b> : 
-					<b>group id (GID)</b> : 
-					<b>description</b> : 
-					<b>home</b> : 
-					<b>shell</b>
-				</small>
-			</p>
-		</div>
-		<div class="fragment">
-			<p>Exemple (réel)</p>
-			<pre>
+				<section>
+					<section>
+						<h2>Utilisateurs et groupes</h2>
+						<p>Quelques fichiers importants</p>
+						<ul>
+							<li class="fragment"><a href="#2/3">/etc/passwd</a> - utilisateurs</li>
+							<li class="fragment"><a href="#2/4">/etc/shadow</a> - mots de passe</li>
+							<li class="fragment"><a href="#2/4">/etc/groups</a> - groupes</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>/etc/passwd</h2>
+						<div class="fragment">
+							<p>Un format super-simple</p>
+							<p><small>
+									<b>username</b> :
+									<b>password</b> : 
+									<b>user id (UID)</b> : 
+									<b>group id (GID)</b> : 
+									<b>description</b> : 
+									<b>home</b> : 
+									<b>shell</b>
+								</small>
+							</p>
+						</div>
+						<div class="fragment">
+							<p>Exemple (réel)</p>
+							<pre>
 			<code>
 root:x:0:0:root:/root:/bin/bash 
 daemon:x:1:1:daemon:/usr/sbin:/bin/sh 
@@ -91,23 +92,23 @@ news:x:9:9:news:/var/spool/news:/bin/sh
 batman:x:1001:1001:Bruce Wayne:/home/batman:/bin/bash
 			</code>
 			</pre>
-		</div>
-	</section>
+						</div>
+					</section>
 
-	<section>
-		<h2>/etc/shadow</h2>
-		<div class="fragment">
-			<p>Un format super-simple :</p>
-			<p><small>
-					<b>username</b> :
-					<b>password</b> : 
-					<b>date du password</b> : 
-					<b>etc (age min, age max...)</b>
-				</small>
-			</p>
-		</div>
-		<div class="fragment">
-			<p>Exemple (réel) :</p>
+					<section>
+						<h2>/etc/shadow</h2>
+						<div class="fragment">
+							<p>Un format super-simple :</p>
+							<p><small>
+									<b>username</b> :
+									<b>password</b> : 
+									<b>date du password</b> : 
+									<b>etc (age min, age max...)</b>
+								</small>
+							</p>
+						</div>
+						<div class="fragment">
+							<p>Exemple (réel) :</p>
 <pre><code>
 root:$6$gjBGnh.Q$RPnyfdvkhXHTP4xtcrVO4I7lGIyp8G3IZiQjjj8cBDikCE3ePuPBuzAex1ip1KVLFbe5GYKiGNxAybPU783Bk0:15174:0:99999:7:::
 daemon:*:15172:0:99999:7:::
@@ -124,21 +125,23 @@ news:*:15172:0:99999:7:::
 
 batman:$6$MdCbGr5F$PfyMqt8MC2EQjzczwdLuqwTxAbm/BqfErwU7gvd02vGQbxL.ZIg5tSNacfp/4pmfwodDYioXTSon2VxTZnQYW/:15174:0:99999:7:::
 </code></pre>
-		</div>
-	</section>
-	<section>
-		<h2>/etc/group</h2>
-		<div class="fragment">
-			<p>Un format super-simple :</p>
-			<p><small>
-					<b>group name</b> :
-					<b>password</b> : 
-					<b>group id (GID)</b> : 
-					<b>group list</b>
-				</small>
-			</p>
-			<div class="fragment">
-				<p>Exemple (réel) :</p>
+						</div>
+					</section>
+
+
+					<section>
+						<h2>/etc/group</h2>
+						<div class="fragment">
+							<p>Un format super-simple :</p>
+							<p><small>
+									<b>group name</b> :
+									<b>password</b> : 
+									<b>group id (GID)</b> : 
+									<b>group list</b>
+								</small>
+							</p>
+							<div class="fragment">
+								<p>Exemple (réel) :</p>
 <pre><code>
 root:x:0:
 daemon:x:1:
@@ -158,49 +161,56 @@ batman:x:1002:
 robin:x:1003:
 batteam:x:1004:batman,robin,batgirl
 </code></pre>
-			</div>
-		</section>
-		<section>
-			<h2>Allocation des UIDs et GIDs</h2>
-			<div class="fragment">
-				<p>UIDs de 0 à 65534</p>
-				<ul>
-					<li class="fragment"><b>0</b> : root (administrateur)</li>
-					<li class="fragment"><b>1-99</b> :
-						Utilisateurs système, alloués par le projet Debian
-					</li>
-					<li class="fragment"><b>100-999</b> :
-						Utilisateurs système, non-alloués par le projet Debian</li>
-					<li class="fragment"><b>1000-59999</b> : Utilisateurs “normaux”</li>
-					<li class="fragment"><b>60000-64999</b> : Utilisateurs “normaux” gérés par Debian</li>
-					<li class="fragment"><b>65000-65533</b> : Réservé</li>
-					<li class="fragment"><b>65534</b> : Utilisateur "nobody" (sans droits ni permissions)
-					</li>
-				</ul>
-			</section>
+							</div>
+						</section>
 
-		</section>
-		<section>
-			<section>
-				<h2>Utilisateurs : ajout et suppression</h2>
-				<div class="fragment">
-					<p>Pour ajouter<p>
-							<ul>
-								<li><b>useradd</b> (minimaliste et standart)</li>
-								<li><b>adduser</b> (polyvalent mais spécifique Debian)</li>
-							</ul>
+
+
+						<section>
+							<h2>UIDs et GIDs</h2>
+							<div class="fragment">
+								<p>Valeurs de 0 à 65534</p>
+								<ul>
+									<li class="fragment"><b>0</b> : root (administrateur)</li>
+									<li class="fragment"><b>1-99</b> :
+										Utilisateurs système, alloués par le projet Debian
+									</li>
+									<li class="fragment"><b>100-999</b> :
+										Utilisateurs système, non-alloués par le projet Debian</li>
+									<li class="fragment"><b>1000-59999</b> : Utilisateurs “normaux”</li>
+									<li class="fragment"><b>60000-64999</b> : Utilisateurs “normaux” gérés par Debian</li>
+									<li class="fragment"><b>65000-65533</b> : Réservé</li>
+									<li class="fragment"><b>65534</b> : Utilisateur "nobody" (sans droits ni permissions)
+									</li>
+								</ul>
+							</section>
+						</section>
+
+
+
+						<section>
+							<section>
+								<h2>Utilisateurs : ajout et suppression</h2>
+								<div class="fragment">
+									<p>Pour ajouter</p>
+									<ul>
+										<li><b>useradd</b> (minimaliste et standart)</li>
+										<li><b>adduser</b> (polyvalent mais spécifique Debian)</li>
+									</ul>
 					<pre><code>root@batcave:~# useradd batman</code></pre>
-						</div>
-						<div class="fragment">
-							<p>Pour supprimer<p>
+								</div>
+								<div class="fragment">
+									<p>Pour supprimer</p>
 									<ul>
 										<li><b>userdel</b> (minimaliste et standart)</li>
 										<li><b>deluser</b> (polyvalent mais spécifique Debian)</li>
 									</ul>
 						<pre><code>root@batcave:~# userdel batman</code></pre>
 								</div>
-
 							</section>
+
+
+
 							<section>
 								<h2>Utilisateurs : modification</h2>
 								<div class="fragment">
@@ -220,60 +230,175 @@ batman@batcave:~#
 								</div>
 							</section>
 
+
+
 							<section>
 								<h2>Groupes : ajout et suppression</h2>
 								<div class="fragment">
-									<p>Pour ajouter<p>
-											<ul>
-												<li><b>groupadd</b> (minimaliste et standart)</li>
-												<li><b>addgroup</b> (polyvalent mais spécifique Debian)</li>
-											</ul>
-											<pre><code>root@batcave:~# groupadd batteam
+									<p>Pour ajouter</p>
+									<ul>
+										<li><b>groupadd</b> (minimaliste et standart)</li>
+										<li><b>addgroup</b> (polyvalent mais spécifique Debian)</li>
+									</ul>
+									<pre><code>root@batcave:~# groupadd batteam
 </code></pre>
-										</div>
-										<div class="fragment">
-											<p>Pour supprimer<p>
-													<ul>
-														<li><b>groupdel</b> (minimaliste et standart)</li>
-														<li><b>delgroup</b> (polyvalent mais spécifique Debian)</li>
-													</ul>
-													<pre><code>root@batcave:~# groupdel batteam
+								</div>
+								<div class="fragment">
+									<p>Pour supprimer</p>
+									<ul>
+										<li><b>groupdel</b> (minimaliste et standart)</li>
+										<li><b>delgroup</b> (polyvalent mais spécifique Debian)</li>
+									</ul>
+									<pre><code>root@batcave:~# groupdel batteam
 </code></pre>
-												</div>
-											</section>
-										</section>
+								</div>
+							</section>
 
-										<section>
-											<h2>Références</h2>
-											<ul>
-												<li><a href="http://www.debian.org/doc/debian-policy/ch-opersys.html">Debian policy Manual</a></li>
-											</ul>
-										</section>
 
-										<section>
-											<h2>Merci !</h2>
-											<p class="fragment">Des questions ?</p>
-										</section>
+							<section>
+								<h2>Groupes : quelques outils</h2>
+								<ul>
+									<li class="fragment"><b>id</b> - afficher les identifiants d'utilisateur et de groupe</li>
+									<li class="fragment"><b>groups</b> -  affiche les groupes auxquels appartient un utilisateur</li>
+									<li class="fragment"><b>getent</b> - récupère des entrées depuis les bases de données d'administration</li>
+								</ul>
+							</section>
 
+							<section>
+								<h2>Configuration des comptes utilisateurs</h2>
+								<ul>
+									<li><b>/etc/skel.conf</b></li>
+									<li><b>/etc/skel/*</b></li>
+									<li><b>/etc/adduser.conf</b></li>
+									<li><b>/etc/default/adduser</b></li>
+								</ul>
+							</section>
+						</section>
+
+
+
+						<section>
+							<h2>Installation de logiciels</h2>
+							<p>L'installation peut varier
+								<span class="fragment"><b>selon le logiciel</b></span><br/>
+								<span class="fragment">et <b>selon la distribution</b> !</span>
+							</p>
+							<br />
+							<p class="fragment">En général, à partir du <i>code source</i> :</p>
+							<ul>
+								<li class="fragment"><b>./configure</b> (detecte l'environnement et configure)</li>
+								<li class="fragment"><b>make</b> (compile les sources en un binaire exécutable)</li>
+								<li class="fragment"><b>make install</b> (installe sur le système)</li>
+							</ul>
+							<br />
+							<br />
+							<p class="fragment">Démonstration !</p>
+						</section>
+
+
+
+						<section>
+							<section>
+								<h2>Archivage</h2>
+								<ul>
+									<li class="fragment"><b>tar</b> - archivage de fichiers</li>
+									<li class="fragment"><b>cpio</b> - archivage de fichiers</li>
+									<li class="fragment"><b>rsync</b> - archivage de fichiers</li>
+									<li class="fragment"><b>dd</b> - copie de disques</li>
+									<li class="fragment"><b>partimage</b> copies de disques</li>
+								</ul>
+							</section>
+
+							<section>
+								<h2>Archivage : <b>tar</b></h2>
+									<ul>
+										<li class="fragment">sans compression</li>
+										<li class="fragment">outils tiers pour compresser: <b>gzip</b>, <b>bzip2</b>, <b>7z</b>...</p>
+										<li class="fragment">dans tar, paramètres : <b>-z</b> (gzip),<b>-j</b> (bzip2), <b>-a</b> (automatique)</p>
+									</ul>
+
+									<div class="fragment">
+										<p><small>Exemple: créer une archive au format <b>tar.gz</b></small></p>
+<pre><code>
+tar czvf archives-batcave.tar.bz2 /home/batman/documents
+</code></pre>
+<pre><code>
+tar cvf archives-batcave.tar /home/batman/documents
+gzip archives-batcave.tar
+</code></pre>
 									</div>
 
-									<!-- The navigational controls UI -->
-									<aside class="controls">
-										<a class="left" href="#">&#x25C4;</a>
-										<a class="right" href="#">&#x25BA;</a>
-										<a class="up" href="#">&#x25B2;</a>
-										<a class="down" href="#">&#x25BC;</a>
-									</aside>
+									<div class="fragment">
+										<small>Exemple: ouvrir une archive <b>tar.gz</b></small>
+<pre><code>
+gunzip archives-batcave.tar.gz
+tar xvf archives-batcave.tar
+</code></pre>
 
-									<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
-									<div class="progress"><span></span></div>
+<pre><code>
+tar xavf archives-batcave.tar.gz
+</code></pre>
 								</div>
 
-								<script src="js/reveal.js"></script>
-								<script src="lib/highlight.js"></script>
-								<script>
-									// Parse the query string into a key/value object
-								var query = {};
+<div class="fragment">
+	<p>Peut aussi servir à copier des disques</p>
+<pre><code>
+(cd /anciendisque ; tar cf - . ) | (cd /nouveaudisque ; tar xvf - )
+</code></pre>
+</div>
+<!-- FIXME: cpio -->
+									</section>
+
+
+									<section>
+										<h2>Sauvegarde : <b>dd</b></h2>
+<pre><code>
+dd if=/foo of=/bar bs=1M count=1000
+</code></pre>
+										<p>Ne résiste pas aux erreurs disque</p>
+										<p>Une alternative : <b>dd_rescue</b></p>
+									</section>
+
+									<section>
+										<h2>Sauvegarde : <b>dd</b></h2>
+										rsync
+										partimage
+									</section>
+								</section>
+
+						<section>
+							<h2>Références</h2>
+							<ul>
+								<li><a href="http://www.debian.org/doc/debian-policy/ch-opersys.html">Debian policy Manual</a></li>
+							</ul>
+						</section>
+
+
+
+						<section>
+							<h2>Merci !</h2>
+							<p class="fragment">Des questions ?</p>
+						</section>
+
+					</div> <!-- .slides -->
+
+					<!-- The navigational controls UI -->
+					<aside class="controls">
+						<a class="left" href="#">&#x25C4;</a>
+						<a class="right" href="#">&#x25BA;</a>
+						<a class="up" href="#">&#x25B2;</a>
+						<a class="down" href="#">&#x25BC;</a>
+					</aside>
+
+					<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+					<div class="progress"><span></span></div>
+				</div> <!-- #reveal -->
+
+				<script src="js/reveal.js"></script>
+				<script src="lib/highlight.js"></script>
+				<script>
+					// Parse the query string into a key/value object
+				var query = {};
 location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
 		query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
 		} );
@@ -303,7 +428,7 @@ transition: query.transition || 'linear'  //default' // default/cube/page/concav
 });
 
 hljs.initHighlightingOnLoad();
-</script>
+	</script>
 
-						</body>
-					</html>
+	</body>
+</html>
