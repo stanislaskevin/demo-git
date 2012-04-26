@@ -48,6 +48,8 @@ pre code {
     -ms-border-radius: 1em;
     -o-border-radius: 1em;
     border-radius: 1em;
+    font-size: 150%;
+    line-height: 95%;
 }
 
 #reveal h1 {
@@ -80,3 +82,4 @@ pre code {
     color: red;
  /*    color: #be0926;*/
 }
+
