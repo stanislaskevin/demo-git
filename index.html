@@ -1,132 +1,302 @@
 <!doctype html>  
 <html lang="en">
 
-    <head>
-	<meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
 
-	<title>Debian GNU/Linux - Administration Unix - Gnuside</title>
+		<title>Debian GNU/Linux - Administration Unix - Gnuside</title>
 
-	<meta name="description" content="Gnuside - Admin Debian GNU/Linux">
-	<meta name="author" content="Gnuside">
+		<meta name="description" content="Gnuside - Admin Debian GNU/Linux">
+		<meta name="author" content="Gnuside">
 
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/zenburn.css">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/zenburn.css">
 
-	<!-- gnuside css -->
-	<link rel="stylesheet" href="css/presentation.css">
+		<!-- gnuside css -->
+		<link rel="stylesheet" href="css/presentation.css">
 
-    </head>
+	</head>
 
-    <body>
+	<body>
 
-	<div id="reveal">
+		<div id="reveal">
 
-	    <!-- Any section element inside of this container is displayed as a slide -->
-	    <div class="slides">
-		<section data-state="title">
-		<h1>Title</h1>
-		<h3 class="inverted">Subtitle</h3>
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-state="title">
+					<h1>Debian GNU/Linux</h1>
+					<h3 class="inverted">Installation</h3>
+
+					<br><br>
+					<p>2012-05-DD</p>
+					<br><br>
+					<i><small>
+							<a href="http://www.gnuside.com">Gnuside</a> / 
+							<a href="http://twitter.com/gnuside">@gnuside</a></small></i>
+				</section>	
+
+				<section>
+					<h2>À propos de Debian</h2>
+
+					<section>
+						<h3>Historique</h3>
+						<ul>
+							<li>Logiciel Libre</li>
+							<li>GNU</li>
+							<li>OpenSource</li>
+							<li>Linux</li>
+						</ul>
+					</section>
+
+
+					<section>
+						<h3>Distribution de logiciels</h3>
+
+						<ul class="iconbullet">
+							<li><img src="img/distro-fedora.png" /> Fedora (ex-Redhat) </li>
+							<li><img src="img/distro-debian.png"  /> Debian</li>
+							<li><img src="img/distro-suse.png" /> SuSe</li>
+							<li><img src="img/distro-ubuntu.png" /> Ubuntu</li>
+							<li><img src="img/distro-mageia.png" /> Mageia (ex-Mandriva, ex-Mandrake)</li>
+							<li>...</li>
+						</ul>
+					</section>
+
+
+					<section>
+						<h3>Le système d'exploitation <em>universel</em></h3>
+
+						<ul>
+							<li>Une branche GNU/Linux, mais pas que...</li>
+							<li>Plus de 29 000 paquets</li>
+							<li>Basé sur un <a href="http://www.debian.org/social_contract">contrat social</a></li>
+							<li>Sert de base à <b>Knoppix</b>, <b>Ubuntu</b>, <b>Mint</b>... </li>
+						</ul>
+
+
+						<ul>
+							<li>plein de gens</li>
+							<li>plein de matériels</li>
+							<li>plein de tests</li>
+							<li>plein de correctifs</li>
+						</ul>
+					</section>
+				</section>
+
+
+
+				<section>
+					<h2>Avant l'installation</h2>
+
+					<section>
+						<h3>FIXME: choix du matériel</h3>
+					</section>
+
+					<section>
+						<h3>Choix de la version</h3>
+
+						<p>Selon la stabilité, le risque, ou la nouveauté souhaitée : 
+							<b>stable</b>, <b>testing</b>, <b>unstable</b>...
+						</p>
+						<br/>
+						<p>.. et pour la bonne architecture matérielle !</p>
+						<ul>
+							<li><b>i386</b> - compatible x86, 32 bits</li>
+							<li><b>amd64</b> - compatible x86, 64 bits</li>
+							<li><b>arm</b></li>
+							<li><b>mips</b></li>
+							<li>...</li>
+						</ul>
+
+					</section>
+
+					<section>
+						<h3>Choix du support</h3>
+
+						<ul class="iconbullet">
+							<li><img src="img/icon-cdrom.png" />image cd (iso)</li>
+							<li><img src="img/icon-dvd.png" />image dvd (iso)</li>
+							<li><img src="img/icon-pendrive.png" />image disque usb</li>
+							<li><img src="img/icon-network.png" />réseau (bootp + pxe)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Choix du media</h3>
+
+						<ul>
+							<li>Selon le support</li>
+							<li>Installeur complet ou <em>netinstall</em><br/>(NFS, HTTP, FTP, Bittorent, etc.)</li>
+							<li>À télécharger sur le <a href="http://www.debian.org/distrib/netinst">site officiel</a></li>
+						</ul>
+
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>IsoLinux</h3>
+						<p>Choix du type d'installation</p>
+						<ul>
+							<li><b>install</b> - <em>classique</em> en mode texte</li>
+							<li><b>installation graphique</b> - moderne, mais dépend du matériel</li>
+							<li><b>advanced options</b> - expert, automatisée, sauvetage ...</li>
+						</ul>
+					</section>
+
+					<section>
+						Options avancées
+					</section>
+				</section>
+
+				<section>
+					<h2>Sélection de la langue</h2>
+					* installation
+					* zone geographique
+					* clavier
+					* FIXME: image
+				</section>
+
+
+
+				<section>
+					<h2>Configuration du réseau</h2>
+				</section>
+
+
+
+				<section>
+					<h2>Définition des utilisateurs</h2>
+					<section>
+						<h3>Administrateur</h3>
+
+						Set root password
+					</section>
+
+					<section>
+						<h3>Utilisateur principal</h3>
+
+						Set main user name and password
+					</section>
+				</section>
+
+
+
+				<section>
+					<h2>Partitionnement du disque</h2>
+
+					<h3>choix du disque</h3>
+					<h3>Gestion des partitions</h3>
+					<h3>Gestion des points de montage</h3>
+					<h3>Formatage</h3>
+
+					FIXME: expliquer point de montage
+				</section>
+
+
+
+				<section>
+					<h2>Installation du systeme de base</h2>
+				</section>
+
+
+
+				<section>
+					<h2>Configuration de la gestion des paquets</h2>
+
+					<p>Choix du miroir de l'archive ...</p>
+					<p>Un paquet ?</p>
+					<p>définition miroir  ?</p>
+					<p>définition de l'archive ?</p>
+					<p>Choix du mandataire http</p>
+				</section>
+
+
+
+				<section>
+					<h2>Popularity contest</h2>
+				</section>
+
+
+
+				<section>
+					<h2>Choix des "taches"</h2>
+				</section>
+
+
+				<section>
+					<h2>Références</h2>
+
+					<ul>
+						<li><a href="http://www.debian.org/releases/stable/i386/">Manuel de référence Debian pour i386</a></li>
+						<li><a href="http://formation-debian.via.ecp.fr/">Formation Debian GNU/Linux</a></li>
+					</ul>
+				</section>
+
+
+				<section>
+					<h2>Fin</h2>
+					<section>
+						<h3>Des questions ?</h3>
+					</section>
+
+					<section>
+						<h3>Merci !</h3>
+					</section>
+				</section>
+
+
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+		<script src="lib/highlight.js"></script>
 		<script>
-		    // Delicously hacky. Look away.
-		    if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) )
-		    document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
-		</script>
-
-		<br><br>
-		<p>YYYY-MM-DD</p>
-		<br><br>
-		<i><small>
-			<a href="http://www.gnuside.com">Gnuside</a> / 
-			<a href="http://twitter.com/gnuside">@gnuside</a></small></i>
-		</section>	
-
-		<section>
-		    <section>
-			<h2>Subslide 1</h2>
-			<p>Something</p>
-<ul>
-			<li class="fragment"><a href="#2/3">topic 1</a> - explanation A</li>
-			<li class="fragment"><a href="#2/4">topic 2</a> - explanation B</li>
-			<li class="fragment"><a href="#2/4">topic 3</a> - explanation C</li>
-</ul>
-		    </section>
-		    <section>
-			<h2>Subslide 2</h2>
-			<p>Something else</p>
-			<p><small>
-			    <b>username</b> :
-			    <b>password</b> : 
-			    <b>UID</b> : 
-			    <b>GID</b> : 
-			    <b>description</b> : 
-			    <b>home</b> : 
-			    <b>shell</b>
-			</small>
-			</p>
-		    </section>
-		    <section>
-			<h2>/etc/shadow</h2>
-			<p>FIXME</p>
-		    </section>
-		</section>
-
-
-		<section>
-		    <h2>Thanks !</h2>
-		    <p class="fragment">Questions ?</p>
-		</section>
-	    </div>
-
-	    <!-- The navigational controls UI -->
-	    <aside class="controls">
-	    <a class="left" href="#">&#x25C4;</a>
-	    <a class="right" href="#">&#x25BA;</a>
-	    <a class="up" href="#">&#x25B2;</a>
-	    <a class="down" href="#">&#x25BC;</a>
-	    </aside>
-
-	    <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
-	    <div class="progress"><span></span></div>
-	</div>
-
-	<script src="js/reveal.js"></script>
-	<script src="lib/highlight.js"></script>
-	<script>
-	    // Parse the query string into a key/value object
-	    var query = {};
-	    location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+			// Parse the query string into a key/value object
+		var query = {};
+location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
 		query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
-	    } );
+		} );
 
-	    Reveal.initialize({
+Reveal.initialize({
 		// Display controls in the bottom right corner
-		controls: true,
+controls: true,
 
-		// Display a presentation progress bar
-		progress: true,
+// Display a presentation progress bar
+progress: true,
 
-		// If true; each slide will be pushed to the browser history
-		history: true,
+// If true; each slide will be pushed to the browser history
+history: true,
 
-		// Flags if mouse wheel navigation should be enabled
-		mouseWheel: true,
+// Flags if mouse wheel navigation should be enabled
+mouseWheel: true,
 
-		// Apply a 3D roll to links on hover
-		rollingLinks: false,
-		//true,
+// Apply a 3D roll to links on hover
+rollingLinks: true,
+//true,
 
-		// UI style
-		theme: query.theme || 'default', // default/neon
+// UI style
+theme: query.theme || 'default', // default/neon
 
-		// Transition style
-		transition: query.transition || 'linear'  //default' // default/cube/page/concave/linear(2d)
-	    });
+// Transition style
+transition: query.transition || 'linear'  //default' // default/cube/page/concave/linear(2d)
+});
 
-	    hljs.initHighlightingOnLoad();
-	</script>
+hljs.initHighlightingOnLoad();
+</script>
 
-    </body>
+	</body>
 </html>
