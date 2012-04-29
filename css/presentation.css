@@ -98,3 +98,22 @@ ul.iconbullet img {
     padding-right: 0.5em;
     vertical-align: bottom;
 }
+
+#reveal .column-left {
+    width: 50%;
+    float: left;
+}
+
+#reveal .column-right {
+    width: 50%;
+}
+
+#reveal .column-right:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: left;
+    visibility: hidden;
+    overflow:hidden;
+}
+
