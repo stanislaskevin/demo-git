@@ -46,35 +46,107 @@ if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) )
 					</p>
 				</section>	
 
-				<section>
-					<section>
-						<h2>Utilisateurs et groupes</h2>
-						<p>Quelques fichiers importants</p>
-						<ul>
-							<li class="fragment"><a href="#2/3">/etc/passwd</a> - utilisateurs</li>
-							<li class="fragment"><a href="#2/4">/etc/shadow</a> - mots de passe</li>
-							<li class="fragment"><a href="#2/4">/etc/groups</a> - groupes</li>
-						</ul>
-					</section>
 
-					<section>
-						<h2>/etc/passwd</h2>
-						<div class="fragment">
-							<p>Un format super-simple</p>
-							<p><small>
-									<b>username</b> :
-									<b>password</b> : 
-									<b>user id (UID)</b> : 
-									<b>group id (GID)</b> : 
-									<b>description</b> : 
-									<b>home</b> : 
-									<b>shell</b>
-								</small>
-							</p>
-						</div>
-						<div class="fragment">
-							<p>Exemple (réel)</p>
-							<pre>
+
+
+						<section>
+							<h2>Utilisateurs</h2>
+							<section>
+								<h3>Ajout</h3>
+									<ul>
+										<li><b>useradd</b> (minimaliste et standart)</li>
+										<li><b>adduser</b> (polyvalent mais spécifique Debian)</li>
+									</ul>
+					<pre><code>root@batcave:~# useradd batman</code></pre>
+							</section>
+
+
+							<section>
+								<h3>Modification</h3>
+								<div >
+									<p>Changer le mot de passe : <b>passwd</b></p>
+									<pre><code>batman@batcave:~$ passwd
+Changement du mot de passe pour batman.
+Mot de passe UNIX (actuel) : 
+Entrez le nouveau mot de passe UNIX : 
+Retapez le nouveau mot de passe UNIX : 
+passwd : le mot de passe a été mis à jour avec succès
+batman@batcave:~#
+</code></pre>
+								</div>
+								<div >
+									<p>Modifier les propriétés : <b>usermod</b></p>
+			<pre><code># usermod batman -c "Bat-Like Avenger"</code></pre>
+								</div>
+							</section>
+
+
+							<section>
+								<h3>Suppression</h3>
+									<ul>
+										<li><b>userdel</b> (minimaliste et standart)</li>
+										<li><b>deluser</b> (polyvalent mais spécifique Debian)</li>
+									</ul>
+						<pre><code>root@batcave:~# userdel batman</code></pre>
+							</section>
+
+
+
+						</section>
+
+
+						<section>
+							<h2>Groupes</h2>
+							<section>
+								<h3>Ajout</h3>
+									<ul>
+										<li><b>groupadd</b> (minimaliste et standart)</li>
+										<li><b>addgroup</b> (polyvalent mais spécifique Debian)</li>
+									</ul>
+									<pre><code>root@batcave:~# groupadd batteam
+</code></pre>
+							</section>
+
+
+							<section>
+								<h3>Suppression</h3>
+								<ul>
+									<li><b>groupdel</b> (minimaliste et standart)</li>
+									<li><b>delgroup</b> (polyvalent mais spécifique Debian)</li>
+								</ul>
+								<pre><code>root@batcave:~# groupdel batteam
+</code></pre>
+							</section>
+						</section>
+
+						<section>
+							<h2>Utilisateurs et groupes</h2>
+							<section>
+								<h3>Quelques fichiers importants</h3>
+								<ul>
+									<li ><a href="#2/3">/etc/passwd</a> - utilisateurs</li>
+									<li ><a href="#2/4">/etc/shadow</a> - mots de passe</li>
+									<li ><a href="#2/4">/etc/groups</a> - groupes</li>
+								</ul>
+							</section>
+
+							<section>
+								<h3>/etc/passwd</h3>
+								<div >
+									<p>Un format super-simple</p>
+									<p><small>
+											<b>username</b> :
+											<b>password</b> : 
+											<b>user id (UID)</b> : 
+											<b>group id (GID)</b> : 
+											<b>description</b> : 
+											<b>home</b> : 
+											<b>shell</b>
+										</small>
+									</p>
+								</div>
+								<div >
+									<pre>
 			<code>
 root:x:0:0:root:/root:/bin/bash 
 daemon:x:1:1:daemon:/usr/sbin:/bin/sh 
@@ -92,23 +164,22 @@ news:x:9:9:news:/var/spool/news:/bin/sh
 batman:x:1001:1001:Bruce Wayne:/home/batman:/bin/bash
 			</code>
 			</pre>
-						</div>
-					</section>
+								</div>
+							</section>
 
-					<section>
-						<h2>/etc/shadow</h2>
-						<div class="fragment">
-							<p>Un format super-simple :</p>
-							<p><small>
-									<b>username</b> :
-									<b>password</b> : 
-									<b>date du password</b> : 
-									<b>etc (age min, age max...)</b>
-								</small>
-							</p>
-						</div>
-						<div class="fragment">
-							<p>Exemple (réel) :</p>
+							<section>
+								<h3>/etc/shadow</h3>
+								<div >
+									<p>Un format super-simple :</p>
+									<p><small>
+											<b>username</b> :
+											<b>password</b> : 
+											<b>date du password</b> : 
+											<b>etc (age min, age max...)</b>
+										</small>
+									</p>
+								</div>
+								<div >
 <pre><code>
 root:$6$gjBGnh.Q$RPnyfdvkhXHTP4xtcrVO4I7lGIyp8G3IZiQjjj8cBDikCE3ePuPBuzAex1ip1KVLFbe5GYKiGNxAybPU783Bk0:15174:0:99999:7:::
 daemon:*:15172:0:99999:7:::
@@ -125,23 +196,22 @@ news:*:15172:0:99999:7:::
 
 batman:$6$MdCbGr5F$PfyMqt8MC2EQjzczwdLuqwTxAbm/BqfErwU7gvd02vGQbxL.ZIg5tSNacfp/4pmfwodDYioXTSon2VxTZnQYW/:15174:0:99999:7:::
 </code></pre>
-						</div>
-					</section>
+								</div>
+							</section>
 
 
-					<section>
-						<h2>/etc/group</h2>
-						<div class="fragment">
-							<p>Un format super-simple :</p>
-							<p><small>
-									<b>group name</b> :
-									<b>password</b> : 
-									<b>group id (GID)</b> : 
-									<b>group list</b>
-								</small>
-							</p>
-							<div class="fragment">
-								<p>Exemple (réel) :</p>
+							<section>
+								<h3>/etc/group</h3>
+								<div >
+									<p>Un format super-simple :</p>
+									<p><small>
+											<b>group name</b> :
+											<b>password</b> : 
+											<b>group id (GID)</b> : 
+											<b>group list</b>
+										</small>
+									</p>
+									<div >
 <pre><code>
 root:x:0:
 daemon:x:1:
@@ -161,111 +231,43 @@ batman:x:1002:
 robin:x:1003:
 batteam:x:1004:batman,robin,batgirl
 </code></pre>
-							</div>
-						</section>
+									</div>
+								</section>
 
 
 
 						<section>
-							<h2>UIDs et GIDs</h2>
-							<div class="fragment">
+							<h3>UIDs et GIDs</h3>
+							<div >
 								<p>Valeurs de 0 à 65534</p>
 								<ul>
-									<li class="fragment"><b>0</b> : root (administrateur)</li>
-									<li class="fragment"><b>1-99</b> :
+									<li ><b>0</b> : root (administrateur)</li>
+									<li ><b>1-99</b> :
 										Utilisateurs système, alloués par le projet Debian
 									</li>
-									<li class="fragment"><b>100-999</b> :
+									<li ><b>100-999</b> :
 										Utilisateurs système, non-alloués par le projet Debian</li>
-									<li class="fragment"><b>1000-59999</b> : Utilisateurs “normaux”</li>
-									<li class="fragment"><b>60000-64999</b> : Utilisateurs “normaux” gérés par Debian</li>
-									<li class="fragment"><b>65000-65533</b> : Réservé</li>
-									<li class="fragment"><b>65534</b> : Utilisateur "nobody" (sans droits ni permissions)
+									<li ><b>1000-59999</b> : Utilisateurs “normaux”</li>
+									<li ><b>60000-64999</b> : Utilisateurs “normaux” gérés par Debian</li>
+									<li ><b>65000-65533</b> : Réservé</li>
+									<li ><b>65534</b> : Utilisateur "nobody" (sans droits ni permissions)
 									</li>
 								</ul>
 							</section>
-						</section>
-
-
-
-						<section>
-							<section>
-								<h2>Utilisateurs : ajout et suppression</h2>
-								<div class="fragment">
-									<p>Pour ajouter</p>
-									<ul>
-										<li><b>useradd</b> (minimaliste et standart)</li>
-										<li><b>adduser</b> (polyvalent mais spécifique Debian)</li>
-									</ul>
-					<pre><code>root@batcave:~# useradd batman</code></pre>
-								</div>
-								<div class="fragment">
-									<p>Pour supprimer</p>
-									<ul>
-										<li><b>userdel</b> (minimaliste et standart)</li>
-										<li><b>deluser</b> (polyvalent mais spécifique Debian)</li>
-									</ul>
-						<pre><code>root@batcave:~# userdel batman</code></pre>
-								</div>
-							</section>
-
 
 
 							<section>
-								<h2>Utilisateurs : modification</h2>
-								<div class="fragment">
-									<p>Changer le mot de passe : <b>passwd</b></p>
-									<pre><code>batman@batcave:~$ passwd
-Changement du mot de passe pour batman.
-Mot de passe UNIX (actuel) : 
-Entrez le nouveau mot de passe UNIX : 
-Retapez le nouveau mot de passe UNIX : 
-passwd : le mot de passe a été mis à jour avec succès
-batman@batcave:~#
-</code></pre>
-								</div>
-								<div class="fragment">
-									<p>Modifier les propriétés : <b>usermod</b></p>
-			<pre><code># usermod batman -c "Bat-Like Avenger"</code></pre>
-								</div>
-							</section>
-
-
-
-							<section>
-								<h2>Groupes : ajout et suppression</h2>
-								<div class="fragment">
-									<p>Pour ajouter</p>
-									<ul>
-										<li><b>groupadd</b> (minimaliste et standart)</li>
-										<li><b>addgroup</b> (polyvalent mais spécifique Debian)</li>
-									</ul>
-									<pre><code>root@batcave:~# groupadd batteam
-</code></pre>
-								</div>
-								<div class="fragment">
-									<p>Pour supprimer</p>
-									<ul>
-										<li><b>groupdel</b> (minimaliste et standart)</li>
-										<li><b>delgroup</b> (polyvalent mais spécifique Debian)</li>
-									</ul>
-									<pre><code>root@batcave:~# groupdel batteam
-</code></pre>
-								</div>
-							</section>
-
-
-							<section>
-								<h2>Groupes : quelques outils</h2>
+								<h3>Quelques outils</h3>
 								<ul>
-									<li class="fragment"><b>id</b> - afficher les identifiants d'utilisateur et de groupe</li>
-									<li class="fragment"><b>groups</b> -  affiche les groupes auxquels appartient un utilisateur</li>
-									<li class="fragment"><b>getent</b> - récupère des entrées depuis les bases de données d'administration</li>
+									<li ><b>id</b> - afficher les identifiants d'utilisateur et de groupe</li>
+									<li ><b>groups</b> -  affiche les groupes auxquels appartient un utilisateur</li>
+									<li ><b>getent</b> - récupère des entrées depuis les bases de données d'administration</li>
 								</ul>
 							</section>
 
+
 							<section>
-								<h2>Configuration des comptes utilisateurs</h2>
+								<h3>Configuration des comptes utilisateurs</h3>
 								<ul>
 									<li><b>/etc/skel.conf</b></li>
 									<li><b>/etc/skel/*</b></li>
@@ -280,19 +282,19 @@ batman@batcave:~#
 						<section>
 							<h2>Installation de logiciels</h2>
 							<p>L'installation peut varier
-								<span class="fragment"><b>selon le logiciel</b></span><br/>
-								<span class="fragment">et <b>selon la distribution</b> !</span>
+								<span ><b>selon le logiciel</b></span><br/>
+								<span >et <b>selon la distribution</b> !</span>
 							</p>
 							<br />
-							<p class="fragment">En général, à partir du <i>code source</i> :</p>
+							<p >En général, à partir du <i>code source</i> :</p>
 							<ul>
-								<li class="fragment"><b>./configure</b> (detecte l'environnement et configure)</li>
-								<li class="fragment"><b>make</b> (compile les sources en un binaire exécutable)</li>
-								<li class="fragment"><b>make install</b> (installe sur le système)</li>
+								<li ><b>./configure</b> (detecte l'environnement et configure)</li>
+								<li ><b>make</b> (compile les sources en un binaire exécutable)</li>
+								<li ><b>make install</b> (installe sur le système)</li>
 							</ul>
 							<br />
 							<br />
-							<p class="fragment">Démonstration !</p>
+							<p >Démonstration !</p>
 						</section>
 
 
@@ -301,70 +303,125 @@ batman@batcave:~#
 							<section>
 								<h2>Archivage</h2>
 								<ul>
-									<li class="fragment"><b>tar</b> - archivage de fichiers</li>
-									<li class="fragment"><b>cpio</b> - archivage de fichiers</li>
-									<li class="fragment"><b>rsync</b> - archivage de fichiers</li>
-									<li class="fragment"><b>dd</b> - copie de disques</li>
-									<li class="fragment"><b>partimage</b> copies de disques</li>
+									<li ><b>tar</b> - archivage de fichiers</li>
+									<li ><b>cpio</b> - archivage de fichiers</li>
+									<li ><b>rsync</b> - archivage de fichiers</li>
+									<li ><b>dd</b> - copie de disques</li>
+									<li ><b>partimage</b> copies de disques</li>
 								</ul>
 							</section>
 
 							<section>
-								<h2>Archivage : <b>tar</b></h2>
-									<ul>
-										<li class="fragment">sans compression</li>
-										<li class="fragment">outils tiers pour compresser: <b>gzip</b>, <b>bzip2</b>, <b>7z</b>...</p>
-										<li class="fragment">dans tar, paramètres : <b>-z</b> (gzip),<b>-j</b> (bzip2), <b>-a</b> (automatique)</p>
-									</ul>
+								<h3><b>tar</b> : vue d'ensemble</h3>
+								<ul>
+									<li >sans compression</li>
+									<li >outils tiers pour compresser: <b>gzip</b>, <b>bzip2</b>, <b>7z</b>...</li>
+									<li >dans tar, paramètres : <b>-z</b> (gzip),<b>-j</b> (bzip2), <b>-a</b> (automatique)</li>
+								</ul>
+							</section>
 
-									<div class="fragment">
-										<p><small>Exemple: créer une archive au format <b>tar.gz</b></small></p>
-<pre><code>
-tar czvf archives-batcave.tar.bz2 /home/batman/documents
+
+							<section>
+								<h3>Créer une archive</h3>
+								<small>(au format <b>tar.gz</b>)</small>
+<pre><code>tar czvf archives-batcave.tar.bz2 /home/batman/documents
 </code></pre>
-<pre><code>
-tar cvf archives-batcave.tar /home/batman/documents
+<pre><code>tar cvf archives-batcave.tar /home/batman/documents
 gzip archives-batcave.tar
 </code></pre>
-									</div>
+							</section>
 
-									<div class="fragment">
-										<small>Exemple: ouvrir une archive <b>tar.gz</b></small>
-<pre><code>
-gunzip archives-batcave.tar.gz
+
+							<section>
+								<h3>Lister une archive</h3>
+								<small>(au format <b>tar.gz</b>)</small>
+<pre><code>gunzip archives-batcave.tar.gz
+tar tvf archives-batcave.tar
+</code></pre>
+
+<pre><code>tar tavf archives-batcave.tar.gz
+</code></pre>
+							</section>
+
+							<section>
+								<h3>Ouvrir une archive</h3>
+								<small>(au format <b>tar.gz</b>)</small>
+<pre><code>gunzip archives-batcave.tar.gz
 tar xvf archives-batcave.tar
 </code></pre>
 
-<pre><code>
-tar xavf archives-batcave.tar.gz
+<pre><code>tar xavf archives-batcave.tar.gz
 </code></pre>
-								</div>
+							</section>
 
-<div class="fragment">
-	<p>Peut aussi servir à copier des disques</p>
-<pre><code>
-(cd /anciendisque ; tar cf - . ) | (cd /nouveaudisque ; tar xvf - )
+
+
+							<section>
+								<h3>Trucs et astuces</h3>
+									<p>Peut aussi servir à copier des disques</p>
+<pre><code>(cd /anciendisque ; tar cf - . ) | (cd /nouveaudisque ; tar xvf - )
 </code></pre>
-</div>
-<!-- FIXME: cpio -->
-									</section>
+								<!-- FIXME: cpio -->
+							</section>
+						</section>
 
 
-									<section>
-										<h2>Sauvegarde : <b>dd</b></h2>
+						<section>
+							<h2>cpio</h2>
+
+							<section>
+								<h3>Créer une archive</h3>
+								<ul>
+									<li><b>-o</b>  : créer une archive</li>
+									<li><b>-F</b> : nom de l'archive (sinon stdio / stdou)</li>
+									<li><b>-H <em>format</em></b> : format à utiliser</li>
+									<li><b>-i</b> : restaurer l'archive</li>
+								</ul>	
+								<pre><code>find documents | cpio -o -H tar -F archives-batcave.tar
+</code></pre>
+							</section>
+
+
+							<section>
+								<h3>Lister une archive</h3>
+								<ul>
+									<li><b>-F</b> : nom de l'archive (sinon stdio / stdou)</li>
+									<li><b>-i</b> : restaurer l'archive</li>
+									<li><b>-t</b> : afficher la table</li>
+								</ul>	
+						<pre><code>cpio -it -F perl-files.tar
+</code></pre>
+							</section>
+
+
+							<section>
+								<h3>Ouvrir une archive</h3>
+								<ul>
+									<li><b>-F</b> : nom de l'archive (sinon stdio / stdou)</li>
+									<li><b>-i</b> : restaurer l'archive</li>
+								</ul>	
+								<pre><code>cpio -i -F archives-batcave.tar
+</code></pre>
+							</section>
+						</section>
+
+
+						<section>
+							<section>
+								<h2>Sauvegarde : <b>dd</b></h2>
 <pre><code>
 dd if=/foo of=/bar bs=1M count=1000
 </code></pre>
-										<p>Ne résiste pas aux erreurs disque</p>
-										<p>Une alternative : <b>dd_rescue</b></p>
-									</section>
+								<p>Ne résiste pas aux erreurs disque</p>
+								<p>Une alternative : <b>dd_rescue</b></p>
+							</section>
 
-									<section>
-										<h2>Sauvegarde : <b>dd</b></h2>
-										rsync
-										partimage
-									</section>
-								</section>
+							<section>
+								<h2>Sauvegarde : <b>dd</b></h2>
+								rsync - FIXME
+								partimage - FIXME
+							</section>
+						</section>
 
 						<section>
 							<h2>Références</h2>
@@ -377,7 +434,7 @@ dd if=/foo of=/bar bs=1M count=1000
 
 						<section>
 							<h2>Merci !</h2>
-							<p class="fragment">Des questions ?</p>
+							<p >Des questions ?</p>
 						</section>
 
 					</div> <!-- .slides -->
