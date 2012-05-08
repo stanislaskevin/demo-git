@@ -28,7 +28,7 @@
 			<div class="slides">
 				<section data-state="title">
 					<h1>Administration GNU/Linux</h1>
-					<h3 class="inverted">Installation</h3>
+					<h3 class="inverted">Disques et stockage</h3>
 
 					<br><br>
 					<p>2012-04</p>
@@ -38,373 +38,244 @@
 							<a href="http://twitter.com/gnuside">@gnuside</a></small></i>
 				</section>	
 
+
 				<section>
-					<h2>À propos de Debian</h2>
+					<h2>Périphériques</h2>
+
+				<section>
+					<h3>Philosophie unix</h3>
+
+					<blockquote>Tout est fichier !</blockquote>
+				</section>
 
 					<section>
-					<h3>Un projet</h3>
+						<h3>/dev</h3>
+
+						<ul>
+							<li><b>/dev/hd<em>x</em><em>Y</em></b> - disques PATA</li>
+							<li><b>/dev/sd<em>x</em><em>Y</em></b> - disques SATA</li>
+							<li><b>/dev/sg<em>Y</em></b> - disques SCSI</li>
+							<li><b>/dev/sr<em>Y</em></b> - cdrom SCSI</li>
+							<li><b>/dev/scd<em>Y</em></b> - cdrom SCSI</li>
+						</ul>
+					</section>
+				
+					<section>
+						<h3>udev</h3>
+
+						<p>Des alias !</p>
+						<p>Plus de clarté !</p>
+
+						<ul>
+							<li><b>/dev/dvd<em>Y</em></b> - lecteurs DVD</li>
+							<li>..</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section>
+					<h2>Partitions</h2>
+
+					<p>Quelques outils</p>
 					<ul>
-						<li>Une organisation</li>
-						<li>Uniquement des bénévoles</li>
-						<li>Un but : <b>développer du logiciel libre</b></li>
-						<li>Des engagements : <a href="http://www.debian.org/social_contract">contrat social</a>,
-						<br/> <a href="http://www.debian.org/social_contract#guidelines">des directives</a>,
-						<a href="http://www.debian.org/doc/debian-policy/">la charte</a>
-						</li>
+						<li>fdisk</li>
+						<li>cfdisk</li>
+						<li>gparted</li>
 					</ul>
-					</section>
+				</section>
+
+				<section>
+					<h2>Filesystems</h2>
 
 					<section>
-						<h3>GNU / Linux</h3>
-						<ul>
-							<li>Un système d'exploitation <b>inspiré d'unix</b></li>
-							<li>Le <b>projet GNU</b> (1984)</li>
-							<li>Le <b>noyau Linux</b> (1991)</li>
-							<li>Du <b>Logiciel Libre</b></li>
-						</ul>
-					</section>
-
-					<section>
-						<h3>Pourquoi Debian ?</h3>
+						<h3>Rappels</h3>
 
 						<ul>
-							<li>Philosophie</li>
-							<li>Excellence technique</li>
-							<li>Grande sûreté du système</li>
-							<li>Une gestion des paquets évoluée</li>
+							<li>Blocks</li>
+							<li>Inodes</li>
+							<li>Fichiers et répertoires</li>
 						</ul>
-
 					</section>
 
 					<section>
-						<h3>Distribution de logiciels</h3>
+						<h3>Construction</h3>
 
-						<ul class="iconbullet column-left">
-							<li><img src="img/distro-fedora.png" /> Fedora (ex-Redhat) </li>
-							<li><img src="img/distro-suse.png" /> OpenSuSe</li>
-							<li><img src="img/distro-slack.png" /> Slackware</li>
-							<li><img src="img/distro-mageia.png" /> Mageia (ex-Mandriva, ex-Mandrake)</li>
-						</ul>
-						<ul class="iconbullet column-right">
-							<li><img src="img/distro-debian.png"  />Debian</li>
-							<li><img src="img/distro-ubuntu.png" />Ubuntu</li>
-							<li><img src="img/distro-mint.png" />Mint</li>
+						<p><b>mkfs.<em>fsname</em> <em>partition</em></b> - formatage de la partition</p>
+					</section>
+
+					<section>
+						<h3>Controle d'intégrité</h3>
+
+						<p><b>fsck.<em>fsname</em> <em>partition</em></b> - vérification du filesystem</p>
+					</section>
+
+					<section>
+						<h3>Labels</h3>
+
+						<p><b>e2label <em>partition</em></b> - affiche le label</p>
+						<p><b>e2label -L <em>label</em> <em>partition</em></b> - affiche le label</p>
+					</section>
+
+					<section>
+						<h3>Montage</h3>
+
+						<p><b>mount -t <em>type</em> <em>partition</em> <em>point-de-montage</em></b></p>
+
+						<p>automount</p>
+
+						<p>pmount</p>
+					</section>
+
+					<section>
+						<h3>Montage automatique</h3>
+
+						<p>Le fichier <b>/etc/fstab</b><p>
+					</section>
+				</section>
+
+
+				<section>
+					<h2>Filesystems virtuels</h2>
+
+					<section>
+						<h3>Du noyau</h3>
+						<ul>
+							<li>/dev</li>
+							<li>/proc</li>
+							<li>/sys</li>
+							<li>/cgroups</li>
 							<li>...</li>
 						</ul>
 					</section>
 
 
 					<section>
-						<h3>Le système d'exploitation <em>universel</em></h3>
+						<h3>Des Utilisateurs (FUSE)</h3>
 
-						<ul class="column-left">
-							<li>Une branche GNU/Linux, mais pas que...</li>
-							<li>Plus de 29 000 paquets</li>
-							<li>Sert de base à <b>Knoppix</b>, <b>Ubuntu</b>, <b>Mint</b>... </li>
-						</ul>
-
-
-						<ul class="column-right">
-							<!-- FIXME -->
-							<li>plein de gens</li>
-							<li>plein de matériels</li>
-							<li>plein de tests</li>
-							<li>plein de correctifs</li>
-						</ul>
+						<p>La commande <b>fusermount</b></p>
 					</section>
+
 				</section>
 
 
-
 				<section>
-					<h2>Avant l'installation</h2>
+					<h2>swap</h2>
 
 					<section>
-						<h3>Choix du matériel</h3>
+						<h3>Définition</h3>
 
+						<blockquote>
+							Swap-per, c'est échanger un contenu de la mémoire centrale vers le contenu d'une mémoire secondaire, ou réciproquement.
+						</blockquote>
+					</section>
+
+					<section>
+						<h3>Plusieurs types de swap</h3>
 						<ul>
-							<li>Pas trop récent</li>
-							<li>Vérifier les HCL</li>
+							<li>Sur partition</li>
+							<li>Sur fichiers</li>
 						</ul>
 					</section>
 
 					<section>
-						<h3>Choix de la version</h3>
+						<h3>Manipuler le swap</h3>
+						<p>/proc/swaps</p>
+						<p>swapon</p>
+						<p>swapoff</p>
+					</section>
+				</section>
 
-						<p>Selon la stabilité, le risque, ou la nouveauté souhaitée : 
-							<b>stable</b>, <b>testing</b>, <b>unstable</b>...
-						</p>
-						<br/>
-						<p>.. et pour la bonne architecture matérielle !</p>
+
+				<section>
+					<h2>RAID</h2>
+
+					<p>man mdadm :-)</p>
+				</section>
+
+
+				<section>
+					<h2>LVM</h2>
+
+					<section>
+						<p>Abstraction du stockage, sur 3 niveaux</p>
 						<ul>
-							<li><b>i386</b> - compatible x86, 32 bits</li>
-							<li><b>amd64</b> - compatible x86, 64 bits</li>
-							<li><b>arm</b></li>
-							<li><b>mips</b></li>
-							<li>...</li>
+							<li><b>PV</b> - volumes physiques</li>
+							<li><b>VG</b> - groupes de volumes (groupes de PV)</li>
+							<li><b>LV</b> - volumes logiques (stockage sur VG)</li>
 						</ul>
-
 					</section>
 
 					<section>
-						<h3>Choix du support</h3>
-
-						<ul class="iconbullet">
-							<li><img src="img/icon-cdrom.png" />image cd (iso)</li>
-							<li><img src="img/icon-dvd.png" />image dvd (iso)</li>
-							<li><img src="img/icon-pendrive.png" />image disque usb</li>
-							<li><img src="img/icon-network.png" />réseau (bootp + pxe)</li>
-						</ul>
+						<h3>Gestion des PV</h3>
+						<p><b>pvcreate <em>partition</em></b> - creer un PV</p>
 					</section>
-					<section>
-						<h3>Choix du media</h3>
 
+					<section>
+						<h3>Gestion des VG</h3>
+						<p><b>vgcreate <em>vgname</em> <em>partition</em></b> - créer un VG</p>
+
+						<p><b>vgextend</b> - changer la taille d'un VG</p>
+
+						<p><b>vgreduce <em>vgname</em> <em>partition</em></b> - retirer un PV du VG</p>
+
+						<p><b>vgremove</b> - supprimer le VG (et les données qui vont avec!)</p>
+					</section>
+
+					<section>
+						<h3>Gestion des LV</h3>
+						<p><b>lvcreate -L <em>taille</em> -n <em>lvname</em></b> - crée un LV sur le VG</p>
+						<p><b>lvremove <em>lvname</em></b></p>
+					</section>
+
+
+					<section>
+						<h3>Retrouver ses PV, VG, etc.</h3>
 						<ul>
-							<li>Selon le support</li>
-							<li>Installeur complet ou <em>netinstall</em><br/>(NFS, HTTP, FTP, Bittorent, etc.)</li>
-							<li>À télécharger sur le <a href="http://www.debian.org/distrib/netinst">site officiel</a></li>
-						</ul>
-
-					</section>
-				</section>
-
-				<section>
-					<h3>IsoLinux</h3>
-					<section>
-						<p>Choix du type d'installation</p>
-						<ul>
-							<li><b>install</b> - <em>classique</em> en mode texte</li>
-							<li><b>installation graphique</b> - moderne, mais dépend du matériel</li>
-							<li><b>advanced options</b> - expert, automatisée, sauvetage ...</li>
-						</ul>
-					</section>
-
-					<section>
-						<img src="img/debian-isolinux.png" />
-					</section>
-
-				</section>
-
-
-
-				<section>
-					<h2>Sélection de la langue</h2>
-
-					<section>
-						<ul>
-							<li>Installation</li>
-							<li>Zone geographique</li>
-							<li>Clavier</li>
+							<li><b>pvscan</b> - rechercher des PV</li>
+							<li><b>pvmove</b> - déplacer les données entre PV</li>
+							<li><b>pvdisplay</b> -  - afficher les disques contenant des PV</li>
+							<li><b>vgscan</b> -rechercher des VG</li>
+							<li><b>vgdisplay</b> - afficher la liste des VG et leur caractéristiques</li>
 						</ul>
 					</section>
 
 
 					<section>
-						<img src="img/debian-language.png" style="width:70%;" />
-					</section>
+						<h3>Exemple : creation d'un LV</h3>
 
+						<pre><code>lvcreate -L 1024M -n test1
+mkfs -t ext3 /dev/monvg/monvl
+mount /dev/mvg/monvl /test
+df -h
+</code></pre>
+
+					</section>
 
 					<section>
-						<img src="img/debian-geography.png" style="width:70%;" />
-					</section>
+						<h3>Exemple : Extension d'un LV</h3>
 
+						<pre></code>
+							lvextend -L+1024M /dev/vtest/test1
+							resize2fs /dev/vtest/test1
+						</code></pre>
+					</section>
 
 					<section>
-						<img src="img/debian-keyboard.png" style="width:70%;" />
+						<h3>Exemple : Re-location d'un LV</h3>
+
+						<small>(ex: en cas de disque défectueux)</small>
+
+						<pre><code>lvcreate -L 1024M -n test1
+mkfs -t ext3 /dev/monvg/monvl
+mount /dev/mvg/monvl /test
+df -h
+</code></pre>
 					</section>
+
+
 
 				</section>
-
-
-
-				<section>
-					<h2>Réseau</h2>
-
-					<section>
-						<ul>
-							<li>Automatique (par défaut) ou statique</li>
-							<li>Nom de machine</li>
-							<li>Nom de réseau</li>
-						</ul>
-					</section>
-
-
-					<section>
-						<img src="img/debian-netmodules.png" style="width:70%;" />
-					</section>
-
-
-					<section>
-						<img src="img/debian-netmachine.png" style="width:70%;" />
-					</section>
-
-					<!--
-					<section>
-						<img src="img/debian-netdomain.png" style="width:70%;" />
-					</section>
-					-->
-				</section>
-
-
-
-				<section>
-					<h2>Utilisateurs</h2>
-
-					<section>
-						<p>
-							<b>root</b> et utilisateur principal
-						</p>
-						<img src="img/xkcd-password_strength.png" style="width:50%; border: 0.5em solid white;"/>
-					</section>
-
-
-					<section>
-						<img src="img/debian-userroot.png" style="width:70%;" />
-					</section>
-
-
-					<section>
-						<img src="img/debian-userrootpwd.png" style="width:70%;" />
-					</section>
-					
-					<section>
-						<img src="img/debian-usermain.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-usermainpwd.png" style="width:70%;" />
-					</section>
-
-				</section>
-
-
-
-				<section>
-					<h2>Partitionnement</h2>
-
-					<section>
-						<ul>
-							<li>Choix du disque</li>
-							<li>Gestion des partitions</li>
-							<li>Gestion des points de montage</li>
-							<li>Formatage</li>
-						</ul>
-					</section>
-
-					<section>
-						<img src="img/debian-partauto.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-partauto2.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-partauto3.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-partauto4.png" style="width:70%;" />
-					</section>
-
-				</section>
-
-
-
-				<section>
-					<h2>Système de base</h2>
-
-					<section>
-						<p>Wait &amp; see :-) </p>
-					</section>
-
-					<section>
-						<img src="img/debian-installsystem.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-installsystem2.png" style="width:70%;" />
-					</section>
-
-				</section>
-
-
-				<section>
-					<h2>Gestion des paquets</h2>
-
-					<section>
-						<ul>
-							<li>Choix de la zone géographique</li>
-							<li>Définition du mirroir</li>
-							<li>Choix du mandataire HTTP (proxy)</li>
-						</ul>	
-					</section>
-
-					<section>
-						<img src="img/debian-pkggeography.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-pkgmirror.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-pkgproxy.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-pkgcfg.png" style="width:70%;" />
-					</section>
-				</section>
-
-
-				<section>
-					<h2>Popularity contest</h2>
-
-					<section>
-						<img src="img/debian-popcontest.png" style="width:70%;" />
-					</section>
-				</section>
-
-
-
-				<section>
-					<h2>Choix des <em>tâches</em></h2>
-
-					<section>
-						<img src="img/debian-tasksel.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-taskinst.png" style="width:70%;" />
-					</section>
-				</section>
-
-
-				<section>
-					<h2>Fin de l'installation</h2>
-
-					<section>
-						<img src="img/debian-grub.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-finish.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-restartgrub.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-restartboot.png" style="width:70%;" />
-					</section>
-
-					<section>
-						<img src="img/debian-restartgdm.png" style="width:70%;" />
-					</section>
-				</section>
-
 
 
 				<section>
@@ -414,10 +285,9 @@
 						<h3>Références</h3>
 
 						<ul>
-							<li><a href="http://www.debian.org/releases/stable/installmanual">Debian squeeze - Installation Guide</a></li>
-							<li><a href="http://www.debian.org/releases/stable/i386/">Manuel de référence Debian pour i386</a></li>
-							<li><a href="http://formation-debian.via.ecp.fr/">Formation Debian GNU/Linux</a></li>
-							<li><a href="http://distrowatch.com/">Distrowatch</a></li>
+							<li><a href="http://wiki.debian-facile.org/manuel:lvm">Debian-Facile: LVM</a></li>
+							<li><a href="http://www.admin-debian.com/les-systemes-de-fichiers-linux/lvm-2-logical-volume-management/">Tutoriels Linux Debian - LVM 2</a></li>
+							<li><a href="http://pbraun.nethence.com/doc/sysutils_hpux/hpux_lvm.html">HP/UX LVM configuration</a></li>
 						</ul>
 					</section>
 
