@@ -1,0 +1,485 @@
+<!doctype html>  
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Debian GNU/Linux - Administration Unix - Gnuside</title>
+
+		<meta name="description" content="Gnuside - Admin Debian GNU/Linux">
+		<meta name="author" content="Gnuside">
+
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/zenburn.css">
+
+		<!-- gnuside css -->
+		<link rel="stylesheet" href="css/presentation.css">
+
+	</head>
+
+	<body>
+
+		<div id="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-state="title">
+					<h1>Debian GNU/Linux</h1>
+					<h3 class="inverted">Installation</h3>
+
+					<br><br>
+					<p>2012-04</p>
+					<br><br>
+					<i><small>
+							<a href="http://www.gnuside.com">Gnuside</a> / 
+							<a href="http://twitter.com/gnuside">@gnuside</a></small></i>
+				</section>	
+
+				<section>
+					<h2>À propos de Debian</h2>
+
+					<section>
+					<h3>Un projet</h3>
+					<ul>
+						<li>Une organisation</li>
+						<li>Uniquement des bénévoles</li>
+						<li>Un but : <b>développer du logiciel libre</b></li>
+						<li>Des engagements : <a href="http://www.debian.org/social_contract">contrat social</a>,
+						<br/> <a href="http://www.debian.org/social_contract#guidelines">des directives</a>,
+						<a href="http://www.debian.org/doc/debian-policy/">la charte</a>
+						</li>
+					</ul>
+					</section>
+
+					<section>
+						<h3>GNU / Linux</h3>
+						<ul>
+							<li>Un système d'exploitation <b>inspiré d'unix</b></li>
+							<li>Le <b>projet GNU</b> (1984)</li>
+							<li>Le <b>noyau Linux</b> (1991)</li>
+							<li>Du <b>Logiciel Libre</b></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Pourquoi Debian ?</h3>
+
+						<ul>
+							<li>Philosophie</li>
+							<li>Excellence technique</li>
+							<li>Grande sûreté du système</li>
+							<li>Une gestion des paquets évoluée</li>
+						</ul>
+
+					</section>
+
+					<section>
+						<h3>Distribution de logiciels</h3>
+
+						<ul class="iconbullet column-left">
+							<li><img src="img/distro-fedora.png" /> Fedora (ex-Redhat) </li>
+							<li><img src="img/distro-suse.png" /> OpenSuSe</li>
+							<li><img src="img/distro-slack.png" /> Slackware</li>
+							<li><img src="img/distro-mageia.png" /> Mageia (ex-Mandriva, ex-Mandrake)</li>
+						</ul>
+						<ul class="iconbullet column-right">
+							<li><img src="img/distro-debian.png"  />Debian</li>
+							<li><img src="img/distro-ubuntu.png" />Ubuntu</li>
+							<li><img src="img/distro-mint.png" />Mint</li>
+							<li>...</li>
+						</ul>
+					</section>
+
+
+					<section>
+						<h3>Le système d'exploitation <em>universel</em></h3>
+
+						<ul class="column-left">
+							<li>Une branche GNU/Linux, mais pas que...</li>
+							<li>Plus de 29 000 paquets</li>
+							<li>Sert de base à <b>Knoppix</b>, <b>Ubuntu</b>, <b>Mint</b>... </li>
+						</ul>
+
+
+						<ul class="column-right">
+							<!-- FIXME -->
+							<li>plein de gens</li>
+							<li>plein de matériels</li>
+							<li>plein de tests</li>
+							<li>plein de correctifs</li>
+						</ul>
+					</section>
+				</section>
+
+
+
+				<section>
+					<h2>Avant l'installation</h2>
+
+					<section>
+						<h3>Choix du matériel</h3>
+
+						<ul>
+							<li>Pas trop récent</li>
+							<li>Vérifier les HCL</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Choix de la version</h3>
+
+						<p>Selon la stabilité, le risque, ou la nouveauté souhaitée : 
+							<b>stable</b>, <b>testing</b>, <b>unstable</b>...
+						</p>
+						<br/>
+						<p>.. et pour la bonne architecture matérielle !</p>
+						<ul>
+							<li><b>i386</b> - compatible x86, 32 bits</li>
+							<li><b>amd64</b> - compatible x86, 64 bits</li>
+							<li><b>arm</b></li>
+							<li><b>mips</b></li>
+							<li>...</li>
+						</ul>
+
+					</section>
+
+					<section>
+						<h3>Choix du support</h3>
+
+						<ul class="iconbullet">
+							<li><img src="img/icon-cdrom.png" />image cd (iso)</li>
+							<li><img src="img/icon-dvd.png" />image dvd (iso)</li>
+							<li><img src="img/icon-pendrive.png" />image disque usb</li>
+							<li><img src="img/icon-network.png" />réseau (bootp + pxe)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Choix du media</h3>
+
+						<ul>
+							<li>Selon le support</li>
+							<li>Installeur complet ou <em>netinstall</em><br/>(NFS, HTTP, FTP, Bittorent, etc.)</li>
+							<li>À télécharger sur le <a href="http://www.debian.org/distrib/netinst">site officiel</a></li>
+						</ul>
+
+					</section>
+				</section>
+
+				<section>
+					<h3>IsoLinux</h3>
+					<section>
+						<p>Choix du type d'installation</p>
+						<ul>
+							<li><b>install</b> - <em>classique</em> en mode texte</li>
+							<li><b>installation graphique</b> - moderne, mais dépend du matériel</li>
+							<li><b>advanced options</b> - expert, automatisée, sauvetage ...</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="img/debian-isolinux.png" />
+					</section>
+
+				</section>
+
+
+
+				<section>
+					<h2>Sélection de la langue</h2>
+
+					<section>
+						<ul>
+							<li>Installation</li>
+							<li>Zone geographique</li>
+							<li>Clavier</li>
+						</ul>
+					</section>
+
+
+					<section>
+						<img src="img/debian-language.png" style="width:70%;" />
+					</section>
+
+
+					<section>
+						<img src="img/debian-geography.png" style="width:70%;" />
+					</section>
+
+
+					<section>
+						<img src="img/debian-keyboard.png" style="width:70%;" />
+					</section>
+
+				</section>
+
+
+
+				<section>
+					<h2>Réseau</h2>
+
+					<section>
+						<ul>
+							<li>Automatique (par défaut) ou statique</li>
+							<li>Nom de machine</li>
+							<li>Nom de réseau</li>
+						</ul>
+					</section>
+
+
+					<section>
+						<img src="img/debian-netmodules.png" style="width:70%;" />
+					</section>
+
+
+					<section>
+						<img src="img/debian-netmachine.png" style="width:70%;" />
+					</section>
+
+					<!--
+					<section>
+						<img src="img/debian-netdomain.png" style="width:70%;" />
+					</section>
+					-->
+				</section>
+
+
+
+				<section>
+					<h2>Utilisateurs</h2>
+
+					<section>
+						<p>
+							<b>root</b> et utilisateur principal
+						</p>
+						<img src="img/xkcd-password_strength.png" style="width:50%; border: 0.5em solid white;"/>
+					</section>
+
+
+					<section>
+						<img src="img/debian-userroot.png" style="width:70%;" />
+					</section>
+
+
+					<section>
+						<img src="img/debian-userrootpwd.png" style="width:70%;" />
+					</section>
+					
+					<section>
+						<img src="img/debian-usermain.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-usermainpwd.png" style="width:70%;" />
+					</section>
+
+				</section>
+
+
+
+				<section>
+					<h2>Partitionnement</h2>
+
+					<section>
+						<ul>
+							<li>Choix du disque</li>
+							<li>Gestion des partitions</li>
+							<li>Gestion des points de montage</li>
+							<li>Formatage</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="img/debian-partauto.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-partauto2.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-partauto3.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-partauto4.png" style="width:70%;" />
+					</section>
+
+				</section>
+
+
+
+				<section>
+					<h2>Système de base</h2>
+
+					<section>
+						<p>Wait &amp; see :-) </p>
+					</section>
+
+					<section>
+						<img src="img/debian-installsystem.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-installsystem2.png" style="width:70%;" />
+					</section>
+
+				</section>
+
+
+				<section>
+					<h2>Gestion des paquets</h2>
+
+					<section>
+						<ul>
+							<li>Choix de la zone géographique</li>
+							<li>Définition du mirroir</li>
+							<li>Choix du mandataire HTTP (proxy)</li>
+						</ul>	
+					</section>
+
+					<section>
+						<img src="img/debian-pkggeography.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-pkgmirror.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-pkgproxy.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-pkgcfg.png" style="width:70%;" />
+					</section>
+				</section>
+
+
+				<section>
+					<h2>Popularity contest</h2>
+
+					<section>
+						<img src="img/debian-popcontest.png" style="width:70%;" />
+					</section>
+				</section>
+
+
+
+				<section>
+					<h2>Choix des <em>tâches</em></h2>
+
+					<section>
+						<img src="img/debian-tasksel.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-taskinst.png" style="width:70%;" />
+					</section>
+				</section>
+
+
+				<section>
+					<h2>Fin de l'installation</h2>
+
+					<section>
+						<img src="img/debian-grub.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-finish.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-restartgrub.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-restartboot.png" style="width:70%;" />
+					</section>
+
+					<section>
+						<img src="img/debian-restartgdm.png" style="width:70%;" />
+					</section>
+				</section>
+
+
+
+				<section>
+					<h2>Fin</h2>
+
+					<section>
+						<h3>Références</h3>
+
+						<ul>
+							<li><a href="http://www.debian.org/releases/stable/installmanual">Debian squeeze - Installation Guide</a></li>
+							<li><a href="http://www.debian.org/releases/stable/i386/">Manuel de référence Debian pour i386</a></li>
+							<li><a href="http://formation-debian.via.ecp.fr/">Formation Debian GNU/Linux</a></li>
+							<li><a href="http://distrowatch.com/">Distrowatch</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Des questions ?</h3>
+					</section>
+
+					<section>
+						<h3>Merci !</h3>
+					</section>
+				</section>
+
+
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+		<script src="lib/highlight.js"></script>
+		<script>
+			// Parse the query string into a key/value object
+		var query = {};
+location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+		query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+		} );
+
+Reveal.initialize({
+		// Display controls in the bottom right corner
+controls: true,
+
+// Display a presentation progress bar
+progress: true,
+
+// If true; each slide will be pushed to the browser history
+history: true,
+
+// Flags if mouse wheel navigation should be enabled
+mouseWheel: true,
+
+// Apply a 3D roll to links on hover
+rollingLinks: true,
+//true,
+
+// UI style
+theme: query.theme || 'default', // default/neon
+
+// Transition style
+transition: query.transition || 'linear'  //default' // default/cube/page/concave/linear(2d)
+});
+
+hljs.initHighlightingOnLoad();
+</script>
+
+	</body>
+</html>
