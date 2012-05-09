@@ -1,0 +1,328 @@
+<!doctype html>  
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Administration GNU/Linux - Usage du shell - Gnuside</title>
+
+		<meta name="description" content="Administration GNU/Linux - Usage du shell - Gnuside">
+		<meta name="author" content="Gnuside">
+
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/zenburn.css">
+
+		<!-- gnuside css -->
+		<link rel="stylesheet" href="css/presentation.css">
+
+	</head>
+
+	<body>
+
+		<div id="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-state="title">
+					<h1>Administration GNU/Linux</h1>
+					<h3 class="inverted">Usage du shell</h3>
+
+					<!--
+					script>
+					// Delicously hacky. Look away.
+					if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) {
+					document.write( '<'+'p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')<'+'/p>' );
+					}
+					</script
+					-->
+
+					<br/><br/>
+					<p>2012-05</p>
+					<br/><br/>
+					<i><small>
+							<a href="http://www.gnuside.com">Gnuside</a> / 
+							<a href="http://twitter.com/gnuside">@gnuside</a></small></i>
+				</section>	
+
+
+				<section>
+					<h2>Trouver de la documentation</h2>
+					<ul>
+						<li><b>man <em>commande</em></b></li>
+						<!-- option -K de man pour rechercher les pages de man qui contiennet un mot clef donné -->
+
+						<li><b>info <em>commande</em></b></li>
+						<li><b>whatis <em>commande</em></b></li>
+					</ul>
+					<p>
+						<small>(en remplaçant <em>commande</em> par le nom de l'application  sur laquelle vous cherchez des informations)</small>
+					</p>
+					<pre><code class="bash">$ whatis bash
+bash (1)             - Interpréteur de commandes GNU Bourne-Again SHell
+</code></pre>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>Gérer les fichiers et les répertoires</h2>
+					</section>
+
+					<section>
+						<h3>Se déplacer dans les répertoires</h3>
+
+						<p>Se situer : <b>pwd</b></p>
+						<pre><code>$ pwd
+</code></pre>
+
+						<p>Aller dans un dossier : <b>cd</b></p>
+						<pre><code>$ cd nouveau_repertoire
+$ cd www/logs
+</code></pre>
+
+						<p>Les chemins relatifs</p>
+						<pre><code>$ cd ..
+$ cd ../documents
+</code></pre>
+
+						<p>Les chemins absolus</p>
+						<pre><code>$ cd /home/batman/documents
+$ cd /usr/share/doc
+</code></pre>
+					</section>
+
+
+					<section>
+						<h3>Lister les fichiers d'un répertoire</h3>
+
+						<p>La commande <b>ls</b></p>
+						<pre><code>$ ls
+</code></pre>
+						<pre><code>$ ls -la
+$ ls -ld SomeDir
+$ ls -R SomeDir
+</code></pre>
+					</section>
+
+					<section>
+						<h3>Créer un fichier ou un répertoire</h3>
+						<p>Créer un fichier vide : <b>touch</b></p>
+<pre><code class="bash">$ touch EmptyFile</code></pre>
+
+						<p>Créer un répertoire : <b>mkdir</b></p>
+<pre><code class="bash">$ mkdir nouveauRepertoire</code></pre>
+<pre><code class="bash">$ mkdir -p nouveauRepertoire/etSousRepertoire</code></pre>
+					</section>
+
+
+					<section>
+						<h3>Supprimer un fichier ou un répertoire</h3>
+
+<pre><code class="bash">$ rm fichierVide
+</code></pre>
+<pre><code class="bash">$ rm -r nouveauDossier
+</code></pre>
+
+						<p><b>Attention : pas de confirmation sans le paramètre -i</b></p>
+<pre><code class="bash">$ rm -ir nouveauDossier
+</code></pre>
+					</section>
+
+
+					<section>
+						<h3>Copier un fichier ou un répertoire</h3>
+<pre><code class="shell">$ cp fichierQuelconque nouveauFichier
+$ cp Image.jpg ~/www/images/
+</code></pre>
+					</section>
+
+
+					<section>
+						<h3>Déplacer un fichier ou un répertoire</h3>
+<pre><code>$ mv fichierQuelconque fichierDestination
+$ mv fichierQuelconque ~/documents/
+$ mv repertoireQuelconque ~/documents/
+</code></pre>
+					</section>
+
+
+
+					<section>
+						<h3>Permissions</h3>
+
+<pre><code>$ ls -l *.txt
+-rw-------  1 batman  batteam  0 Mar 28 12:45 fichierPrivé.txt
+-rw-rw-r--  1 batgirl batteam  0 Mar 28 12:47 fichierPublic.txt
+</code></pre>
+
+						<p>Changer les permissions : <b>chmod</b></p>
+
+<pre><code class="bash">$ chmod g+r fichierPrivé.txt
+</code></pre>
+
+						<p>Changer le propriétaire : <b>chown</b></p>
+<pre><code class="bash">$ chown batman:batteam privateBatcaveFile.txt
+</code></pre>
+
+						<p>Changer le groupe : <b>chgroup</b></p>
+<pre><code class="bash">$ chgrp batteam PrivateBatCaveFile.txt
+</code></pre>
+					</section>
+
+
+
+					<section>
+						<h3>Quelques astuces</h3>
+
+						<p>Attention aux espaces !</p>
+						<pre><code>$ cd "nouveau repertoire avec des espaces"
+$ cd nouveau\ repertoire\ avec\ des\ espaces
+</code></pre>
+
+						<p>Revenir dans <em>$HOME</em></p>
+						<pre><code>$ cd
+</code></pre>
+
+						<p>Fichiers commençant par un tiret (-)</p>
+<pre><code class="bash">$ rm \-StupidFile
+</code></pre>
+					</section>
+
+
+				</section>
+
+
+
+				<section>
+
+					<section>
+						<h2>Contenu des fichiers</h2>
+					</section>
+
+
+
+					<section>
+						<h3>Afficher le contenu d'un fichier</h3>
+						<p>En entier</p>
+					<pre><code>$ cat ~/ToDo.txt</code></pre>
+
+						<p>... seulement son début</p>
+<pre><code class="bash">$ head ~/www/logs/access
+$ head -n 20 -f ~/www/logs/error
+</code></pre>
+
+						<p>... ou seulement sa fin</p>
+<pre><code class="bash">$ tail ~/www/logs/access
+$ tail -n 20 ~/www/logs/access
+$ tail -f ~/www/logs/error
+</code></pre>
+					</section>
+
+
+					<section>
+						<h3>Rechercher des fichiers</h3>
+
+						<p>La commande <b>grep</b></p>
+						<pre><code>$ grep 'Catwoman' ~/realVillains.txt
+$ grep -r 'Catwoman' ~/villains/
+$ egrep '(Catwoman|Poison Ivy)' ~/recentCrimes.txt
+						</code></pre>
+
+						<p>La commande <b>find</b></p>
+						<pre><code>
+$ find ~/documents/ -name \*.html
+$ find ~/www/ -name \*.html -or -name \*.txt -exec grep -H {} \;
+						</code></pre>
+
+					</section>
+
+
+
+					<section>
+						<h2>Liens</h2>
+
+						<p>Liens symboliques : <b>ln</b></p>
+<pre><code class="bash">$ ln -s monFichier lienVersMonFichier
+$ ln -s monRepertoire lienVersMonRepertoire
+</code></pre>
+
+						<p>Liens durs : <b>ln</b> (encore)</p>
+<pre><code class="bash">$ ln MyFile LinkToMyFile
+</code></pre>
+					<!-- FIXME: expliquer la différence, les inodes, etc ? -->
+					</section>
+
+				</section>
+
+
+
+				<section>
+					<h2>Fin</h2>
+					<section>
+						<h3>Références</h3>
+						<p><a href="http://csoft.net/docs/course.html.en">Référence shell (csoft)</a></p>
+					</section>
+
+					<section>
+						<h3>Des questions ?</h3>
+					</section>
+
+					<section>
+						<h3>Merci !</h3>
+					</section>
+				</section>
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+		<script src="js/highlight.js"></script>
+		<script>
+			// Parse the query string into a key/value object
+		var query = {};
+location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+		query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+		} );
+
+Reveal.initialize({
+		// Display controls in the bottom right corner
+controls: true,
+
+// Display a presentation progress bar
+progress: true,
+
+// If true; each slide will be pushed to the browser history
+history: true,
+
+// Flags if mouse wheel navigation should be enabled
+mouseWheel: true,
+
+// Apply a 3D roll to links on hover
+rollingLinks: false,
+//true,
+
+// UI style
+theme: query.theme || 'default', // default/neon
+
+// Transition style
+transition: query.transition || 'linear'  //default' // default/cube/page/concave/linear(2d)
+});
+
+hljs.initHighlightingOnLoad();
+</script>
+
+	</body>
+</html>

@@ -1,0 +1,455 @@
+<!doctype html>  
+<html lang="en">
+
+    <head>
+	<meta charset="utf-8">
+
+	<title>Administration GNU/Linux - Gestion de logiciels (OpenSUSE) - Gnuside</title>
+
+	<meta name="description" content="Adminsitration GNU/Linux - Gestion des logiciels (OpenSUSE)">
+	<meta name="author" content="Gnuside">
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/zenburn.css">
+
+	<!-- gnuside css -->
+	<link rel="stylesheet" href="css/presentation.css">
+
+    </head>
+
+    <body>
+
+	<div id="reveal">
+
+	    <!-- Any section element inside of this container is displayed as a slide -->
+	    <div class="slides">
+		<section data-state="title">
+		<h1>Administration GNU/Linux</h1>
+		<h3 class="inverted">Gestion des logiciels<br/>(OpenSUSE)</h3>
+
+		<br><br>
+		<p>2012-05</p>
+		<br><br>
+		<i><small>
+			<a href="http://www.gnuside.com">Gnuside</a> / 
+			<a href="http://twitter.com/gnuside">@gnuside</a></small></i>
+		</section>	
+
+
+		<section>
+			<h2>Spécificités d'OpenSUSE</h2>
+
+			<ul>
+				<li>Yast</li>
+				<li>Zypper</li>
+				<li>Rpm</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Définitions</h2>
+
+			<section>
+				<h3>Paquets logiciels (packages)</h3>
+				<ul>
+					<li>Applications, biobliothèques, media ...</li>
+					<li>Binaires ou sources</li>
+					<li>Des informations de gestion : <b>dépendances</b>, etc.</li>
+					<li>Au format <b>rpm</b></li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Dépendances</h3>
+
+				<p>= <b>Prérequis logiciel</b></p>
+
+				<p>
+				Exemple: dépendances pour <em>firefox (12.0-3)</em></p>
+				<small>
+				<ul>
+					<li>libc6 (>= 2.4)</li>
+					<li>libgdk-pixbuf2.0-0 (>= 2.22.0)</li>
+					<li>libglib2.0-0 (>= 2.16.0)</li>
+					<li>libgtk2.0-0 (>= 2.10)</li>
+					<li>libnspr4-0d (>= 1.8.0.10)</li>
+					<li>libstdc++6 (>= 4.1.1)</li>
+					<li>fontconfig</li>
+					<li>procps</li>
+					<li>xulrunner-12.0 (>= 12.0-3)</li>
+				</ul>
+				</small>
+				</p>
+
+			</section>
+			<section>
+				<h3>Branches</h3>
+
+				<ul>
+					<li><b>stable</b></li>
+					<li><b>factory</b> (developement)</li>
+				</ul>
+
+				<br/>
+				<br/>
+
+				<p>Vie d'un paquet : factory &rarr; stable</p>
+				<br/>
+				<p>Publication en <i>Rolling release</i> ou <i>snapshots</i> ?</p>
+			</section>
+
+			<section>
+				<h3>Dépots</h3>
+
+				<ul>
+					<li>Ensemble de paquets</li>
+					<li>Pour une ou plusieurs branches</li>
+					<li>Officiels : <b>oss</b>, <b>non-oss</b>, <b>update</b>, <br/>
+						<b>src-oss</b>, <b>src-non-oss</b>, <b>debug</b></li>
+					<li>Non-officiels : <b>contrib</b>, <b>kde</b>, <b>gnome</b>, <b>packman</b>, etc.</li>
+					<li>Accessibles localement, en FTP, HTTP ... et Bittorent !</li>
+				</ul>
+			</section>
+
+		</section>
+
+
+
+		<section>
+			<h2>La commande Yast</h2>
+
+			<section>
+				<h3>Vue d'ensemble</h3>
+				<p>En ligne commande (<b>yast</b>) ou en mode graphique (<b>yast2</b>)</p>
+				<ul>
+					<li>Partitionner et formater vos disques</li>
+					<li>Configurer le réseau</li>
+					<li>Configurer les périphériques</li>
+					<li>Activer ou désactiver les services système</li>
+					<li><b>Installer and désinstaller des logiciels</b></li>
+					<li>Configurer les différents services système</li>
+					<li>etc.</li>
+				</ul>
+			</section>
+
+		</section>
+
+
+
+
+		<section>
+			<h2>Le système Zypper</h2>
+
+			<section>
+				<h3>Vue d'ensemble</h3>
+
+				<p>Une bibliothèque libzypper et des outils</p>
+				<p>Basés sur <em>rpm</em></p>
+				<ul>
+					<li>zypper</li>
+					<li>...</li> <!-- FIXME -->
+				</ul>
+			</section>
+
+			<section>
+				<h3>Usages</h3>
+				<ul>
+					<li><b>Rechercher</b> des paquets</li>
+					<li><b>Obtenir</b> des informations sur les paquets</li>
+					<li><b>Installer</b> des paquets</li>
+					<li><b>Supprimer</b> des paquets</li>
+					<li><b>Mettre à jour</b> les paquets</li>
+					<li><b>Gérer les dépendances</b> entre paquets</li>
+					<li><b>Résoudre les conflits</b></li>
+					<li>...</li>
+				</ul>
+			</section>
+
+			<!-- notion de dépendances, lien avec dpkg -->
+
+			<section>
+				<h3>Information sur les paquets</h3>
+				<p>À mettre à jour avant toute commande <tt>zypper</tt></p>
+				<p><b>zypper refresh</b></p>
+				<pre><code># zypper refresh
+Le dépôt 'Mises à jour pour openSUSE 12.1 12.1-1.4' est à jour.
+Le dépôt 'openSUSE-12.1-Non-Oss' est à jour.
+Le dépôt 'openSUSE-12.1-Oss' est à jour.
+Tous les dépots ont été rafraîchis.
+</code></pre>
+			</section>
+
+
+
+			<section>
+				<h3>Rechercher</h3>
+
+				<p><b>zypper search --match-all <em>mot-clef [mot-clef-2] [...]</em></b></p>
+				<pre><code>$ zypper search ssh filesystem
+Chargement des données du dépôt...
+Lecture des paquets installés...
+
+S | Nom                   | Résumé                | Type         
+--+-----------------------+-----------------------+--------------
+[...]
+i | openssh               | Secure Shell Client-> | paquet       
+  | openssh               | Secure Shell Client-> | paquet source
+i | openssh-askpass       | A passphrase dialog-> | paquet       
+  | openssh-askpass-gnome | A GNOME-Based Passp-> | paquet       
+  | openssh-askpass-gnome | A GNOME-Based Passp-> | paquet source
+  | sshfp                 | RFC4255 DNS SSHFP r-> | paquet       
+  | sshfs                 | Filesystem client b-> | paquet       
+</code></pre>
+			</section>
+
+
+
+			<section>
+				<h3>S'informer sur le paquet</h3>
+
+				<p><b>zypper info <em>nom-du-paquet</em></b></p>
+				<pre><code>$ zypper info snarf
+Chargement des données du dépôt...
+Lecture des paquets installés...
+
+Informations sur paquet sshfs:
+
+Dépot: openSUSE-12.1-Oss
+Nom: sshfs
+Version: 2.3-2.1.3
+Arch: i586
+Fabricant: openSUSE
+Installé: Non
+État: non installée
+Taille une fois installé : 106,0 KiB
+Résumé: Filesystem client based on SSH file transfer protocol
+Description: 
+SSHFS is a filesystem client based on the SSH File Transfer
+Protocol.  Since most SSH servers already support this
+protocol it is very easy to set up: i.e.  on the server side
+there's nothing to do. [...]
+</code></pre>
+			</section>
+
+			<section>
+				<h3>Installer des paquets</h3>
+
+				<p><b>zypper install <em>nom-du-paquet [nom-du-paquet2] [...]</em></b></p>
+				<pre><code># zypper install snarf
+Chargement des données du dépôt...
+Lecture des paquets installés...
+Résolution des dépendances des paquets...
+
+Le NOUVEAU paquet suivant va être installé:
+  sshfs 
+
+1 paquet à installer.
+Taille de téléchargement totale : 47,0 KiB. Après
+l'opération, un 106,0 KiB 
+supplémentaire sera utilisé.
+Continuer ? [o/n/?] (o): o
+Récupération de paquet sshfs-2.3-2.1.3.i586 (1/1), 47,0 KiB
+(106,0 KiB decompressé)
+Récupération: sshfs-2.3-2.1.3.i586.rpm [fait (2,7 KiB/s)]
+Installation: sshfs - 2.3-2.1.3 [fait]
+</code></pre>
+			</section>
+
+			<section>
+				<h3>Désinstaller des paquets</h3>
+				<p><b>zypper remove <em>nom-du-paquet [nom-du-paquet2] [...]</em></b></p>
+<pre><code># zypper remove snarf
+Chargement des données du dépôt...
+Lecture des paquets installés...
+Résolution des dépendances des paquets...
+
+Le paquet suivant va être SUPPRIME:
+  sshfs 
+
+1 paquet à supprimer.
+Après l'opération, 106,0 KiB sera libéré.
+Continuer ? [o/n/?] (o): o
+Suppression de sshfs-2.3-2.1.3 [fait]
+</code></pre>
+			</section>
+
+			<section>
+				<h3>Mettre à jour</h3>
+				<p><b>zypper list-updates</b></p>	
+				<p><b>zypper update</b></p>
+				<ul>
+					<li>Préserve les dépendances existantes</li>
+					<li>Fait des changement minimaux</li>
+				</ul>
+
+				<br/><br/>
+				<p><b>zypper dist-upgrade</b></p>
+				<ul>
+					<li>Résoud les nouvelles dépendances</li>
+					<li>Tente de contourner les conflits</li>
+					<li>Peut introduire de nouveaux packages</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Régler les problèmes</h3>
+
+				<br/>
+				<p>Forcer l'installation d'un paquet donné :<br/>
+				<b>zypper install <em>depot</em>:<em>nom-du-paquet</em></b></p>
+
+				<br/>
+				<p>Reprendre l'installation et réparer<br/> (ex: après une interruption) :<br/>
+				<b>zypper verify</b></p>
+			</section>
+			<!-- apt-file search == webpin -->
+
+
+			<section>
+				<h3>Configuration</h3>
+
+				<ul>
+					<li>Configuration des dépots pour <tt>Zypper</tt></li>
+					<li>Fragmentés dans <b>/etc/zypp/repos.d/</b></li>
+				</ul>
+
+				<br/><br/>
+				<p>Extrait de
+					<em>/etc/zypp/repos.d/repo-oss.repo</em> :</p>
+
+<pre><code>
+[repo-oss]
+name=openSUSE-12.1-Oss
+enabled=1
+autorefresh=1
+baseurl=http://download.opensuse.org/distribution/12.1/repo/oss/
+path=/
+type=yast2
+keeppackages=0
+</code></pre>
+			</section>
+
+			<section>
+				<h3>Gestion des dépots</h3>
+				<p><b>zypper repos</b> - liste les dépots</p>
+				<p><b>zypper addrepo URI alias</b> - ajoute un dépot</p>
+				<p><b>zypper removerepo alias</b> - supprime un dépot</p>
+			</section>
+		</section>
+
+
+		<section>
+			<h2>Rpm</h2>
+
+			<section>
+				<h3><b>R</b>edhat <b>P</b>ackage <b>M</b>anager</h3>
+
+				<ul>
+					<li><b>Installer</b> des paquets</li>
+					<li><b>Supprimer</b> des paquets</li>
+					<li><b>Lister</b> les paquets</li>
+					<li><b>Lister</b> le contenu des paquets</li>
+				</ul>
+			</section>	
+
+			<section>
+				<h3>Installer des paquets</h3>
+				<p><b>rpm -ivh <em>nom-du-fichier.deb</em></b></p>
+
+			</section>
+
+			<section>
+				<h3>Désinstaller des paquets</h3>
+				<p><b>rpm -e <em>nom-du-paquet</em></b></p>
+
+			</section>
+
+			<section>
+				<h3>Lister les paquets</h3>
+				<p><b>rpm -qa <em>[nom-du-paquet]</em></b></p>
+			</section>
+
+			<section>
+				<h3>Lister le contenu des paquets</h3>
+				<p><b>rpm -ql <em>nom-du-paquet</em></b></p>
+			</section>
+		</section>
+
+		<section>
+			<h2>Fin</h2>
+
+			<section>
+		    <h3>Références</h3>
+			<ul>
+				<li><a href="http://en.opensuse.org/openSUSE:Testing">OpenSUSE - The development cycle</a></li>
+				<li><a href="http://en.opensuse.org/Package_repositories">OpenSUSE - Package repositories</a></li>
+				<li><a href="http://nakedape.cc/wiki/PackageManagerCheatsheet">PackageManagerCheatsheet</a></li>
+				<li><a
+						href="http://lilypond.org/blog/jan/openSUSE-HOWTO">OpenSUSE
+						10.3 survival guide</a></li>
+			</ul>
+			</section>
+
+			<section>
+		    <h3>Questions ?</h3>
+			</section>
+
+			<section>
+		    <h3>Merci !</h3>
+			</section>
+		</section>
+	    </div>
+
+	    <!-- The navigational controls UI -->
+	    <aside class="controls">
+	    <a class="left" href="#">&#x25C4;</a>
+	    <a class="right" href="#">&#x25BA;</a>
+	    <a class="up" href="#">&#x25B2;</a>
+	    <a class="down" href="#">&#x25BC;</a>
+	    </aside>
+
+	    <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+	    <div class="progress"><span></span></div>
+	</div>
+
+	<script src="js/reveal.js"></script>
+	<script src="lib/highlight.js"></script>
+	<script>
+	    // Parse the query string into a key/value object
+	    var query = {};
+	    location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+		query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+	    } );
+
+	    Reveal.initialize({
+		// Display controls in the bottom right corner
+		controls: true,
+
+		// Display a presentation progress bar
+		progress: true,
+
+		// If true; each slide will be pushed to the browser history
+		history: true,
+
+		// Flags if mouse wheel navigation should be enabled
+		mouseWheel: true,
+
+		// Apply a 3D roll to links on hover
+		rollingLinks: false,
+		//true,
+
+		// UI style
+		theme: query.theme || 'default', // default/neon
+
+		// Transition style
+		transition: query.transition || 'linear'  //default' // default/cube/page/concave/linear(2d)
+	    });
+
+	    hljs.initHighlightingOnLoad();
+	</script>
+
+    </body>
+</html>

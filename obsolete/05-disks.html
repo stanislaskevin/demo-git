@@ -1,0 +1,424 @@
+<!doctype html>  
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Debian GNU/Linux - Administration Unix - Gnuside</title>
+
+		<meta name="description" content="Gnuside - Admin Debian GNU/Linux">
+		<meta name="author" content="Gnuside">
+
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/zenburn.css">
+
+		<!-- gnuside css -->
+		<link rel="stylesheet" href="css/presentation.css">
+
+	</head>
+
+	<body>
+
+		<div id="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-state="title">
+					<h1>Administration GNU/Linux</h1>
+					<h3 class="inverted">Disques et stockage</h3>
+
+					<br><br>
+					<p>2012-04</p>
+					<br><br>
+					<i><small>
+							<a href="http://www.gnuside.com">Gnuside</a> / 
+							<a href="http://twitter.com/gnuside">@gnuside</a></small></i>
+				</section>	
+
+
+				<section>
+					<h2>Périphériques</h2>
+
+				<section>
+					<h3>Philosophie unix</h3>
+
+					<blockquote>Tout est fichier !</blockquote>
+				</section>
+
+					<section>
+						<h3>/dev</h3>
+
+						<ul>
+							<li><b>/dev/hd<em>x</em><em>Y</em></b> - disques PATA</li>
+							<li><b>/dev/sd<em>x</em><em>Y</em></b> - disques SATA</li>
+							<li><b>/dev/sg<em>Y</em></b> - disques SCSI</li>
+							<li><b>/dev/sr<em>Y</em></b> - cdrom SCSI</li>
+							<li><b>/dev/scd<em>Y</em></b> - cdrom SCSI</li>
+						</ul>
+					</section>
+				
+					<section>
+						<h3>udev</h3>
+
+						<p>Des alias !</p>
+						<p>Plus de clarté !</p>
+
+						<ul>
+							<li><b>/dev/dvd<em>Y</em></b> - lecteurs DVD</li>
+							<li>..</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section>
+					<h2>Partitions</h2>
+
+					<p>Quelques outils</p>
+					<ul>
+						<li>fdisk</li>
+						<li>cfdisk</li>
+						<li>gparted</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Filesystems</h2>
+
+					<section>
+						<h3>Rappels</h3>
+
+						<ul>
+							<li>Blocks</li>
+							<li>Inodes</li>
+							<li>Fichiers et répertoires</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Construction</h3>
+
+						<p><b>mkfs.<em>fsname</em> <em>partition</em></b> - formatage de la partition</p>
+					</section>
+
+					<section>
+						<h3>Controle d'intégrité</h3>
+
+						<p><b>fsck.<em>fsname</em> <em>partition</em></b> - vérification du filesystem</p>
+					</section>
+
+					<section>
+						<h3>Labels</h3>
+
+						<p><b>e2label <em>partition</em></b> - affiche le label</p>
+						<p><b>e2label -L <em>label</em> <em>partition</em></b> - affiche le label</p>
+					</section>
+
+					<section>
+						<h3>Montage</h3>
+
+						<p><b>mount -t <em>type</em> <em>partition</em> <em>point-de-montage</em></b></p>
+
+						<p>automount</p>
+
+						<p>pmount</p>
+					</section>
+
+					<section>
+						<h3>Montage automatique</h3>
+
+						<p>Le fichier <b>/etc/fstab</b><p>
+					</section>
+				</section>
+
+
+				<section>
+					<h2>Filesystems virtuels</h2>
+
+					<section>
+						<h3>Du noyau</h3>
+						<ul>
+							<li>/dev</li>
+							<li>/proc</li>
+							<li>/sys</li>
+							<li>/cgroups</li>
+							<li>...</li>
+						</ul>
+					</section>
+
+
+					<section>
+						<h3>Des Utilisateurs (FUSE)</h3>
+
+						<p>La commande <b>fusermount</b></p>
+					</section>
+
+				</section>
+
+
+				<section>
+					<h2>Swap</h2>
+
+					<section>
+						<h3>Définition</h3>
+
+						<blockquote>
+							Swap-per, c'est échanger un contenu de la mémoire centrale vers le contenu d'une mémoire secondaire, ou réciproquement.
+						</blockquote>
+					</section>
+
+					<section>
+						<h3>Plusieurs types de swap</h3>
+						<ul>
+							<li>Sur partition</li>
+							<li>Sur fichiers</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Manipuler le swap</h3>
+						<p><b>/proc/swaps</b></p>
+						<pre><code>$ cat /proc/swaps 
+Filename                Type            Size    Used    Priority
+/dev/sda1               partition       15624188        518960  -1
+</code></pre>
+
+						<p><b>mkswap <em>partition</em></b> - formater une partition commee swap</p>
+						<p><b>swapon <em>partition</em></b> - activer une partition comme swap</p>
+						<p><b>swapoff <em>partition</em></b> - désactiver une partition du swap</p>
+					</section>
+				</section>
+
+
+				<section>
+					<h2>RAID</h2>
+
+					<section>
+						<p>FIXME: les différents types de raid</p>
+					</section>
+
+
+					<section>
+						<h3>Always RTFM</h3>
+						<p><b>man mdadm</b><br />Parce que vous oublierez aussi comment l'utiliser :-)</p>
+					</section>
+
+
+					<section>
+						<h3>Création</h3>
+						<p><b>mdadm --create <em>[...]</em></b></p>
+						<pre><code># mdadm --create /dev/md1 --level=1 --raid-devices=2 \
+  /dev/sdb1 /dev/sdc1
+</code></pre>
+					</section>
+
+
+					<section>
+						<h3>(Ré)Assemblage</h3>
+						<p>Pour un RAID existant</p>
+						<p><b>mdadm --assemble <em>[...]</em></b></p>
+						<pre><code># mdadm --assemble /dev/md1 /dev/sdb1 /dev/sdc1
+</code></pre>
+					</section>
+
+
+					<section>
+						<h3>(Re)Construction</h3>
+						<p>Pour un RAID cassé</p>
+						<p><b>mdadm --manage <em>[...]</em></b></p>
+
+						<pre><code># mdadm --manage /dev/md1 --remove /dev/sdb1
+# mdadm --manage /dev/md1 --add /dev/sdb1
+</code></pre>
+
+					</section>
+
+					<section>
+						<h3>mdadm.conf</h3>
+						<p>Liste les différents RAID disponibles</p>
+
+						<p>Utiliser <b>mdadm --examine --scan</b><br/>(pour compléter facilement le fichier)</p>
+
+						<pre><code>$ mdadm --detail --scan >> /etc/mdadm.conf
+</code></pre>
+					</section>
+
+					<section>
+						<h3>Monitoring</h3>
+
+						<p>Voir <b>/proc/mdstats/</b></p>
+					</section>
+
+				</section>
+
+
+				<section>
+					<h2>LVM</h2>
+
+					<section>
+						<p>Abstraction du stockage, sur 3 niveaux</p>
+						<ul>
+							<li><b>PV</b> - volumes physiques</li>
+							<li><b>VG</b> - groupes de volumes (groupes de PV)</li>
+							<li><b>LV</b> - volumes logiques (stockage sur VG)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Gestion des PV</h3>
+						<ul>
+							<li><b>pvcreate <em>partition</em></b> - créer un PV</li>
+							<li><b>pvmove <em>partition-source</em> <em>partition-destination</em></b> - créer un PV</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Gestion des VG</h3>
+						<ul>
+							<li><b>vgcreate <em>vgname</em> <em>partition</em></b> - créer un VG</li>
+							<li><b>vgextend <em>vgname</em> <em>partition</em></b> - changer la taille d'un VG</li>
+							<li><b>vgreduce <em>vgname</em> <em>partition</em></b> - retirer un PV du VG</li>
+							<li><b>vgremove</b> - supprimer le VG (et les données qui vont avec!)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Gestion des LV</h3>
+						<ul>
+							<li><b>lvcreate -L <em>taille</em> -n <em>lvname</em></b> - crée un LV sur le VG</li>
+							<li><b>lvremove <em>lvname</em></b></li>
+						</ul>
+					</section>
+
+
+					<section>
+						<h3>Retrouver ses PV, VG, etc.</h3>
+						<ul>
+							<li><b>pvscan</b> - rechercher des PV</li>
+							<li><b>pvmove</b> - déplacer les données entre PV</li>
+							<li><b>pvdisplay</b> - afficher les disques contenant des PV</li>
+							<li><b>vgscan</b> -rechercher des VG</li>
+							<li><b>vgdisplay</b> - afficher la liste des VG et leur caractéristiques</li>
+						</ul>
+					</section>
+
+
+					<section>
+						<h3>Exemple : creation d'un LV</h3>
+
+						<pre><code>lvcreate -L 1024M -n example-lv
+mkfs -t ext3 /dev/example-vg/example-lv
+mount /dev/example-vg/example-lv /mnt/example-lv
+df -h
+</code></pre>
+
+					</section>
+
+					<section>
+						<h3>Exemple : Extension d'un LV</h3>
+
+						<pre><code>lvextend -L+1024M /dev/example-vg/example-lv
+resize2fs /dev/example-vg/example-lv
+</code></pre>
+
+						<p>N.B: Penser à démonter le LV avant....</p>
+					</section>
+
+					<!--
+					<section>
+						<h3>Exemple : Re-location d'un LV</h3>
+
+						<small>(ex: en cas de disque défectueux)</small>
+
+						<pre><code>lvcreate -L 1024M -n example-lv
+mkfs -t ext3 /dev/example-vg/example-lv
+mount /dev/example-vg/example-lv /mnt/example-lv
+df -h
+</code></pre>
+						-->
+					</section>
+
+
+
+				</section>
+
+
+				<section>
+					<h2>Fin</h2>
+
+					<section>
+						<h3>Références</h3>
+
+						<ul>
+							<li><a href="http://wiki.debian-facile.org/manuel:lvm">Debian-Facile: LVM</a></li>
+							<li><a href="http://www.admin-debian.com/les-systemes-de-fichiers-linux/lvm-2-logical-volume-management/">Tutoriels Linux Debian - LVM 2</a></li>
+							<li><a href="http://pbraun.nethence.com/doc/sysutils_hpux/hpux_lvm.html">HP/UX LVM configuration</a></li>
+							<li><a href="http://www.noisette.ch/wiki/index.php/Mdadm">Noisette Wiki - Mdadm</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Des questions ?</h3>
+					</section>
+
+					<section>
+						<h3>Merci !</h3>
+					</section>
+				</section>
+
+
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+		<script src="lib/highlight.js"></script>
+		<script>
+			// Parse the query string into a key/value object
+		var query = {};
+location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+		query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+		} );
+
+Reveal.initialize({
+		// Display controls in the bottom right corner
+controls: true,
+
+// Display a presentation progress bar
+progress: true,
+
+// If true; each slide will be pushed to the browser history
+history: true,
+
+// Flags if mouse wheel navigation should be enabled
+mouseWheel: true,
+
+// Apply a 3D roll to links on hover
+rollingLinks: true,
+//true,
+
+// UI style
+theme: query.theme || 'default', // default/neon
+
+// Transition style
+transition: query.transition || 'linear'  //default' // default/cube/page/concave/linear(2d)
+});
+
+hljs.initHighlightingOnLoad();
+</script>
+
+	</body>
+</html>
