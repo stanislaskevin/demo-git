@@ -17,49 +17,67 @@
 			%a{:href => "http://twitter.com/gnuside"} @gnuside
 
 %section
-	%h2 Trouver de la documentation
-	%ul
-		%li
+	%h2 Vue d'ensemble
+
+	%section
+		%h3 Idée générale
+
+		%p Format d'une commande : action &rarr; objet-de-l'action
+
+		%p
 			%b
-				man
+				commande
+				%em [parametres optionnels]
+				%em parametres obligatoires
+
+
+	%section
+		%h3 Trouver de la documentation
+		%ul
+			%li
+				%b
+					man
+					%em commande
+			/ option -K de man pour rechercher les pages de man qui contiennet un mot clef donné
+			%li
+				%b
+					info
+					%em commande
+			%li
+				%b
+					whatis
+					%em commande
+		%p
+			%small
+				(en remplaçant
 				%em commande
-		/ option -K de man pour rechercher les pages de man qui contiennet un mot clef donné
-		%li
-			%b
-				info
-				%em commande
-		%li
-			%b
-				whatis
-				%em commande
-	%p
-		%small
-			(en remplaçant
-			%em commande
-			par le nom de l'application	sur laquelle vous cherchez des informations)
-	%pre
-		%code.bash
-			:preserve
-				$ whatis bash
-				bash (1)						 - Interpréteur de commandes GNU Bourne-Again SHell
+				par le nom de l'application	sur laquelle vous cherchez des informations)
+		%pre
+			%code.bash
+				:preserve
+					$ whatis bash
+					bash (1)						 - Interpréteur de commandes GNU Bourne-Again SHell
 
 %section
+	%h2 Fichiers et répertoires
 
 	%section
-		%h2 Gérer les fichiers et les répertoires
-
-	%section
-		%h3 Se déplacer dans les répertoires
+		%h3 Se situer
 		%p
-			Se situer :
 			%b pwd
 		%pre
 			%code
 				:preserve
 					$ pwd
+
+	%section
+		%h3 Se déplacer
 		%p
 			Aller dans un dossier :
-			%b cd
+			%b 
+				cd
+				%em
+					destination
 		%pre
 			%code
 				:preserve
@@ -106,8 +124,14 @@
 			%b mkdir
 		%pre
 			%code.bash $ mkdir nouveauRepertoire
+
+		%p 
+			et l'option
+			%b -p
+			crée les répertoires intermédiaires
+
 		%pre
-			%code.bash $ mkdir -p nouveauRepertoire/etSousRepertoire
+			%code.bash $ mkdir -p nouveauRepertoire/etSousRepertoire/etSousSousRépertoire
 
 	%section
 		%h3 Supprimer un fichier ou un répertoire
