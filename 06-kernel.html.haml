@@ -1,0 +1,238 @@
+%section{"data-state" => "title"}
+	%h1 Administration GNU/Linux
+	%h3.inverted Noyau, performance et tuning
+	%br
+	%br
+	%p 2012-05
+	%br
+	%br
+	%i
+		%small
+			%a{:href => "http://www.gnuside.com"} Gnuside
+			\/
+			%a{:href => "http://twitter.com/gnuside"} @gnuside
+
+%section
+	%h2 Le noyau
+
+	%section
+		%h3 Présentation
+
+		%p Le coeur d'un système d'exploitation
+		%ul
+			%li Communication inter-process
+			%li Gestion de la mémoire
+			%li Gestion des processus et scheduling
+			%li Gestion des entrées et sorties
+
+	%section
+		%h3 Types de kernel
+
+		.column-left
+			%p 
+				%b Micro-kernels 
+				%br
+				ou 
+				%b kernels modulaires
+			%ul
+				%li Contient uniquement le coeur de l'OS
+				%li Tout le reste est fourni en tant que services
+				%li Flexible et très modulaire
+				%li Exemples: Amoeba, Mach, QNX, ...
+
+		.column-right
+			%p
+				%b Kernels monolitiques
+				%br
+				%br
+			%ul
+				%li Contient tout ce qui est lié à l'OS
+				%li Construit statiquement ou dynamiquement
+				%li Très performant
+				%li Exemples: VxWorks, Linux, ...
+
+	%section
+		%h3 Architecture
+
+		%ul
+			%li Kernel
+			%li Kernel space
+			%li System call I/F
+			%li User space
+
+	%section
+		%h3 Kernel startup
+
+		%ul
+			%li 
+				%b Initialisation de la plate-forme
+				%br
+				(CPU, MMU, ...)
+			%li 
+				%b Initialisation des drivers
+				%br
+				(Filesystem)
+			%li 
+				Montage du 
+				%b root filesystem
+			%li 
+				Chargement des 
+				%b autres drivers
+			%li 
+				%b Initcall 
+				&amp; libération de la mémoire
+			%li 
+				%b Passage au userspace
+				%br
+				(appel du premier processus: init)
+
+	%section
+		%h3 Fonctionnalités
+
+		%ul
+			%li Gestion des processus
+			%li Gestion de la mémoire
+			%li Gestion des périphériques
+			%li Gestion du stockage
+			%li Gestion du réseau
+
+	%section
+		%h3 Révisions stables / experimentales / patches
+
+	%section
+		%h3 Nouveautés du 2.6 / 3.3
+
+
+%section
+	%h2 Construction d'un nouveau noyau
+
+	%section
+		%h3 Pourquoi modifier un noyau ?
+
+	%section
+		%h3 Code source
+
+		%p 
+			Sur 
+			%a{ :href => "http://www.kernel.org" } kernel.org
+
+		%pre
+			%code
+				:preserve
+					# cd /usr/src
+					# wget http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.3.5.tar.bz2
+					# tar xavf linux-3.3.5.tar.bz2
+					# cd linux-3.3.5
+
+	%section
+		%h3 Build system
+
+		.column-left
+			%p Composants clefs
+			%ul
+				%li 
+					%b Makefile
+				%li 
+					%b Kconfig
+
+		.column-right
+			%p Configuration du Makefile
+			%ul
+				%li Pour préciser la version
+				%li Pour la cross-compilation (ARCH, CROSS_COMPILE)
+
+
+	%section
+		%h3 Méthode de configuration
+
+		%ul
+			%li 
+				%b make config
+			%li
+				%b make menuconfig
+			%li
+				%b make xconfig
+
+		%p et aussi defconfig, oldconfig, ...
+
+	
+	%section
+		%h3 Options de configuration
+
+		%small
+			%ul
+				%li Code Maturity level
+				%li General Setup
+				%li Loadable Module Support
+				%li Block Layer
+				%li Networking
+				%li Device Drivers
+				%li File Systems
+				%li Kernel Hacking
+				%li Security Options
+				%li Cryptographic Options
+				%li Library Routines
+
+	%section
+		%h3 Compilation
+
+		%ul
+			%li
+				%b make
+				%br
+				\- pour tout compiler
+			%li
+				%b make modules
+				%br
+				\- pour compiler les modules
+			%li
+				%b make modules_prepare
+				%br
+				\- pour préparer la compilation des modules
+
+		%p 
+			Résultat: créer l'image du kernel (
+			%b vmlinux
+			)
+
+	%section
+		%h3 Nettoyage
+
+		%ul
+			%li
+				%b make clean
+				\- nettoyage simple
+			%li
+				%b make mrproper
+				\- nettoyage en profondeur, dont la configuration
+
+	%section
+		%h3 Installation
+
+
+%section
+	%h2 Kernel arguments
+
+	%ul
+		%li console
+		%li root
+		%li initrd
+		%li mem
+		%li resume
+		%li ...
+
+%section
+	%h2 Fin
+	%section
+		%h3 Références
+		%ul
+			%li
+				%a{:href => "http://wiki.debian-facile.org/manuel:lvm"} Debian-Facile: LVM
+
+	%section
+		%h3 Des questions ?
+
+	%section
+		%h3 Merci !
+
+
