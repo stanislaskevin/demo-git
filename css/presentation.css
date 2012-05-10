@@ -100,21 +100,33 @@ ul.iconbullet img {
     vertical-align: bottom;
 }
 
+#reveal section {
+    padding: 0;
+}
+
 #reveal .column-left {
-    width: 50%;
+    width: 45%;
     float: left;
 }
 
 #reveal .column-right {
-    width: 50%;
+    float: right;
+    width: 45%;
 }
 
 #reveal .column-right:after {
     content: "\0020";
     display: block;
     height: 0;
-    clear: left;
+    clear: both;
     visibility: hidden;
     overflow:hidden;
+}
+
+#reveal tt {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 90%;
+    color: #fc0;
 }
 
