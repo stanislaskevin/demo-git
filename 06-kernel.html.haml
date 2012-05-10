@@ -60,8 +60,272 @@
 			%li System call I/F
 			%li User space
 
+
 	%section
-		%h3 Kernel startup
+		%h3 Fonctionnalités
+
+		%ul
+			%li Gestion des processus
+			%li Gestion de la mémoire
+			%li Gestion des périphériques
+			%li Gestion du stockage
+			%li Gestion du réseau
+
+	%section
+		%h3 Révisions stables / experimentales / patches
+
+	%section
+		%h3 Nouveautés du 2.6 / 3.3
+
+
+%section
+	%h2 Compiler un noyau
+
+	%section
+		%h3 Pourquoi faire ?
+
+		%ul
+			%li utiliser une version spécifique
+			%li modifier la configuration statique
+			%li optimiser pour un matériel
+			%li améliorer la consommation mémoire
+			%li supprimer des drivers inutiles
+			%li raccourcir le temps de démarrage
+			%li épater ses amis ;-)
+
+		%br
+		%br
+		%p 
+			Parce que c'est un 
+			%em rite initiatique 
+			;-)
+
+
+	%section
+		%h3 Prérequis
+
+		%ul
+			%li 
+				%b gcc
+			%li 
+				%b libc6-dev
+			%li 
+				%b make
+			%li 
+				%b ncurses-dev
+				(pour le menu texte)
+			%li 
+				%b libqt4-dev
+				(pour le menu graphique, très lourd)
+	
+
+	%section
+		%h3 Code source
+
+		%p 
+			Télécharger depuis
+			%a{ :href => "http://www.kernel.org" } www.kernel.org
+
+		%pre
+			%code
+				:preserve
+					# cd /usr/src
+					# wget http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.3.5.tar.bz2
+					# tar xavf linux-3.3.5.tar.bz2
+					# cd linux-3.3.5
+			/
+
+	%section
+		%h3 Build system
+
+		.column-left
+			%p Composants clefs
+			%ul
+				%li 
+					%tt Makefile
+				%li 
+					%tt Kconfig
+
+		.column-right
+			%p Configuration du Makefile
+			%ul
+				%li Pour préciser la version
+				%li 
+					Pour la cross-compilation (
+					%tt ARCH
+					, 
+					%tt CROSS_COMPILE
+					)
+				%li
+				
+
+	%section
+		%h3 Inclusion des modules
+
+		%ul
+			%li 
+				%b En dur
+				\- incluse dans le kernel
+			%li
+				%b En module
+				\- optionnel et chargé à la demande
+		%p 
+
+
+	%section
+		%h3 Méthode de configuration
+
+		%p 
+			%tt make config
+			%br
+			%small configuration interactive en texte
+		%p
+			%tt make menuconfig
+			%br
+			%small menus de configuration en texte
+		%p
+			%tt make xconfig
+			%br
+			%small menus de configuration graphiques
+
+		%p et aussi defconfig, oldconfig, ...
+
+	%section
+		%h3 Fichiers de configuration
+
+		%p
+			%tt .config
+			%br
+			%small 
+				configuration
+				%em de travail
+				(dans les sources)
+
+		%p
+			%tt /boot/config-xxxx
+			%br
+			%small configuration du noyau xxxx (pour les noyaux installés)
+
+	
+	%section
+		%h3 Options de configuration
+
+		%small
+			%ul
+				%li Code Maturity level
+				%li General Setup
+				%li Loadable Module Support
+				%li Block Layer
+				%li Networking
+				%li Device Drivers
+				%li File Systems
+				%li Kernel Hacking
+				%li Security Options
+				%li Cryptographic Options
+				%li Library Routines
+
+	%section
+		%h3 Compilation
+
+		%p 
+			Objectif: 
+			%b créer l'image du kernel 
+			(
+			%tt vmlinux
+			)
+
+		%p
+			%tt make
+			%br
+			%small tout compiler
+
+		%br
+		%p
+			%tt make modules
+			%br
+			%small compiler les modules
+
+		%br
+		%p
+			%tt make modules_prepare
+			%br
+			%small préparer la compilation des modules
+
+
+	%section
+		%h3 Nettoyage
+
+		%p
+			%tt make clean
+			%br
+			%small nettoyage simple
+
+		%br
+		%p
+			%tt make mrproper
+			%br
+			%small 
+				nettoyage en profondeur 
+				%br
+				(supprime aussi la configuration)
+
+	%section
+		%h3 Installation
+		
+		%p
+			%tt make install
+			%br
+			%small installer le kernel
+
+		%p
+			%tt make modules_install
+			%br
+			%small installer les modules
+
+		%p 
+			%b Important : mettre à jour le bootloader !
+			%br
+			%small
+				(
+				%tt /etc/lilo.conf
+				, 
+				%tt /boot/grub/menu.lst
+				,
+				%tt /boot/grub/grub.cfg
+				ou autre)
+
+%section
+	%h2 Démarrage du kernel
+
+	%section
+		%h3 Paramètres optionnels
+
+		%ul
+			%li console
+			%li mem
+			%li resume
+			%li quiet
+			%li ...
+
+		%p 
+			Extrait de 
+			%tt menu.lst
+			(GRUB)
+
+		%pre
+			%code
+				:preserve
+					/boot/vmlinuz-3.1.10-1.9-desktop 
+						root=/dev/disk/by-id/ata-VBOX_HARDDISK_VBbc7a0ab4-75120ea2-part2 
+						showopts apm=off noresume nosmp maxcpus=0 edd=off 
+						powersaved=off nohz=off highres=off processor.max_cstate=1 
+						nomodeset x11failsafe vga=0x314
+						initrd=/boot/initrd-3.1.10-1.9-desktop
+			/
+
+
+	%section
+		%h3 Séquence de démarrage
 
 		%ul
 			%li 
@@ -87,139 +351,25 @@
 				(appel du premier processus: init)
 
 	%section
-		%h3 Fonctionnalités
+		%h3 Vérifier l'état
 
-		%ul
-			%li Gestion des processus
-			%li Gestion de la mémoire
-			%li Gestion des périphériques
-			%li Gestion du stockage
-			%li Gestion du réseau
+		%p
+			%tt dmesg
+			ou
+			%tt /var/log/dmesg
 
-	%section
-		%h3 Révisions stables / experimentales / patches
-
-	%section
-		%h3 Nouveautés du 2.6 / 3.3
-
-
-%section
-	%h2 Construction d'un nouveau noyau
-
-	%section
-		%h3 Pourquoi modifier un noyau ?
-
-	%section
-		%h3 Code source
-
-		%p 
-			Sur 
-			%a{ :href => "http://www.kernel.org" } kernel.org
+		%p
+			%tt uname -r
 
 		%pre
 			%code
 				:preserve
-					# cd /usr/src
-					# wget http://www.kernel.org/pub/linux/kernel/v3.0/linux-3.3.5.tar.bz2
-					# tar xavf linux-3.3.5.tar.bz2
-					# cd linux-3.3.5
+					$ uname -a
+					Linux batcave.batdomain 3.1.10-1.9-desktop #1 SMP PREEMPT Thu Apr 5 18:48:38 UTC 2012 (4a97ec8) i686 i686 i386 GNU/Linux
+					$ uname -r
+					3.1.10-1.9-desktop
+			/
 
-	%section
-		%h3 Build system
-
-		.column-left
-			%p Composants clefs
-			%ul
-				%li 
-					%b Makefile
-				%li 
-					%b Kconfig
-
-		.column-right
-			%p Configuration du Makefile
-			%ul
-				%li Pour préciser la version
-				%li Pour la cross-compilation (ARCH, CROSS_COMPILE)
-
-
-	%section
-		%h3 Méthode de configuration
-
-		%ul
-			%li 
-				%b make config
-			%li
-				%b make menuconfig
-			%li
-				%b make xconfig
-
-		%p et aussi defconfig, oldconfig, ...
-
-	
-	%section
-		%h3 Options de configuration
-
-		%small
-			%ul
-				%li Code Maturity level
-				%li General Setup
-				%li Loadable Module Support
-				%li Block Layer
-				%li Networking
-				%li Device Drivers
-				%li File Systems
-				%li Kernel Hacking
-				%li Security Options
-				%li Cryptographic Options
-				%li Library Routines
-
-	%section
-		%h3 Compilation
-
-		%ul
-			%li
-				%b make
-				%br
-				\- pour tout compiler
-			%li
-				%b make modules
-				%br
-				\- pour compiler les modules
-			%li
-				%b make modules_prepare
-				%br
-				\- pour préparer la compilation des modules
-
-		%p 
-			Résultat: créer l'image du kernel (
-			%b vmlinux
-			)
-
-	%section
-		%h3 Nettoyage
-
-		%ul
-			%li
-				%b make clean
-				\- nettoyage simple
-			%li
-				%b make mrproper
-				\- nettoyage en profondeur, dont la configuration
-
-	%section
-		%h3 Installation
-
-
-%section
-	%h2 Kernel arguments
-
-	%ul
-		%li console
-		%li root
-		%li initrd
-		%li mem
-		%li resume
-		%li ...
 
 %section
 	%h2 Fin
@@ -227,7 +377,9 @@
 		%h3 Références
 		%ul
 			%li
-				%a{:href => "http://wiki.debian-facile.org/manuel:lvm"} Debian-Facile: LVM
+				%a{ :href => "http://kernel.org/" } The Linux Kernel Archives
+			%li
+				%a{ :href => "http://doc.ubuntu-fr.org/tutoriel/compiler_linux" } Ubuntu-fr : Compiler son kernel
 
 	%section
 		%h3 Des questions ?
