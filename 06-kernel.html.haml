@@ -24,6 +24,7 @@
 			%li Gestion de la mémoire
 			%li Gestion des processus et scheduling
 			%li Gestion des entrées et sorties
+			%li Gestion de la sécurité !
 
 	%section
 		%h3 Types de kernel
@@ -72,7 +73,43 @@
 			%li Gestion du réseau
 
 	%section
-		%h3 Révisions stables / experimentales / patches
+		%h3 Versions
+		
+		%ul.column-left
+			%li
+				%b <= 2.5 
+				\- numéro mineur pour le type de kernel
+				(pair = stable, impair = instable)
+			%li 
+				%b >= 2.6 
+				\- numérotation changée !
+			%li 
+				%b >= 3.0 
+				\- numérotation simplifiée (un chiffre en moins)
+			
+		
+		%ul.column-right
+			%li 
+				%b 2.6.x(.y) 
+				\- versions stables
+			%li 
+				%b 2.6.x 
+				\- publiés par Linus Torvalds
+			%li 
+				%b 2.6.x.y 
+				\- publiés par la 
+				%em stable team
+				( 
+				%em y
+				\= numéro du patch)
+			%li 
+				%b 2.6.x-rcX
+				, 
+				%b 2.6.x-rcX-mmY
+				, 
+				%b 2.6.x-mmX 
+				\- versions de développement
+
 
 	%section
 		%h3 Nouveautés du 2.6 / 3.3
@@ -108,15 +145,20 @@
 			%li 
 				%b gcc
 			%li 
-				%b libc6-dev
+				%b binutils
+			%li 
+				%b libc6 devel
 			%li 
 				%b make
 			%li 
 				%b ncurses-dev
 				(pour le menu texte)
 			%li 
-				%b libqt4-dev
+				%b qt4 devel
 				(pour le menu graphique, très lourd)
+			%li 
+				%b gtk2 devel
+				(pour l'autre menu graphique, très lourd)
 	
 
 	%section
@@ -205,6 +247,12 @@
 			%tt /boot/config-xxxx
 			%br
 			%small configuration du noyau xxxx (pour les noyaux installés)
+
+		%pre
+			%code
+				:preserve
+					# cp /boot/config-`uname -r` /usr/src/linux-3.3.5/.config
+			/
 
 	
 	%section
@@ -370,6 +418,96 @@
 					3.1.10-1.9-desktop
 			/
 
+
+%section
+	%h2 Usage des modules
+
+	%section
+		%h3 Connaitre son matériel
+
+		%p
+			%tt lspci -v
+		%p
+			%tt lsusb
+		%p
+			%tt cat /proc/cpuinfo
+		%p
+			%tt  cat /proc/meminfo
+		%p
+			%tt fdisk -l
+		%p
+			%tt dmesg
+	
+	%section
+		%h3 Lister les modules
+
+		%p 
+			%tt /lib/modules
+			%br
+			%small modules disponibles
+
+		%p 
+			%tt lsmod
+			%br
+			%small liste les modules chargés
+
+		%p 
+			%tt modprobe -l
+			%br
+			%small liste les modules chargés (et leur chemin)
+
+	%section
+		%h3 À propos des modules
+
+		%p
+			%tt 
+				modinfo 
+				%em module-name
+			%br
+			%small afficher les informations sur un module
+
+	%section
+		%h3 Charger un module
+		%p
+			%tt 
+				insmod
+				%em module-name
+			%br
+			%small charger un module
+
+		%p
+			%tt 
+				modprobe
+				%em module-name
+			%br
+			%small charger un module et ses dépendances
+
+	%section
+		%h3 Décharger un module
+		%p
+			%tt 
+				rmmod
+				%em module-name
+			%br
+			%small décharger un module
+
+		%p
+			%tt 
+				modprobe -r
+				%em module-name
+			%br
+			%small décharger un module et ses dépendances
+
+	%section
+		%h3 Automatiser le chargement...
+
+		%p
+			%tt /etc/modules.conf
+			(2.4) ou
+			%tt /etc/modprobe.conf
+			(2.6)
+			%br
+			%small liste des modules à charger automatiquement
 
 %section
 	%h2 Fin
