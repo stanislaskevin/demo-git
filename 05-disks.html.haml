@@ -1,0 +1,403 @@
+%section{"data-state" => "title"}
+	%h1 Administration GNU/Linux
+	%h3.inverted Disques et stockage
+	%br
+	%br
+	%p 2012-04
+	%br
+	%br
+	%i
+		%small
+			%a{:href => "http://www.gnuside.com"} Gnuside
+			\/
+			%a{:href => "http://twitter.com/gnuside"} @gnuside
+
+%section
+	%h2 Périphériques
+
+	%section
+		%h3 Philosophie unix
+		%blockquote Tout est fichier !
+
+	%section
+		%h3 /dev
+		%ul
+			%li
+				%b
+					\/dev/hd
+					%em x
+					%em Y
+				\- disques PATA
+			%li
+				%b
+					\/dev/sd
+					%em x
+					%em Y
+				\- disques SATA
+			%li
+				%b
+					\/dev/sg
+					%em Y
+				\- disques SCSI
+			%li
+				%b
+					\/dev/sr
+					%em Y
+				\- cdrom SCSI
+			%li
+				%b
+					\/dev/scd
+					%em Y
+				\- cdrom SCSI
+
+	%section
+		%h3 udev
+		%p Des alias !
+		%p Plus de clarté !
+		%ul
+			%li
+				%b
+					\/dev/dvd
+					%em Y
+				\- lecteurs DVD
+			%li ..
+
+%section
+	%h2 Partitions
+	%p Quelques outils
+	%ul
+		%li fdisk
+		%li cfdisk
+		%li gparted
+
+
+%section
+	%h2 Filesystems
+
+	%section
+		%h3 Rappels
+		%ul
+			%li Blocks
+			%li Inodes
+			%li Fichiers et répertoires
+
+	%section
+		%h3 Construction
+		%p
+			%b
+				mkfs.
+				%em fsname
+				%em partition
+			\- formatage de la partition
+
+	%section
+		%h3 Controle d'intégrité
+		%p
+			%b
+				fsck.
+				%em fsname
+				%em partition
+			\- vérification du filesystem
+
+	%section
+		%h3 Labels
+		%p
+			%b
+				e2label
+				%em partition
+			\- affiche le label
+		%p
+			%b
+				e2label -L
+				%em label
+				%em partition
+			\- affiche le label
+
+	%section
+		%h3 Montage
+		%p
+			%b
+				mount -t
+				%em type
+				%em partition
+				%em point-de-montage
+		%p automount
+		%p pmount
+		 
+	%section
+		%h3 Montage automatique
+		%p
+			Le fichier
+			%b /etc/fstab
+			%p
+
+
+%section
+	%h2 Filesystems virtuels
+
+	%section
+		%h3 Du noyau
+		%ul
+			%li /dev
+			%li /proc
+			%li /sys
+			%li /cgroups
+			%li ...
+
+	%section
+		%h3 Des Utilisateurs (FUSE)
+		%p
+			La commande
+			%b fusermount
+
+
+%section
+	%h2 Swap
+
+	%section
+		%h3 Définition
+		%blockquote
+			Swap-per, c'est échanger un contenu de la mémoire centrale vers le contenu d'une mémoire secondaire, ou réciproquement.
+
+	%section
+		%h3 Plusieurs types de swap
+		%ul
+			%li Sur partition
+			%li Sur fichiers
+
+	%section
+		%h3 Manipuler le swap
+		%p
+			%b /proc/swaps
+		%pre
+			%code
+				:preserve
+					$ cat /proc/swaps 
+					Filename								Type						Size		Used		Priority
+					/dev/sda1							 partition			 15624188				518960	-1
+		%p
+			%b
+				mkswap
+				%em partition
+			\- formater une partition commee swap
+		%p
+			%b
+				swapon
+				%em partition
+			\- activer une partition comme swap
+		%p
+			%b
+				swapoff
+				%em partition
+			\- désactiver une partition du swap
+
+
+%section
+	%h2 RAID
+
+	%section
+		%p FIXME: les différents types de raid
+
+	%section
+		%h3 Always RTFM
+		%p
+			%b man mdadm
+			= succeed "Parce" do
+				%br
+			que vous oublierez aussi comment l'utiliser :-)
+
+	%section
+		%h3 Création
+		%p
+			%b
+				mdadm --create
+				%em [...]
+		%pre
+			%code
+				:preserve
+					# mdadm --create /dev/md1 --level=1 --raid-devices=2 \
+						/dev/sdb1 /dev/sdc1
+
+	%section
+		%h3 (Ré)Assemblage
+		%p Pour un RAID existant
+		%p
+			%b
+				mdadm --assemble
+				%em [...]
+		%pre
+			%code
+				:preserve
+					# mdadm --assemble /dev/md1 /dev/sdb1 /dev/sdc1
+
+	%section
+		%h3 (Re)Construction
+		%p Pour un RAID cassé
+		%p
+			%b
+				mdadm --manage
+				%em [...]
+		%pre
+			%code
+				:preserve
+					# mdadm --manage /dev/md1 --remove /dev/sdb1
+					# mdadm --manage /dev/md1 --add /dev/sdb1
+
+	%section
+		%h3 mdadm.conf
+		%p Liste les différents RAID disponibles
+		%p
+			Utiliser
+			%b mdadm --examine --scan
+			= succeed "(pour" do
+				%br/
+			compléter facilement le fichier)
+		%pre
+			%code
+				:preserve
+					$ mdadm --detail --scan >> /etc/mdadm.conf
+
+	%section
+		%h3 Monitoring
+		%p
+			Voir
+			%b /proc/mdstats/
+
+
+%section
+	%h2 LVM
+
+	%section
+		%p Abstraction du stockage, sur 3 niveaux
+		%ul
+			%li
+				%b PV
+				\- volumes physiques
+			%li
+				%b VG
+				\- groupes de volumes (groupes de PV)
+			%li
+				%b LV
+				\- volumes logiques (stockage sur VG)
+
+	%section
+		%h3 Gestion des PV
+		%ul
+			%li
+				%b
+					pvcreate
+					%em partition
+				\- créer un PV
+			%li
+				%b
+					pvmove
+					%em partition-source
+					%em partition-destination
+				\- créer un PV
+
+	%section
+		%h3 Gestion des VG
+		%ul
+			%li
+				%b
+					vgcreate
+					%em vgname
+					%em partition
+				\- créer un VG
+			%li
+				%b
+					vgextend
+					%em vgname
+					%em partition
+				\- changer la taille d'un VG
+			%li
+				%b
+					vgreduce
+					%em vgname
+					%em partition
+				\- retirer un PV du VG
+			%li
+				%b vgremove
+				\- supprimer le VG (et les données qui vont avec!)
+
+	%section
+		%h3 Gestion des LV
+		%ul
+			%li
+				%b
+					lvcreate -L
+					%em taille
+					\-n
+					%em lvname
+				\- crée un LV sur le VG
+			%li
+				%b
+					lvremove
+					%em lvname
+
+	%section
+		%h3 Retrouver ses PV, VG, etc.
+		%ul
+			%li
+				%b pvscan
+				\- rechercher des PV
+			%li
+				%b pvmove
+				\- déplacer les données entre PV
+			%li
+				%b pvdisplay
+				\- afficher les disques contenant des PV
+			%li
+				%b vgscan
+				\-rechercher des VG
+			%li
+				%b vgdisplay
+				\- afficher la liste des VG et leur caractéristiques
+
+	%section
+		%h3 Exemple : creation d'un LV
+		%pre
+			%code
+				:preserve
+					lvcreate -L 1024M -n example-lv
+					mkfs -t ext3 /dev/example-vg/example-lv
+					mount /dev/example-vg/example-lv /mnt/example-lv
+					df -h
+	%section
+		%h3 Exemple : Extension d'un LV
+		%pre
+			%code
+				:preserve
+					lvextend -L+1024M /dev/example-vg/example-lv
+					resize2fs /dev/example-vg/example-lv
+		%p N.B: Penser à démonter le LV avant....
+	/
+		<section>
+		<h3>Exemple : Re-location d'un LV</h3>
+		
+		<small>(ex: en cas de disque défectueux)</small>
+		
+		<pre><code>lvcreate -L 1024M -n example-lv
+		mkfs -t ext3 /dev/example-vg/example-lv
+		mount /dev/example-vg/example-lv /mnt/example-lv
+		df -h
+		</code></pre>
+
+%section
+	%h2 Fin
+	%section
+		%h3 Références
+		%ul
+			%li
+				%a{:href => "http://wiki.debian-facile.org/manuel:lvm"} Debian-Facile: LVM
+			%li
+				%a{:href => "http://www.admin-debian.com/les-systemes-de-fichiers-linux/lvm-2-logical-volume-management/"} Tutoriels Linux Debian - LVM 2
+			%li
+				%a{:href => "http://pbraun.nethence.com/doc/sysutils_hpux/hpux_lvm.html"} HP/UX LVM configuration
+			%li
+				%a{:href => "http://www.noisette.ch/wiki/index.php/Mdadm"} Noisette Wiki - Mdadm
+	%section
+		%h3 Des questions ?
+	%section
+		%h3 Merci !
+
