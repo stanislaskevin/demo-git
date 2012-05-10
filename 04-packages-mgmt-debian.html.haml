@@ -1,0 +1,507 @@
+%section{"data-state" => "title"}
+	%h1 Administration GNU/Linux
+	%h3.inverted Gestion des logiciels (Debian)
+	%br
+		%br
+			%p 2012-05
+			%br
+				%br
+					%i
+						%small
+							%a{:href => "http://www.gnuside.com"} Gnuside
+							\/
+							%a{:href => "http://twitter.com/gnuside"} @gnuside
+
+%section
+	%h2 Spécificités de Debian
+	%ul
+		%li APT
+		%li Dpkg
+
+%section
+	%h2 Définitions
+
+	%section
+		%h3 Paquets logiciels (packages)
+		%ul
+			%li Applications, biobliothèques, media ...
+			%li Binaires ou sources
+			%li
+				Des informations de gestion :
+				= succeed "," do
+					%b dépendances
+				etc.
+			%li
+				Au format
+				%b deb
+
+	%section
+		%h3 Dépendances
+		%p
+			\=
+			%b Prérequis logiciel
+		%p
+			Exemple: dépendances pour
+			%em firefox (12.0-3)
+		%small
+			%ul
+				%li libc6 (>= 2.4)
+				%li libgdk-pixbuf2.0-0 (>= 2.22.0)
+				%li libglib2.0-0 (>= 2.16.0)
+				%li libgtk2.0-0 (>= 2.10)
+				%li libnspr4-0d (>= 1.8.0.10)
+				%li libstdc++6 (>= 4.1.1)
+				%li fontconfig
+				%li procps
+				%li debianutils (>= 1.16)
+				%li xulrunner-12.0 (>= 12.0-3)
+
+	%section
+		%h3 Branches
+		%ul
+			%li
+				%b stable
+			%li
+				%b testing
+			%li
+				%b unstable
+			%li
+				%i experimental
+		%br/
+		%br/
+		%p
+			Vie d'un paquet : unstable ↔ testing → stable
+
+	%section
+		%h3 Dépots
+		%ul
+			%li Ensemble de paquets
+			%li Pour une ou plusieurs branches
+			%li
+				Officiels ou non :
+				= succeed "," do
+					%b main
+				= succeed "," do
+					%b contrib
+				%b non-free
+			%li Accessibles localement, en FTP, HTTP ... et Bittorent !
+
+%section
+	%h2 La commande dpkg
+
+	%section
+		%h3
+			%b> D
+			ebian
+			= succeed "ac" do
+				%b P
+			= succeed "a" do
+				%b k
+			= succeed "e" do
+				%b g
+		%ul
+			%li
+				%b Installer
+				des paquets
+			%li
+				%b Supprimer
+				des paquets
+			%li
+				%b Lister
+				les paquets
+			%li
+				%b Lister
+				le contenu des paquets
+
+	%section
+		%h3 Installer des paquets
+		%p
+			%b
+				dpkg -i
+				%em nom-du-fichier.deb
+		%pre
+			%code
+				:preserve
+					# wget http://ftp.fr.debian.org/debian/pool/main/s/snarf/snarf_7.0-5_amd64.deb
+					# dpkg -i snarf_7.0-5_amd64.deb 
+					Selecting previously unselected package snarf.
+					(Lecture de la base de données... 
+						905167 fichiers et répertoires déjà installés.)
+					Dépaquetage de snarf (à partir de snarf_7.0-5_amd64.deb) ...
+					Paramétrage de snarf (7.0-5) ...
+					Traitement des actions différées (« triggers ») pour « man-db »...
+
+	%section
+		%h3 Désinstaller des paquets
+		%p
+			%b
+				dpkg -r
+				%em nom-du-paquet
+		%pre
+			%code
+				:preserve
+					# dpkg -r snarf
+					(Lecture de la base de données... 
+						905173 fichiers et répertoires déjà installés.)
+					Suppression de snarf ...
+					Traitement des actions différées (« triggers ») pour « man-db »...
+
+	%section
+		%h3 Lister les paquets
+		%p
+			%b
+				dpkg -l
+				%em [nom-du-paquet]
+		%pre
+			%code
+				:preserve
+					$ dpkg -l snarf
+					Souhait=inconnU/Installé/suppRimé/Purgé/H=à garder
+					| État=Non/Installé/fichier-Config/dépaqUeté/échec-conFig/
+					| H=semi-installé/W=attend-traitement-déclenchements
+					|/ Err?=(aucune)/besoin Réinstallation (État,Err: majuscule=mauvais)
+					||/ Nom					 Version			 Description
+					+++-=============-=============-===============================
+					ii	snarf				 7.0-5				 A command-line URL grabber
+
+	%section
+		%h3 Lister le contenu des paquets
+		%p
+			%b
+				dpkg -L
+				%em nom-du-paquet
+		%pre
+			%code
+				:preserve
+					$ dpkg -L snarf
+					/.
+					/usr
+					/usr/bin
+					/usr/bin/snarf
+					/usr/share
+					/usr/share/man
+					/usr/share/man/man1
+					/usr/share/man/man1/snarf.1.gz
+					/usr/share/doc
+					/usr/share/doc/snarf
+					/usr/share/doc/snarf/README
+					/usr/share/doc/snarf/TODO
+					/usr/share/doc/snarf/copyright
+					/usr/share/doc/snarf/changelog.gz
+					/usr/share/doc/snarf/changelog.Debian.gz
+
+%section
+	%h2 Le système APT
+
+	%section
+		%h3
+			%b> A
+			dvanced
+			= succeed "ackage" do
+				%b P
+			= succeed "ool" do
+				%b T
+		%p Un ensemble d'outils
+		%p
+			Basés sur
+			%em dpkg
+		%ul
+			%li apt-get
+			%li apt-cache
+			%li apt-file
+			%li ...
+
+	%section
+		%h3 Usages
+		%ul
+			%li
+				%b Rechercher
+				des paquets
+			%li
+				%b Obtenir
+				des informations sur les paquets
+			%li
+				%b Installer
+				des paquets
+			%li
+				%b Supprimer
+				des paquets
+			%li
+				%b Mettre à jour
+				les paquets
+			%li
+				%b Gérer les dépendances
+				entre paquets
+			%li
+				%b Résoudre les conflits
+			%li ...
+
+	/ notion de dépendances, lien avec dpkg
+	%section
+		%h3 Information sur les paquets
+		%p À mettre à jour avant toute commande APT
+		%p
+			%b apt-get update
+		%pre
+			%code
+				:preserve
+					# apt-get update
+					Atteint http://ftp.fr.debian.org unstable/main Sources/DiffIndex
+					Atteint http://ftp.fr.debian.org unstable/main amd64 Packages/DiffIndex
+					Atteint http://ftp.fr.debian.org unstable/main TranslationIndex
+					Atteint http://ftp.fr.debian.org unstable/main Translation-fr
+					Atteint http://ftp.fr.debian.org unstable/main Translation-en
+					Atteint http://ftp.fr.debian.org stable/main Sources
+					Atteint http://ftp.fr.debian.org stable/main amd64 Packages
+					Atteint http://ftp.fr.debian.org stable/main TranslationIndex
+					Atteint http://ftp.fr.debian.org stable/main Translation-fr_FR
+					Atteint http://ftp.fr.debian.org stable/main Translation-fr
+					11,9 ko réceptionnés en 3s (3 174 o/s)
+					Lecture des listes de paquets... Fait
+
+	%section
+		%h3 Rechercher
+		%p
+			%b
+				apt-cache search
+				%em mot-clef [mot-clef-2] [...]
+		%pre
+			%code
+				:preserve
+					$ apt-cache search url grabber
+					snarf - A command-line URL grabber
+					python-urlgrabber - A high-level cross-protocol url-grabber
+
+	%section
+		%h3 S'informer sur le dépot
+		%p
+			%b
+				apt-cache policy
+				%em nom-du-paquet
+		%pre
+			%code
+				:preserve
+					$ apt-cache policy snarf
+					snarf:
+						Installé : 7.0-5
+						Candidat : 7.0-5
+					 Table de version :
+					 *** 7.0-5 0
+									500 http://ftp.fr.debian.org/debian/ stable/main amd64 Packages
+									990 http://ftp.fr.debian.org/debian/ testing/main amd64 Packages
+									500 http://ftp.fr.debian.org/debian/ unstable/main amd64 Packages
+									100 /var/lib/dpkg/status
+
+	%section
+		%h3 S'informer sur le paquet
+		%p
+			%b
+				apt-cache show
+				%em nom-du-paquet
+		%pre
+			%code
+				:preserve
+					$ apt-cache show snarf
+					Package: snarf
+					Priority: optional
+					Section: net
+					Installed-Size: 88
+					Maintainer: Noah Meyerhans <noahm@debian.org>
+					Architecture: amd64
+					Version: 7.0-5
+					Depends: libc6 (>= 2.3.5-1)
+					Filename: pool/main/s/snarf/snarf_7.0-5_amd64.deb
+					Size: 23074
+					MD5sum: 4a5b2ee4218e4da6f0fb6eb453e20ac3
+					SHA1: ec27aa66028b942551a5179e043be7b8e22f2df9
+					SHA256: 21e70d39a942b328e8a29f573e3b4897808a91e74b358e6fe0fb49fb316bdaa0
+					Description-en: A command-line URL grabber
+					 Snarf is a utility to retrieve files via the http and ftp protocols. It
+					 supports http redirect, http and ftp resume, http and ftp
+					 authentication, and other neat things.	Its functionality is similar to
+					 that of wget, but with a much smaller binary.
+					Tag: interface::commandline, protocol::ftp, protocol::http, role::program, scope::utility, use::downloading
+
+	%section
+		%h3 Installer des paquets
+		%p
+			%b
+				apt-get install
+				%em nom-du-paquet [nom-du-paquet2] [...]
+		%pre
+			%code
+				:preserve
+					
+					# apt-get install snarf
+					Lecture des listes de paquets... Fait
+					Construction de l'arbre des dépendances			 
+					Lecture des informations d'état... Fait
+					Les NOUVEAUX paquets suivants seront installés :
+						snarf
+					0 mis à jour, 1 nouvellement installés, 0 à enlever et 2780 non mis à jour.
+					Il est nécessaire de prendre 0 o/23,1 ko dans les archives.
+					Après cette opération, 90,1 ko d'espace disque supplémentaires seront utilisés.
+					Retrieving bug reports... Done
+					Parsing Found/Fixed information... Done
+					Selecting previously unselected package snarf.
+					(Lecture de la base de données... 877032 fichiers et répertoires déjà installés.)
+					Dépaquetage de snarf (à partir de .../archives/snarf_7.0-5_amd64.deb) ...
+					Traitement des actions différées (« triggers ») pour « man-db »...
+					Paramétrage de snarf (7.0-5) ...
+
+	%section
+		%h3 Désinstaller des paquets
+		%p
+			%b
+				apt-get remove
+				%em nom-du-paquet [nom-du-paquet2] [...]
+		%pre
+			%code
+				:preserve
+					# apt-get remove snarf
+					Lecture des listes de paquets... Fait
+					Construction de l'arbre des dépendances			 
+					Lecture des informations d'état... Fait
+					Les paquets suivants seront ENLEVÉS :
+						snarf
+					0 mis à jour, 0 nouvellement installés, 1 à enlever et 2780 non mis à jour.
+					Après cette opération, 90,1 ko d'espace disque seront libérés.
+					Souhaitez-vous continuer [O/n] ? 
+					(Lecture de la base de données... 877038 fichiers et répertoires déjà installés.)
+					Suppression de snarf ...
+					Traitement des actions différées (« triggers ») pour « man-db »...
+
+	%section
+		%h3 Mettre à jour
+		%p
+			%b apt-get upgrade
+		%ul
+			%li Préserve les dépendances existantes
+			%li Fait des changement minimaux
+		%br/
+		%br/
+		%p
+			%b apt-get dist-upgrade
+		%ul
+			%li Résoud les nouvelles dépendances
+			%li Tente de contourner les conflits
+			%li Peut introduire de nouveaux packages
+
+	%section
+		%h3 Régler les problèmes
+		%p
+			Forcer l'installation d'un paquet :
+			%br/
+			%b
+				dpkg -i --force-
+				%em quelquechose
+				%em nom-du-fichier.deb
+		%br/
+		%p
+			Forcer l'installation d'un paquet issu d'une branche donnée :
+			%br/
+			%b
+				apt-get install -t
+				%em branche
+				%em nom-du-paquet
+		%br/
+		%p
+			Reprendre l'installation (ex: après une interruption) :
+			%br/
+			%b apt-get -f install
+
+%section
+	%h2 Configuration de APT
+
+	%section
+		%h3 Emplacement
+		%p
+			Dans le répertoire
+			%b /etc/apt/
+
+	%section
+		%h3 sources.list
+		%ul
+			%li Configuration des dépots pour APT
+			%li
+				Format simple :
+				%b
+					deb
+					%em url
+					%em branch
+					%em archive-area
+			%li
+				Fragmenté dans
+				%b /etc/apt/sources.list.d/
+		%br/
+		%br/
+		%p
+			Extrait de
+			%em /etc/apt/sources.list
+			\:
+		%pre
+			%code
+				:preserve
+					## stable
+					deb http://ftp.fr.debian.org/debian/ stable main contrib non-free
+					deb-src http://ftp.fr.debian.org/debian/ stable main contrib non-free
+					
+					## stable/security
+					deb http://security.debian.org/ stable/updates main contrib non-free
+					deb-src http://security.debian.org/ stable/updates main contrib non-free
+					
+					## testing 
+					deb http://ftp.fr.debian.org/debian/ testing main contrib non-free
+					deb-src http://ftp.fr.debian.org/debian/ testing main contrib non-free
+					
+					...
+
+	%section
+		%h3 apt.conf
+		%ul
+			%li Définir la branche par défaut
+			%li Régler les options réseau
+			%li Changer le comportement par défaut
+			%li ...
+		%br/
+		%br/
+		%p
+			Voir
+			%b man apt.conf
+			pour la syntaxe !
+
+	%section
+		%h3 preferences
+		%ul
+			%li Pour changer les priorités entre les branches
+			%li
+				Pour figer des paquets (
+				%em> pinning
+				)
+		%br/
+		%br/
+		%p
+			Voir
+			%b man apt_preferences
+			pour la syntaxe !
+
+%section
+	%h3 Report de bug
+	%p
+		%b reportbug
+
+%section
+	%h2 Fin
+
+	%section
+		%h3 Références
+		%ul
+			%li
+				%a{:href => "http://newbiedoc.sourceforge.net/tutorials/apt-get-intro/info.html"} Installing Debian Software with the Advanced Package Tool
+
+	%section
+		%h3 Questions ?
+
+	%section
+		%h3 Merci !
+

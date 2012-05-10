@@ -1,0 +1,441 @@
+%section{"data-state" => "title"}
+	%h1 Administration GNU/Linux
+	%h3.inverted
+		Gestion des logiciels
+		%br>/
+		(OpenSUSE)
+	%br
+		%br
+			%p 2012-05
+			%br
+				%br
+					%i
+						%small
+							%a{:href => "http://www.gnuside.com"} Gnuside
+							\/
+							%a{:href => "http://twitter.com/gnuside"} @gnuside
+
+%section
+	%h2 Spécificités d'OpenSUSE
+	%ul
+		%li Yast
+		%li Zypper
+		%li Rpm
+
+%section
+	%h2 Définitions
+
+	%section
+		%h3 Paquets logiciels (packages)
+		%ul
+			%li Applications, biobliothèques, media ...
+			%li Binaires ou sources
+			%li
+				Des informations de gestion :
+				= succeed "," do
+					%b dépendances
+				etc.
+			%li
+				Au format
+				%b rpm
+
+	%section
+		%h3 Dépendances
+		%p
+			\=
+			%b Prérequis logiciel
+		%p
+			Exemple: dépendances pour
+			%em firefox (12.0-3)
+		%small
+			%ul
+				%li libc6 (>= 2.4)
+				%li libgdk-pixbuf2.0-0 (>= 2.22.0)
+				%li libglib2.0-0 (>= 2.16.0)
+				%li libgtk2.0-0 (>= 2.10)
+				%li libnspr4-0d (>= 1.8.0.10)
+				%li libstdc++6 (>= 4.1.1)
+				%li fontconfig
+				%li procps
+				%li xulrunner-12.0 (>= 12.0-3)
+
+	%section
+		%h3 Branches
+		%ul
+			%li
+				%b stable
+			%li
+				%b factory
+				(developement)
+		%br/
+		%br/
+		%p Vie d'un paquet : factory → stable
+		%br/
+		%p
+			Publication en
+			%i Rolling release
+			ou
+			%i snapshots
+			?
+
+	%section
+		%h3 Dépots
+		%ul
+			%li Ensemble de paquets
+			%li Pour une ou plusieurs branches
+			%li
+				Officiels :
+				= succeed "," do
+					%b oss
+				= succeed "," do
+					%b non-oss
+				= succeed "," do
+					%b update
+				%br/
+				= succeed "," do
+					%b src-oss
+				= succeed "," do
+					%b src-non-oss
+				%b debug
+			%li
+				Non-officiels :
+				= succeed "," do
+					%b contrib
+				= succeed "," do
+					%b kde
+				= succeed "," do
+					%b gnome
+				= succeed "," do
+					%b packman
+				etc.
+			%li Accessibles localement, en FTP, HTTP ... et Bittorent !
+
+%section
+	%h2 La commande Yast
+
+	%section
+		%h3 Vue d'ensemble
+		%p
+			En ligne commande (
+			%b> yast
+			) ou en mode graphique (
+			%b> yast2
+			)
+		%ul
+			%li Partitionner et formater vos disques
+			%li Configurer le réseau
+			%li Configurer les périphériques
+			%li Activer ou désactiver les services système
+			%li
+				%b Installer and désinstaller des logiciels
+			%li Configurer les différents services système
+			%li etc.
+
+%section
+	%h2 Le système Zypper
+
+	%section
+		%h3 Vue d'ensemble
+		%p Une bibliothèque libzypper et des outils
+		%p
+			Basés sur
+			%em rpm
+		%ul
+			%li zypper
+			%li ...
+			/ FIXME
+
+	%section
+		%h3 Usages
+		%ul
+			%li
+				%b Rechercher
+				des paquets
+			%li
+				%b Obtenir
+				des informations sur les paquets
+			%li
+				%b Installer
+				des paquets
+			%li
+				%b Supprimer
+				des paquets
+			%li
+				%b Mettre à jour
+				les paquets
+			%li
+				%b Gérer les dépendances
+				entre paquets
+			%li
+				%b Résoudre les conflits
+			%li ...
+
+	/ notion de dépendances, lien avec dpkg
+	%section
+		%h3 Information sur les paquets
+		%p
+			À mettre à jour avant toute commande
+			%tt zypper
+		%p
+			%b zypper refresh
+		%pre
+			%code
+				:preserve
+					# zypper refresh
+					Le dépôt 'Mises à jour pour openSUSE 12.1 12.1-1.4' est à jour.
+					Le dépôt 'openSUSE-12.1-Non-Oss' est à jour.
+					Le dépôt 'openSUSE-12.1-Oss' est à jour.
+					Tous les dépots ont été rafraîchis.
+
+	%section
+		%h3 Rechercher
+		%p
+			%b
+				zypper search --match-all
+				%em mot-clef [mot-clef-2] [...]
+		%pre
+			%code
+				:preserve
+					$ zypper search ssh filesystem
+					Chargement des données du dépôt...
+					Lecture des paquets installés...
+					
+					S | Nom									 | Résumé								| Type				 
+					--+-----------------------+-----------------------+--------------
+					[...]
+					i | openssh							 | Secure Shell Client-> | paquet			 
+						| openssh							 | Secure Shell Client-> | paquet source
+					i | openssh-askpass			 | A passphrase dialog-> | paquet			 
+						| openssh-askpass-gnome | A GNOME-Based Passp-> | paquet			 
+						| openssh-askpass-gnome | A GNOME-Based Passp-> | paquet source
+						| sshfp								 | RFC4255 DNS SSHFP r-> | paquet			 
+						| sshfs								 | Filesystem client b-> | paquet			 
+
+	%section
+		%h3 S'informer sur le paquet
+		%p
+			%b
+				zypper info
+				%em nom-du-paquet
+		%pre
+			%code
+				:preserve
+					$ zypper info snarf
+					Chargement des données du dépôt...
+					Lecture des paquets installés...
+					
+					Informations sur paquet sshfs:
+					
+					Dépot: openSUSE-12.1-Oss
+					Nom: sshfs
+					Version: 2.3-2.1.3
+					Arch: i586
+					Fabricant: openSUSE
+					Installé: Non
+					État: non installée
+					Taille une fois installé : 106,0 KiB
+					Résumé: Filesystem client based on SSH file transfer protocol
+					Description: 
+					SSHFS is a filesystem client based on the SSH File Transfer
+					Protocol.	Since most SSH servers already support this
+					protocol it is very easy to set up: i.e.	on the server side
+					there's nothing to do. [...]
+
+	%section
+		%h3 Installer des paquets
+		%p
+			%b
+				zypper install
+				%em nom-du-paquet [nom-du-paquet2] [...]
+		%pre
+			%code
+				:preserve
+					# zypper install snarf
+					Chargement des données du dépôt...
+					Lecture des paquets installés...
+					Résolution des dépendances des paquets...
+					
+					Le NOUVEAU paquet suivant va être installé:
+						sshfs 
+					
+					1 paquet à installer.
+					Taille de téléchargement totale : 47,0 KiB. Après
+					l'opération, un 106,0 KiB 
+					supplémentaire sera utilisé.
+					Continuer ? [o/n/?] (o): o
+					Récupération de paquet sshfs-2.3-2.1.3.i586 (1/1), 47,0 KiB
+					(106,0 KiB decompressé)
+					Récupération: sshfs-2.3-2.1.3.i586.rpm [fait (2,7 KiB/s)]
+					Installation: sshfs - 2.3-2.1.3 [fait]
+
+	%section
+		%h3 Désinstaller des paquets
+		%p
+			%b
+				zypper remove
+				%em nom-du-paquet [nom-du-paquet2] [...]
+		%pre
+			%code
+				:preserve
+					# zypper remove snarf
+					Chargement des données du dépôt...
+					Lecture des paquets installés...
+					Résolution des dépendances des paquets...
+					
+					Le paquet suivant va être SUPPRIME:
+						sshfs 
+					
+					1 paquet à supprimer.
+					Après l'opération, 106,0 KiB sera libéré.
+					Continuer ? [o/n/?] (o): o
+					Suppression de sshfs-2.3-2.1.3 [fait]
+
+	%section
+		%h3 Mettre à jour
+		%p
+			%b zypper list-updates
+		%p
+			%b zypper update
+		%ul
+			%li Préserve les dépendances existantes
+			%li Fait des changement minimaux
+		%br/
+		%br/
+		%p
+			%b zypper dist-upgrade
+		%ul
+			%li Résoud les nouvelles dépendances
+			%li Tente de contourner les conflits
+			%li Peut introduire de nouveaux packages
+
+	%section
+		%h3 Régler les problèmes
+		%br/
+		%p
+			Forcer l'installation d'un paquet donné :
+			%br/
+			%b
+				zypper install
+				= succeed ":" do
+					%em depot
+				%em nom-du-paquet
+		%br
+		%p
+			Reprendre l'installation et réparer
+			%br
+			(ex: après une interruption) :
+			%br
+			%b zypper verify
+
+	/ apt-file search == webpin
+	%section
+		%h3 Configuration
+		%ul
+			%li
+				Configuration des dépots pour
+				%tt Zypper
+			%li
+				Fragmentés dans
+				%b /etc/zypp/repos.d/
+		%br
+		%br
+		%p
+			Extrait de
+			%em /etc/zypp/repos.d/repo-oss.repo
+			\:
+		%pre
+			%code
+				:preserve
+					
+					[repo-oss]
+					name=openSUSE-12.1-Oss
+					enabled=1
+					autorefresh=1
+					baseurl=http://download.opensuse.org/distribution/12.1/repo/oss/
+					path=/
+					type=yast2
+					keeppackages=0
+
+	%section
+		%h3 Gestion des dépots
+		%p
+			%b zypper repos
+			\- liste les dépots
+		%p
+			%b zypper addrepo URI alias
+			\- ajoute un dépot
+		%p
+			%b zypper removerepo alias
+			\- supprime un dépot
+
+%section
+	%h2 Rpm
+	%section
+		%h3
+			%b> R
+			edhat
+			= succeed "ackage" do
+				%b P
+			= succeed "anager" do
+				%b M
+		%ul
+			%li
+				%b Installer
+				des paquets
+			%li
+				%b Supprimer
+				des paquets
+			%li
+				%b Lister
+				les paquets
+			%li
+				%b Lister
+				le contenu des paquets
+	%section
+		%h3 Installer des paquets
+		%p
+			%b
+				rpm -ivh
+				%em nom-du-fichier.deb
+	%section
+		%h3 Désinstaller des paquets
+		%p
+			%b
+				rpm -e
+				%em nom-du-paquet
+	%section
+		%h3 Lister les paquets
+		%p
+			%b
+				rpm -qa
+				%em [nom-du-paquet]
+	%section
+		%h3 Lister le contenu des paquets
+		%p
+			%b
+				rpm -ql
+				%em nom-du-paquet
+
+%section
+	%h2 Fin
+
+	%section
+		%h3 Références
+		%ul
+			%li
+				%a{:href => "http://en.opensuse.org/openSUSE:Testing"} OpenSUSE - The development cycle
+			%li
+				%a{:href => "http://en.opensuse.org/Package_repositories"} OpenSUSE - Package repositories
+			%li
+				%a{:href => "http://nakedape.cc/wiki/PackageManagerCheatsheet"} PackageManagerCheatsheet
+			%li
+				%a{:href => "http://lilypond.org/blog/jan/openSUSE-HOWTO"}
+					OpenSUSE
+					10.3 survival guide
+
+	%section
+		%h3 Questions ?
+
+	%section
+		%h3 Merci !
+
