@@ -2,8 +2,8 @@
 %html{:lang => "en"}
 	%head
 		%meta{:charset => "utf-8"}
-		%title JavaScript &amp; JQuery - Gnuside
-		%meta{:content => "JavaScript + JQuery - Gnuside", :name => "description"}
+		%title= "%s - %s - Gnuside" % [@title, @chapter]
+		%meta{:content => "%s - %s - Gnuside" % [@title, @chapter], :name => "description"}
 		%meta{:content => "Gnuside", :name => "author"}
 		%link{:href => "http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic", :rel => "stylesheet", :type => "text/css"}
 		%link{:href => "css/reset.css", :rel => "stylesheet"}
@@ -16,6 +16,22 @@
 		#reveal
 			/ Any section element inside of this container is displayed as a slide
 			.slides
+				%section{"data-state" => "title"}
+					%h1
+						= @title
+					%h3.inverted
+						= @chapter
+					%br
+					%br
+					%p 2012-04
+					%br
+					%br
+					%i
+						%small
+							%a{:href => "http://www.gnuside.com"} Gnuside
+							\/
+							%a{:href => "http://twitter.com/gnuside"} @gnuside
+
 				= yield
 
 			/ The navigational controls UI
