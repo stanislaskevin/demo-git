@@ -1,0 +1,132 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Luckiest+Guy);
+
+
+html {
+    /* From http://subtlepatterns.com/?p=824 */
+    background-image: url(../img/gnuside-background.png); 
+}
+
+
+body:before {
+    content: url(../img/gnuside-white-transparency.png);
+    width: 74px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+
+body:after {
+    opacity: 0;
+
+    width: 74px;
+    height: 126px;
+    position: fixed;
+    top: 0px;
+    right: 2em;
+    content: url(../img/gnuside-logowhite2.png);
+
+    -webkit-transition: all .9s ease;
+    -moz-transition: all .9s ease;
+    -ms-transition: all .9s ease;
+    -o-transition: all .9s ease;
+    transition: all .9s ease;
+}
+
+.title body:after {
+    opacity: 1;
+}
+
+#reveal .progress span {
+    background: none repeat scroll 0 0 #be0926;
+}
+
+pre code {
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+    border-radius: 1em;
+    font-size: 145%;
+    line-height: 100%;
+    overflow:hidden;
+}
+
+#reveal h1 {
+    font-size: 220%;
+}
+
+#reveal h1, #reveal h2, #reveal h3 {
+    text-transform: none;
+}
+
+#reveal b {
+    color: red;
+}
+
+#reveal a {
+    color: red;
+}
+
+#reveal .controls a.enabled {
+    color: red;
+ /*    color: #be0926;*/
+}
+
+#reveal a:not(.image) {
+    color: red;
+ /*    color: #be0926;*/
+}
+
+#reveal a:hover:not(.image) {
+    color: red;
+ /*    color: #be0926;*/
+}
+
+#reveal section img {
+    border: none;
+    background: none;
+}
+
+ul.iconbullet li {
+    list-style: none;
+}
+
+ul.iconbullet img {
+    width: 48px;
+    height: 48px;
+    padding-right: 0.5em;
+    vertical-align: bottom;
+}
+
+#reveal section {
+    padding: 0;
+}
+
+#reveal .column-left {
+    width: 45%;
+    float: left;
+}
+
+#reveal .column-right {
+    float: right;
+    width: 45%;
+}
+
+#reveal .column-right:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow:hidden;
+}
+
+#reveal tt {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 90%;
+    color: #fc0;
+}
+
