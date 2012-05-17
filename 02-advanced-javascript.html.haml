@@ -1,10 +1,11 @@
-- @title = "Javascript & JQuery"
+- @title = "Javascript et JQuery"
 - @chapter = "Introduction à Javascript"
-
 %section
 	%h2 À propos de Javascript
 	%section
 		%h3 Demo
+
+		%p toto
 
 	%section
 		%h3 Coté client
@@ -58,16 +59,35 @@
 
 	%section
 		%h3 DOM
+	
+	%section
+		%h3 Manipuler un élément
+
+		%p
+			%tt document.getElementById( name )
 
 	%section
 		%h3 Naviguer dans le document
 
+		%p 
+			%tt Node.childNodes
+			%br
+			%small => Array
+
+		%p 
+			%tt Node.childNodes.length
+			%br
+			%small pratique pour vérifier le contenu
+		
+
 	%section
 		%h3 Editer les elements
 
-		%tt innerText
+		%p 
+			%tt innerText
 
-		%tt textContent
+		%p
+			%tt textContent
 
 	%section
 		%h3 Vérifier la présence d'un noeud
