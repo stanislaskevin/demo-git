@@ -24,7 +24,7 @@
 
 
 %section
-	%h2 Bonnes pratiques Javascript
+	%h2 Bonnes pratiques
 
 	%section
 		%h3 Console log
@@ -50,8 +50,7 @@
 	%section
 		%h3 Accélerer le chargement
 
-		%p Placer les chargement de (grosses) bibliotheques en fin de page
-
+		%p Chargement les bibliotheques en fin de page
 
 
 %section
@@ -84,10 +83,10 @@
 		%h3 Editer les elements
 
 		%p 
-			%tt innerText
+			%tt Node.innerText
 
 		%p
-			%tt textContent
+			%tt Node.textContent
 
 	%section
 		%h3 Vérifier la présence d'un noeud
@@ -102,9 +101,11 @@
 	%section
 		%h3 Insérer des noeuds
 
-		%tt .insertBefore()
+		%p
+			%tt Node.insertBefore()
 
-		%tt .insertAfter()
+		%p
+			%tt Node.insertAfter()
 
 		/FIXME
 
@@ -122,20 +123,62 @@
 
 
 %section
-	%h2 Cadres applicatifs (framework)
+	%h2 Cadre applicatif
 
 	%section
-		%h3 Prototype
+		%h3 Définition
+
+		%p
+			%em (= Framework)
+
+		%ul
+			%li Ensemble cohérent de fonctions
+			%li Faciliter le travail
+			%li Evite de réinventer la roue
 
 	%section
-		%h3 Mootools
+		%h3 Pourquoi en utiliser ?
+
+		%img{ :src => "img/jobgraph.png" }
+		%p
+			%small Permet de trouver du travail !
 
 	%section
-		%h3 Scriptaculous
+		%h3 Pourquoi ne pas en utiliser ?
+
+		%ul
+			%li Comprendre ce qui se passe
+			%li 
+				Répondre à un 
+				%em objectif précis
+			%li 
+				Passer moins de temps à 
+				%em adapter le fonctionnement
+			%li 
+				Ne pas charger une bibliothèque 
+				%em pour une seule fonction utile&nbsp;!
+
+	%section
+		%h3 Quelques possibilités
+		
+		%ul
+			%li Dojo Toolkit
+			%li Prototype
+			%li Mootools
+			%li Script.aculo.us
+			%li Ext.JS
+			%li 
+				%b JQuery
 
 	%section
 		%h3 JQuery
 
+		%ul
+			%li GPL/MIT
+			%li Le plus léger (55.9 KB)
+			%li La plus populaire !
+			%li Autant utilitaire que graphique
+			%li Avec de nombreux plugins !
 
 
 %section
@@ -144,13 +187,23 @@
 		%h3 Références
 		%ul
 			%li
-				%a{:href => "http://www.debian.org/releases/stable/installmanual"} Debian squeeze - Installation Guide
+				%a{ :href => "http://matthiasschuetz.com/javascript-framework-matrix/en/" }
+					JavaScript Framework Matrix
 			%li
-				%a{:href => "http://www.debian.org/releases/stable/i386/"} Manuel de référence Debian pour i386
+				%a{ :href => "FIXME" } 
+					Dojo Toolkit
 			%li
-				%a{:href => "http://formation-debian.via.ecp.fr/"} Formation Debian GNU/Linux
+				%a{ :href => "FIXME" } 
+					Script.aculo.us
 			%li
-				%a{:href => "http://distrowatch.com/"} Distrowatch
+				%a{ :href => "FIXME" } 
+					Mootools
+			%li
+				%a{ :href => "FIXME" } 
+					Prototype
+			%li
+				%a{ :href => "http://www.sencha.com/products/extjs/" }
+					ExtJS
 	%section
 		%h3 Des questions ?
 	%section
