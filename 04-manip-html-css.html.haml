@@ -90,7 +90,7 @@
 			&dash; To be or not to be, that is the question...
 	
 %section
-	%h2 Noeuds et contenu
+	%h2 Noeuds DOM
 
 	%section
 		%h3 Créer des noeuds
@@ -193,12 +193,15 @@
 		%p
 			%tt .prop( propertyName )
 			%br
-			et
 			%tt .attr( attrName, [value] )
+			%br
+			%tt .removeAttr( attrName )
+
+		/ FIXME: demo ?
 
 
 %section
-	%h2 Manipulations du CSS
+	%h2 Propriétés CSS
 
 	%section
 		%h3 Récupérer les propriétés
@@ -267,6 +270,19 @@
 			%span#css-change-properties coeur 
 			?
 
+	%section
+		%h3 Les classes
+
+		%p
+			%tt .addClass()
+			et 
+			%tt .toggleClass()
+
+		/ FIXME demo
+
+
+%section
+	%h2 Tailles &amp; et positions
 
 	%section
 		%h3 Changer les dimensions
@@ -279,21 +295,60 @@
 			Retourne ou change les dimensions de l'objet
 
 		%br
-		%pre.column-left
-			%code.javascript
-				:escaped
-					$("#css-change-dimensions")
-						.width("300px")
-						.height("300px");
-			/
-
 		.column-right
-		%img(src="img/enlargeyourpeniche.png" width="50" height="50" id="css-change-dimensions")
+			%img(src="img/enlargeyourpeniche.png" width="50" height="50" id="css-change-dimensions")
+
+		%div.column-left
+			%pre
+				%code.javascript
+					:escaped
+						$('#css-change-dimensions')
+							.width('300px')
+							.height('300px');
+				/
+
+			%pre
+				%code.javascript
+					:escaped
+						$('#css-change-dimensions')
+							.width('50px')
+							.height('50px');
+				/
+
 
 	%section
-		%h3 Les classes
+		%h3 Position
 
-	/ FIXME addClass, toggleClass
+		%p
+			%tt .position()
+			et 
+			%tt .offset( value )
+
+		%p 
+			Relatifs (respectivement) à l'élément parent ou au document
+
+		%p 
+			Possèdent les attributs 
+			%tt .top
+			et
+			%tt .left
+
+		%pre
+			%code.javascript
+				:preserve
+					$('#css-position-demo').click(function(){
+						var offset = $(this).offset();
+						$(this).offset( { 
+							top: offset.top, 
+							left: ( offset.left + 200 ) % $(document).width() 
+						});
+					});
+			/
+
+		%button#css-position-demo
+			Click me !
+
+
 
 %section
 	%h2 Fin
