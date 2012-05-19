@@ -1,0 +1,268 @@
+- @title = "Javascript et JQuery"
+- @chapter = "Manipulations HTML et CSS"
+
+%section
+	%h2 Noeuds et contenu
+
+	%section
+		%h3 Récupérer le contenu
+
+		%p
+			%tt .text()
+
+	%section
+		%h3 Changer du contenu
+
+		%p
+			%tt .html(content)
+			%br
+			Change le contenu (innerHTML) des éléments sélectionnés
+
+		%pre
+			%code.js
+				:preserve
+					$("#change-content").html("Hello brother, i'm here !");
+			/
+
+		%blockquote#change-content
+			Ô brother, where art thou ?
+
+	%section
+		%h3 Ajouter du contenu dedans
+		%p
+			%tt .prepend(content);
+			%br
+			%tt .append(content);
+			%br
+			Ajoute du contenu avant ou après celui de l'element sélectionnés
+
+		%pre
+			%code.js
+				:preserve
+					$("#add-content-inside")
+						.prepend("Ô rage ! ")
+						.append(" Ô vieillesse ennemie !")
+			/
+		%blockquote#add-content-inside
+			Ô désespoir !
+
+
+	%section
+		%h3 Ajouter du contenu autour
+
+		%p
+			%tt .before(content);
+			%br
+			%tt .after(content);
+			%br
+			Ajoute du contenu avant ou après l'élément sélectionné
+
+		%pre
+			%code.js
+				:escaped
+					$("#add-content-after")
+						.before("<p>Hamlet (Act 3 scene 1)</p>")
+						.after("<small>by Shakespeare</small>");
+			/
+
+		%blockquote#add-content-after
+			&dash; To be or not to be, that is the question...
+
+	%section
+		%h3 Créer des noeuds
+
+		%p
+			%tt $('your html code here');
+
+		%br
+		%pre
+			%code.js
+				:escaped
+					$("<p>Something to add somewhere</p>")
+			/code
+
+	%section
+		%h3#clone-node Cloner des noeuds
+
+		%p
+			%tt .clone()
+
+		%br
+		%pre
+			%code.js
+				:escaped
+					$("h3#clone-node").clone();
+			/code
+
+
+	%section
+		%h3 Insérer des noeuds
+		%p
+			%tt .insertBefore()
+			%br
+			%tt .insertAfter()
+			%br
+			%tt .appendTo(selector)
+
+		%pre
+			%code.js
+				:escaped
+					$('<span>Et lux facta est</span>').appendTo('#insert-nodes');
+			/
+
+		%blockquote#insert-nodes
+			Lux fact !
+
+	%section
+		%h3 
+			Supprimer des noeuds 
+			%br/
+			(ou presque)
+
+		%p
+			%tt .empty()
+			,
+			%tt .remove()
+			et 
+			%tt .detach()
+
+		%pre
+			%code.js
+				:escaped
+					$('#suppress-demo').empty();
+			/
+
+		%pre
+			%code.js
+				:escaped
+					$('#suppress-demo').remove();
+			/
+
+		%pre
+			%code.js
+				:escaped
+					$('#suppress-demo').detach();
+			/
+
+		%blockquote#suppress-demo
+			In the beginning was the Word
+
+%section
+	%h2 DOM : Attributs
+
+	%section
+		%h3
+
+%section
+	%h2 Manipulations du CSS
+
+	%section
+		%h3 Récupérer les propriétés
+
+		%p
+			%tt .css( name )
+			%br
+			Retourne la valeur actuelle
+			%br
+			de la propriété 
+			%em name
+			sélectionnée
+
+		%br
+		%pre
+			%code.js
+				:escaped
+					var result = $("#css-get-style").css('color');
+					alert(result);
+			/
+
+		%blockquote(style="color:red;" id="css-get-style")
+			À vaincre sans péril, on triomphe sans gloire
+	
+	%section
+		%h3 Changer une propriété
+
+		%p
+			%tt .css( name, value )
+			%br
+			Change la valeur de la propriété 
+			%em name
+			à la valeur
+			%em value
+
+		%br
+		%pre
+			%code.js
+				:escaped
+					$("#css-change-property").css('color','red');
+			/
+
+		%blockquote#css-change-property
+			Va, je ne te hais point.
+
+	%section
+		%h3 Changer plusieurs propriétés
+
+		%p
+			%tt .css({properties})
+			%br
+			Change plusieurs propriétés CSS en même temps
+
+		%br
+		%pre
+			%code.js
+				:escaped
+					$("#css-change-properties").css({
+						'color' :'red',
+						'background-color': 'black'
+					});
+			/
+
+		%blockquote
+			Rodrigue, as-tu du 
+			%span#css-change-properties coeur 
+			?
+
+
+	%section
+		%h3 Changer les dimensions
+
+		%p
+			%tt .height([size])
+			%br
+			%tt .width([size])
+			%br
+			Retourne ou change les dimensions de l'objet
+
+		%br
+		%pre.column-left
+			%code.js
+				:escaped
+					$("#css-change-dimensions")
+						.width("300px")
+						.height("300px");
+			/
+
+		.column-right
+		%img(src="img/enlargeyourpeniche.png" width="50" height="50" id="css-change-dimensions")
+
+	%section
+		%h3 Les classes
+
+	/ FIXME addClass, toggleClass
+
+%section
+	%h2 Fin
+
+	%section
+		%h3 Références
+		%ul
+			%li
+				%a(href="") toto
+
+	%section
+		%h3 Des questions ?
+
+	%section
+		%h3 Merci !
+
