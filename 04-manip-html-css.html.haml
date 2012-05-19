@@ -2,26 +2,47 @@
 - @chapter = "Manipulations HTML et CSS"
 
 %section
-	%h2 Noeuds et contenu
+	%h2 Texte et contenu
 
-	%section
+	%section#get-text
 		%h3 Récupérer le contenu
-
 		%p
+			%tt .html()
+			et
 			%tt .text()
+
+		%pre
+			%code.javascript
+				:preserve
+					alert($("#get-text p:first").html());
+			/
+
+		%pre
+			%code.javascript
+				:preserve
+					alert($("#get-text p:first").text());
+			/
 
 	%section
 		%h3 Changer du contenu
 
 		%p
 			%tt .html(content)
+			et 
+			%tt .text(content)
 			%br
-			Change le contenu (innerHTML) des éléments sélectionnés
+			Changent le contenu (innerHTML) des éléments sélectionnés
 
 		%pre
-			%code.js
+			%code.javascript
 				:preserve
-					$("#change-content").html("Hello brother, i'm here !");
+					$("#change-content").html("Hello brother, i'm here as html !");
+			/
+
+		%pre
+			%code.javascript
+				:preserve
+					$("#change-content").text("Hello brother, i'm here as text !");
 			/
 
 		%blockquote#change-content
@@ -37,7 +58,7 @@
 			Ajoute du contenu avant ou après celui de l'element sélectionnés
 
 		%pre
-			%code.js
+			%code.javascript
 				:preserve
 					$("#add-content-inside")
 						.prepend("Ô rage ! ")
@@ -58,7 +79,7 @@
 			Ajoute du contenu avant ou après l'élément sélectionné
 
 		%pre
-			%code.js
+			%code.javascript
 				:escaped
 					$("#add-content-after")
 						.before("<p>Hamlet (Act 3 scene 1)</p>")
@@ -67,6 +88,9 @@
 
 		%blockquote#add-content-after
 			&dash; To be or not to be, that is the question...
+	
+%section
+	%h2 Noeuds et contenu
 
 	%section
 		%h3 Créer des noeuds
@@ -76,7 +100,7 @@
 
 		%br
 		%pre
-			%code.js
+			%code.javascript
 				:escaped
 					$("<p>Something to add somewhere</p>")
 			/code
@@ -89,7 +113,7 @@
 
 		%br
 		%pre
-			%code.js
+			%code.javascript
 				:escaped
 					$("h3#clone-node").clone();
 			/code
@@ -99,15 +123,17 @@
 		%h3 Insérer des noeuds
 		%p
 			%tt .insertBefore()
-			%br
+			,
 			%tt .insertAfter()
 			%br
+			et
 			%tt .appendTo(selector)
 
 		%pre
-			%code.js
+			%code.javascript
 				:escaped
-					$('<span>Et lux facta est</span>').appendTo('#insert-nodes');
+					$('<em>Deus dixit :</em>').insertBefore('#insert-nodes');
+					$('<span>Et lux facta est.</span>').appendTo('#insert-nodes');
 			/
 
 		%blockquote#insert-nodes
@@ -127,31 +153,49 @@
 			%tt .detach()
 
 		%pre
-			%code.js
-				:escaped
+			%code.javascript
+				:preserve
 					$('#suppress-demo').empty();
-			/
-
-		%pre
-			%code.js
-				:escaped
+					$('#suppress-demo').detach().insertAfter('#suppress-demo-prev');
 					$('#suppress-demo').remove();
 			/
 
-		%pre
-			%code.js
-				:escaped
-					$('#suppress-demo').detach();
-			/
+		#suppress-demo-prev
 
 		%blockquote#suppress-demo
 			In the beginning was the Word
 
-%section
-	%h2 DOM : Attributs
+	%section
+		%h3 Remplacer des noeuds
+
+		%p
+			%tt .replaceWith( newcontent )
+			%br
+			ou
+			%tt .replaceWith( function )
+
+		%pre
+			%code.javascript
+				:escaped
+					$('#replace-demo button').click(function(){
+						$(this).replaceWith( "<div>" + $(this).text() + "</div>" );
+					});
+			/
+		
+		#replace-demo
+			%button First
+			%button Second
+			%button Third
 
 	%section
-		%h3
+		%h3 Attributs
+
+		%p
+			%tt .prop( propertyName )
+			%br
+			et
+			%tt .attr( attrName, [value] )
+
 
 %section
 	%h2 Manipulations du CSS
@@ -170,7 +214,7 @@
 
 		%br
 		%pre
-			%code.js
+			%code.javascript
 				:escaped
 					var result = $("#css-get-style").css('color');
 					alert(result);
@@ -192,7 +236,7 @@
 
 		%br
 		%pre
-			%code.js
+			%code.javascript
 				:escaped
 					$("#css-change-property").css('color','red');
 			/
@@ -210,7 +254,7 @@
 
 		%br
 		%pre
-			%code.js
+			%code.javascript
 				:escaped
 					$("#css-change-properties").css({
 						'color' :'red',
@@ -236,7 +280,7 @@
 
 		%br
 		%pre.column-left
-			%code.js
+			%code.javascript
 				:escaped
 					$("#css-change-dimensions")
 						.width("300px")
