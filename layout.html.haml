@@ -82,7 +82,12 @@
 
 			
 			$(document).ready(function() {
-				$("pre code.js").click(function(){ eval(this.textContent)});
+				$("pre code.js").prop('contentEditable','true').each( function() {
+					var codeElem = this;
+					$("<input type='button' value='Run!' class='runbutton'></input>")
+						.click(function(){ eval(codeElem.textContent)})
+						.insertAfter(this);
+				});
 			});
 		/ end
 
