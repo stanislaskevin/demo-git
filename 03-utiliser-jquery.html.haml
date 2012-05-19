@@ -1,0 +1,321 @@
+- @title = "Javascript et JQuery"
+- @chapter = "Utiliser JQuery"
+
+%section
+	%h2 Où trouver JQuery
+
+
+%section
+	%h3 Versions ...
+
+	%p Minifiée
+
+	%p ou pas...
+
+%section
+	%h2 Utiliser JQuery
+	%section
+		%h3 Installer la lib
+
+		%ul
+			%li
+				dans votre dossier de script (ex:
+				%tt chemin-vers-mes-js/
+				)
+			%li via une url en ligne !
+
+
+	%section
+		%h3 Inclure dans les pages
+
+		%pre
+			%code.html
+				:escaped
+					<script type="text/javascript" src="chemin-vers-mes-js/jquery.js">
+					</script>
+			/
+
+		%p En fin de page, c'est mieux !
+
+	%section
+		%h3 Commencer les traitements
+
+		%pre
+			%code.js
+				:escaped
+					$(document).ready(function(){
+						// faire des choses quand DOM sera prêt
+					});
+			/
+
+		
+
+%section
+	%h2 Préambule
+
+	%section
+		%h3 Le "$"
+
+		%ul
+			%li 
+				Alias de la fonction 
+				%tt jQuery
+			%li
+				Utilisé pour construire les objets de type 
+				%tt jQuery
+	
+	%section
+		%h3 Le type jQuery
+
+		%ul 
+			%li Equivaut à une requête
+			%li Une collection d'éléments
+			%li 
+				Peut être vide (
+				%tt .length == 0
+				)
+
+%section 
+	%h2 Selecteurs
+
+	%section
+		%h3 Définition
+
+		%ul
+			%li Référence à des elements
+			%li Ressemble aux selecteurs CSS
+				
+	%section
+		%h3 Types
+
+		%p 
+			%tt $("tagname")
+		%p
+			où
+			%em tagname
+			est le nom de la balise
+
+			
+	%section
+		%h3 Classes
+
+		%p
+			%tt $(".classname")
+		%p
+			où
+			%em classname
+			est le nom de la classe
+
+	%section
+		%h3 Identifiants
+
+		%p
+			%tt $("#identifier")
+		%p
+			où
+			%em identifier
+			est l'id de l'element
+
+	%section
+		%h3 Attributs
+
+		%p
+			%tt $("[attr='val']")
+		%p
+			où
+			%em attr
+			est l'attribut choisi
+			%br/
+			et 
+			%em val
+			la valeur souhaitée
+
+	%section
+		%h3 Universel
+
+		%p
+			%tt $("*")
+
+	%section
+		%h3 Pseudo-classes
+
+		%p
+			%tt $(":something")
+			%br/
+
+		%br/
+		%ul
+			%li
+				Position -
+				%tt :first
+				,
+				%tt :last
+				,
+				%tt :even
+				,
+				%tt :odd
+				,
+				%tt :eq(index)
+				\...
+			%li
+				Formulaires - 
+				%tt :text
+				, 
+				%tt :password
+				,
+				%tt :radio
+				,
+				%tt :checkbox
+				\...
+			%li	
+				Attributs - 
+				%tt :enabled
+				,
+				%tt :disabled
+				,
+				%tt :selected
+				,
+				%tt :checked
+				\...
+
+	%section
+		%h3 Combinaisons de selecteurs
+
+		%ul
+			%li
+				Children -
+				%tt #container children
+			%li 
+				Intersection - 
+				%tt [name="value"][name2="value2"]
+			%li
+				Union - 
+				%tt selector1, selector2, selectorN
+			%li 
+				Element adjacent -
+				%tt prev + next
+			%li
+				Element suivant - 
+				%tt prev ~ siblings
+
+	%section
+		%h3 Demo !
+
+		%p 
+			%a{ :href=>"http://files.sawmac.com/js1e/chapter05/selectors.html" } jQuery Selector Test Bed 
+
+	
+
+%section
+	%h2 Filtres et parcours
+	
+	%section#filter-selector
+		%h3  Selon un sélecteur
+		%p
+			%tt .filter( selector )
+
+		%pre
+			%code.js
+				:preserve
+					$('section').filter('#filter-selector').css('background-color', 'red');
+			/
+
+	%section
+		%h3 Selon une fonction
+		%p
+			%tt.filter-function .filter( function( index ) )
+
+		%pre
+			%code.js
+				:preserve
+					$('tt').filter(function(index) {
+						return $(this).hasClass('filter-function');
+					}).css('background-color', 'red');
+			/
+
+	%section#filter-element
+		%h3 Selon un element
+		%p
+			%tt .filter( element )
+
+		%pre
+			%code.js
+				:preserve
+					$("section")
+						.filter( document.getElementById('filter-element') )
+						.css('background-color', 'red');
+			/
+
+	%section#filter-jquery
+		%h3 Selon une autre collection d'objets
+		%p
+			%tt .filter( jQuery object )
+
+		%pre
+			%code.js
+				:preserve
+					$('section').filter( $('#filter-jquery') ).css('background-color', 'red');
+			/
+
+	%section
+		%h3 Recherche
+
+		%p
+			%tt .find( expr )
+			%br/
+			Cherche parmi les elements fils
+
+
+		%pre
+			%code.js
+				:preserve
+					$('section').find('tt').css('background-color','red');
+			/
+
+%section
+	%h2 Itérateurs
+
+	%section
+		%h3 Pour chaque
+		
+		%p
+			%tt .each( expr )
+
+		%pre
+			%code.js
+				:escaped
+					$('section > h2').each( function() { 
+						console.log(this.textContent); 
+						} );
+			/
+
+	%section
+		%h3 Association
+
+		%p
+			%tt .map( func )
+
+		%pre
+			%code.js
+				:escaped
+					var result = $('section > h2').map( function() { 
+						return this.textContent; 
+						} ).get();
+					console.log(result);
+			/
+
+%section
+	%h2 Fin
+
+	%section
+		%h3 Références
+		%ul
+			%li
+				%a(href="http://www.tutorialspoint.com/jquery/jquery-selectors.htm") TutorialPoint - jQuery - Selectors
+
+	%section
+		%h3 Des questions ?
+
+	%section
+		%h3 Merci !
+
