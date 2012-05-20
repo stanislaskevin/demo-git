@@ -1,43 +1,62 @@
 - @title = "Javascript et JQuery"
-- @chapter = "Introduction à Javascript"
+- @chapter = "Javascript avancé"
 %section
 	%h2 À propos de Javascript
-	%section
-		%h3 Demo
-
-		%p toto
 
 	%section
 		%h3 Coté client
 
-		%p Navigateurs web
+		%p 
+			Navigateurs web 
+			%br
+			%small (Firefox, Chrome, etc.)
+
+			/FIXME ajouter des icones
 
 	%section
 		%h3 Coté serveur
 
-		%p Node.JS
+		%p 
+			%a(href="http://nodejs.org/") Node.JS
+			&ndash; serveur 
+			%em event-driven
 
-		%p PhantomJS
+		%p 
+			%a(href="http://phantomjs.org/") PhantomJS 
+			&ndash; navigateur 
+			%em headless
 
-	%section
-		%h3 Historique
-
+		/FIXME ajouter des icones
 
 %section
 	%h2 Bonnes pratiques
 
 	%section
-		%h3 Console log
-	
+		%h3 Les logs
+
+		%p
+			%tt console.log() 
+			c'est bien
+
+		%p 
+			%tt alert()
+			c'est mal
+
+		%p
+			%tt document.write()
+			c'est TRÈS mal !
 
 	%section
-		%h3 Quelques aides
+		%h3 Quelques outils
 
-		%p Inspector (Firefox / Chrome)
+		%ul
+			%li DOM Inspector (Firefox)
+			%li FireBug (Firefox)
+			%li Developper Tool (Firefox)
+			%li Inspector (Chrome)
 
 	%section 
 		%h3 Coté asynchrone
-
 
 %section
 	%h2 Optimiser son code
@@ -187,22 +206,19 @@
 		%h3 Références
 		%ul
 			%li
-				%a{ :href => "http://matthiasschuetz.com/javascript-framework-matrix/en/" }
-					JavaScript Framework Matrix
+				%a(href="http://blogs.msdn.com/b/cdndevs/archive/2011/05/26/console-log-say-goodbye-to-javascript-alerts-for-debugging.aspx") Console.Log : Say Goodbye to JavaScript Alerts for Debugging!
 			%li
-				%a{ :href => "FIXME" } 
-					Dojo Toolkit
+				%a(href="http://matthiasschuetz.com/javascript-framework-matrix/en/") JavaScript Framework Matrix
 			%li
-				%a{ :href => "FIXME" } 
-					Script.aculo.us
+				%a(href="FIXME") Dojo Toolkit
 			%li
-				%a{ :href => "FIXME" } 
-					Mootools
+				%a(href="FIXME") Script.aculo.us
 			%li
-				%a{ :href => "FIXME" } 
-					Prototype
+				%a(href="FIXME") Mootools
 			%li
-				%a{ :href => "http://www.sencha.com/products/extjs/" }
+				%a(href="FIXME") Prototype
+			%li
+				%a(href="http://www.sencha.com/products/extjs/")
 					ExtJS
 	%section
 		%h3 Des questions ?
