@@ -8,10 +8,24 @@
 		%h3 Définitions
 
 		%p 
-			%b Event handlers 
-			\= méthodes appelées 
+			%b 
+				Evenement (=
+				%em event
+				)
+			%br
+			%small Un "quelque chose" qui se produit
+		
+		%p	
+			%b Handlers 
 			%br 
-			lorsque "quelque chose" se produit
+			%small Méthodes appelées pour la gestion de l'évènement
+
+		%p 
+			%b 
+				Déclancheur (=
+				%em trigger
+				)
+
 		%p
 			%small 
 				(aka 
@@ -42,12 +56,297 @@
 
 		/FIXME: demo
 
+	%section
+		%h3 Types d'évenements
+
+		%ul(class="small")
+			%li 
+				%em blur 
+				&ndash; l'élément perd le focus
+			%li 
+				%em change 
+				&ndash; l'élément change
+			%li 
+				%em click 
+				&ndash; un clic (de souris)
+			%li 
+				%em dblclick 
+				&ndash; un double clic (de souris)
+			%li 
+				%em error 
+				&ndash; une erreur de chargement (ou de déchargement)
+			%li 
+				%em focus 
+				&ndash; l'élement obtient le focus
+			%li 
+				%em keydown 
+				&ndash; une touche est pressée
+			%li 
+				%em keypress 
+				&ndash; une touche est pressée et relachée
+			%li 
+				%em keyup 
+				&ndash; une touche est relachée
+			%li 
+				%em load 
+				&ndash; le document est chargé
+			%li 
+				%em mousedown 
+				&ndash; un bouton de souris est pressé
+			%li 
+				%em mouseenter 
+				&ndash; la souris entre sur la surface de l'élément
+			%li 
+				%em mouseleave 
+				&ndash; la souris quitte la surface de l'élément (et de ses fils)
+			%li 
+				%em mousemove 
+				&ndash; la souris bouge
+			%li 
+				%em mouseout 
+				&ndash; la souris quitte la surface de l'élement
+			%li 
+				%em mouseover 
+				&ndash; le pointeur se déplace au dessus d'un élément
+			%li 
+				%em mouseup 
+				&ndash; un bouton de souris est relaché
+			%li 
+				%em resize 
+				&ndash; la fenetre change de taille
+			%li 
+				%em scroll 
+				&ndash; la fenetre défile
+			%li 
+				%em select 
+				&ndash; lorsqu'un texte est selectionné
+			%li 
+				%em submit 
+				&ndash; lorsqu'un formulaire est envoyé
+			%li 
+				%em unload 
+				&ndash; le document est déchargé
 
 %section
-	%h2 Création d'évenements et déclancheurs
+	%h2 Gestion d'évènements
+
+	%section
+		%h3 Association
+
+		%p
+			%tt .bind(eventType[, eventData], handler)
+			%br
+			%tt .live(eventType[, eventData], handler)
+			%br
+			%tt .delegate(selector, eventType, handler)
+			%br
+			%tt .on(eventType, selector, eventData, handler)
+
+
+		%p
+			%small 
+				associe
+				%em handler
+				au type d'évenement 
+				%em eventType 
+
+		%pre
+			%code.javascript
+				:preserve
+					// Bind
+					$( "#members li a" ).on( "click", function( e ) {} );
+					$( "#members li a" ).bind( "click", function( e ) {} );
+
+					// Live
+					$( document ).on( "click", "#members li a", function( e ) {} );
+					$( "#members li a" ).live( "click", function( e ) {} );
+
+					// Delegate
+					$( "#members" ).on( "click", "li a", function( e ) {} );
+					$( "#members" ).delegate( "li a", "click", function( e ) {} );
+			/
+	
+	%section
+		%h3 Désassociation
+	
+		%p
+			%tt .unbind(eventType[, handler])
+			%br
+			%tt die(eventType, selector, handler);
+			%br
+			%tt off(eventType, selector, handler);
+
+		%p
+			%small 
+				désassocie
+				%em handler
+				du type d'évenement 
+				%em eventType 
+
+
+	%section
+		%h3 (Dés)association &ndash; exemple
+
+		%pre
+			%code.javascript
+				:preserve
+					$('#event-association')
+					.css('outline','1px solid red')
+					.text('Now i handle events!')
+					.bind('click', function( event ){
+						alert('Hi there!');
+					   });
+			/
+
+		%pre
+			%code.javascript
+				:preserve
+					$('#event-association')
+					.css('outline','none')
+					.text('I handle no events...')
+					.unbind('click');;
+			/
+
+		%blockquote#event-association
+			I handle no events...
+
+
+	%section
+		%h3 Occurence unique
+
+		%p
+			%tt .one(eventType, handler)
+
+		%pre
+			%code.javascript
+				:preserve
+					$('#event-one')
+					.css('outline','1px solid red')
+					.text('Now i handle events!')
+					.one('click', function( event ){
+						alert('Hi there!');
+						$(this).css('outline','none')
+							.text('I handle no more events...!')
+					   });
+			/
+
+		%blockquote#event-one
+			I handle no events...
+
+	%section
+		%h3 Déclancheur
+
+		%p
+			%tt .trigger(eventType[, extraParameters])
+			%br
+			%small 
+				déclanche l'évènement 
+				%em eventType
+
+		%pre
+			%code.javascript
+				:preserve
+					$('#event-trigger-demo').bind('click', function() {
+						alert($(this).text());
+					});
+			/
+		%pre
+			%code.javascript
+				:preserve
+					$('#event-trigger-demo').trigger('click');
+			/
+
+		%blockquote#event-trigger-demo
+			I'm not really a button
+
+
+	%section
+		%h3 Nom des évènements
+
+		%p 
+			Tout ça fonctionne aussi 
+			%br
+			sur des évenements non-prédéfinis !
+
+		%br
+		%p 
+			Les évenements peuvent être précisés
+			par des namespaces
+
 
 %section
-	%h2 Fonctions d'évenement prédéfinies
+	%h2 L'objet Event
+
+	%section
+		%h3 Attributs d'évènements
+
+		%ul
+			%li
+				%tt keyCode
+				,
+				%tt which
+				&ndash; code de la touche ou du bouton pressé
+			%li 
+				%tt altKey
+				,
+				%tt ctrlKey
+				,
+				%tt shiftKey
+				,
+				%tt metaKey
+				&ndash; modificateurs de touches
+			%li
+				%tt pageX
+				,
+				%tt pageY
+				,
+				%tt screenX
+				,
+				%tt screenY
+				&ndash; coordonnées sur la page
+			%li 
+				%tt relatedTarget
+				&ndash; objet lié à la souris
+			%li 
+				%tt target
+				&ndash; objet déclancheur
+			%li 
+				%tt timeStamp
+				&ndash; date de l'évènement
+			%li 
+				%tt type
+				&ndash; type d'évènement
+			%li 
+				%tt data
+				&ndash; paramètres optionnels
+
+	%section
+		%h3 Méthodes
+
+		%ul
+			%li 
+				%tt preventDefault() 
+				\- empêche l'action par défaut
+			%li
+				%tt isDefaultPrevented()
+				\- indique si 
+				%tt event.preventDefault() 
+				a été appelé pour cet évènement
+			%li
+				%tt stopPropagation()
+				\- arrête la propagation de l'évenement aux objets parents
+			%li 
+				%tt isPropagationStopped() 
+				\- indique si la propagation de l'évènement a été arrêtée
+			%li
+				%tt stopImmediatePropagation()
+				\- empêche les autres handlers de gérer cet évènement
+			%li 
+				%tt isImmediatePropagationStopped()
+				\- indique si 
+				%tt stopImmediatePropagation()
+				a été appelé
+
 
 %section
 	%h2 Evenements dynamiques
@@ -61,7 +360,22 @@
 		%ul
 			%li
 				%a(href="http://www.learnjquery.org/newsletter/Tutorial-3-jquery-events.html") 
-					LearnJQuery : understanding jQuery events
+					LearnJQuery &ndash; understanding jQuery events
+			%li
+				%a(href="http://www.mkyong.com/jquery/different-between-mouseout-and-mouseleave-in-jquery/")
+					Mkyong &ndash; Different between mouseout() and mouseleave() in jQuery
+			%li
+				%a(href="http://www.elijahmanor.com/2012/02/differences-between-jquery-bind-vs-live.html")
+					Web Dev .NET &ndash; Differences Between jQuery .bind() vs .live() vs .delegate() vs .on() 
+			%li
+				%a(href="http://stackoverflow.com/questions/3349380/jquery-proxy-usage")
+					StackOverflow &ndash; jQuery.proxy() usage
+			%li
+				%a(href="http://jimmycuadra.com/posts/understanding-jquery-14s-proxy-method")
+					Jimmy Cuadra &ndash; Understanding jQuery 1.4's $.proxy() method
+			%li
+				%a(href="http://docs.jquery.com/Namespaced_Events")
+					JQuery &ndash; Namespaced Events
 
 	%section
 		%h3 Des questions ?
