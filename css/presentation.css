@@ -136,3 +136,8 @@ ul.iconbullet img {
     margin-top: -2.4em;
     margin-right: 1em;
 }
+
+.small {
+    font-size: 60%;
+    line-height: 100%;
+}
