@@ -1,0 +1,47 @@
+Glenn ROLLAND <glenn.rolland@gnuside.com>
+
+http://files.glenux.net/NextFormation/
+
+twitter @glenux ou @gnuside
+----
+
+
+Javascript < ECMAScript
+
+javascript coté client (navigateurs)
+
+javascript coté serveur
+    node.js
+    phantom.js
+
+
+
+syntaxe :
+
+des mots clefs ;
+des mots clefs ;
+des mots clefs ;
+des mots clefs ;
+
+// commentaires
+
+/* commentaires */
+/* commentaires 
+    encore et encore ...
+*/
+
+
+-----
+
+fonctions :
+
+  motclef(...)
+  "chaine de caractere" 
+  'aussi une chaine de caracteres'
+
+duck typing
+
+----
+
+
+
