@@ -41,7 +41,7 @@
 		%h3 Commencer les traitements
 
 		%pre
-			%code.js
+			%code.javascript
 				:escaped
 					$(document).ready(function(){
 						// faire des choses quand DOM sera prêt
@@ -215,7 +215,7 @@
 			%tt .filter( selector )
 
 		%pre
-			%code.js
+			%code.javascript
 				:preserve
 					$('section').filter('#filter-selector').css('background-color', 'red');
 			/
@@ -226,7 +226,7 @@
 			%tt.filter-function .filter( function( index ) )
 
 		%pre
-			%code.js
+			%code.javascript
 				:preserve
 					$('tt').filter(function(index) {
 						return $(this).hasClass('filter-function');
@@ -239,7 +239,7 @@
 			%tt .filter( element )
 
 		%pre
-			%code.js
+			%code.javascript
 				:preserve
 					$("section")
 						.filter( document.getElementById('filter-element') )
@@ -252,7 +252,7 @@
 			%tt .filter( jQuery object )
 
 		%pre
-			%code.js
+			%code.javascript
 				:preserve
 					$('section').filter( $('#filter-jquery') ).css('background-color', 'red');
 			/
@@ -267,7 +267,7 @@
 
 
 		%pre
-			%code.js
+			%code.javascript
 				:preserve
 					$('section').find('tt#find-tt').css('background-color','red');
 			/
@@ -282,7 +282,7 @@
 			%tt .each( expr )
 
 		%pre
-			%code.js
+			%code.javascript
 				:escaped
 					$('section > h2').each( function() { 
 						console.log(this.textContent); 
@@ -296,7 +296,7 @@
 			%tt .map( func )
 
 		%pre
-			%code.js
+			%code.javascript
 				:escaped
 					var result = $('section > h2').map( function() { 
 						return this.textContent; 
