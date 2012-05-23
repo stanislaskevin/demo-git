@@ -77,31 +77,33 @@ div#play-racket {
 	box-shadow: 0em 0.2em 0.2em white;
 }
 
+div#play-score:before {
+    content: "score : ";
+    color: #888;
+}
+
 div#play-score {
 	display: block;
 	position: absolute;
 	font-size: 2em;
 	bottom: 0px;
 	right: 0px;
-	color: #888;
+	color: white;
 	margin: 0.5em;
 }
 
-div#play-score .counter {
-	color: white;
-}
 
+div#play-lives:before {
+    content: "lives : ";
+    color: #888;
+}
 div#play-lives {
 	display: block;
 	position: absolute;
 	font-size: 2em;
 	bottom: 0px;
 	left: 0px;
-	color: #888;
-	margin: 0.5em;
-}
-
-div#play-lives .counter {
 	color: white;
+	margin: 0.5em;
 }
 

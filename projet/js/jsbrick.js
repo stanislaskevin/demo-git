@@ -71,6 +71,7 @@ jsBrick.Ball = function() {
 
 /* on définit la raquette */
 jsBrick.Racket = function() {
+	var id = Math.random();
 	var domObj = $("#play-ball");
 	var width = domObj.width();
 	var xMax = $(document).width();
@@ -87,20 +88,24 @@ jsBrick.Racket = function() {
 	};
 
 	this.draw = function() {
-		domObj.offset({
+		var val = {
+			id : id,
 			left: x,
 			top : y
-		});
-	}
+		};
+		// console.log(val);
+		domObj.offset(val);
+	};
 
 	this.reset = function() {
 		y = domObj.offset().top;
 		x = (xMax - width) / 2;
-	}
+	};
 };
 
 /* on définit les briques */
 jsBrick.Brick = function() {
+	
 };
 
 
@@ -134,7 +139,6 @@ jsBrick.Game = function() {
 		ball.reset();
 		racket.reset();
 
-
 		$("#play").off('mousemove.jsbrick');
 		$("#play").on('mousemove.jsbrick', function(ev) {
 			racket.move(ev);
@@ -143,11 +147,11 @@ jsBrick.Game = function() {
 
 	this.loop = function() {
 		ball.move();
+		/*
 		if (ball.lost()) {
-			racket.reset();
-			ball.reset();
+			this.reset();
 			this.kill();
-		}
+		}*/
 		if (this.lost()){
 			// FIXME: game over !
 		}
