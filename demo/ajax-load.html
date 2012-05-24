@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script src="jquery-1.7.2.min.js"></script>
+		<script>
+			$.load_anous = function( selector ) {
+				var table = selector.split(" ");
+				var url = table[0];
+				table.shift();
+				var selector2 = table.join(" ");
+				if (selector2.length == 0) {selector2 = "*";}
+				$.ajax( {
+					url: url,
+					dataType: "html",
+					success: function(data) {
+					$("#highscores").html( $(data).filter(selector2) );
+					}
+				} );
+			}
+
+			$(document).ready( function() {
+				$("#score1").click( function() {
+					$.load_anous( "scores1.html" );
+
+				} );
+
+				$("#score2").click( function() {
+					$("#highscores").load("scores2.html" );
+				} );
+			} );
+		</script>
+	</head>
+	<body>
+		<h1>Highscores</h1>
+
+		<a id="score1">Equipe 1</a>
+		<a id="score2">Equipe 2</a>
+
+		<ul id="highscores">
+
+		</ul>
+	</body>
+</html>

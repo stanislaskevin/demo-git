@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<script src="jquery-1.7.2.min.js"></script>
+		<script>
+			$(document).ready( function() {
+				$("#score1").click( function() {
+
+					/*
+					$("#highscores").animate({
+						opacity: 0,
+					}, 500, function() {
+						$("#highscores").animate({ opacity: 1,
+					}, 500)
+					});*/
+
+					$("#highscores").hide( function() {
+						$("#highscores").load("scores1.html" );
+						$("#highscores").slideDown().slideUp();
+					});
+
+				} );
+
+				$("#score2").click( function() {
+					$("#highscores").load("scores2.html" );
+				} );
+
+			} );
+		</script>
+	</head>
+	<body>
+		<h1>Highscores</h1>
+
+		<a id="score1">Equipe 1</a>
+		<a id="score2">Equipe 2</a>
+
+
+		<ul id="highscores"></ul>
+
+		<p>Hello world</p>
+	</body>
+</html>
