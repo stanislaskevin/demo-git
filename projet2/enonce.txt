@@ -1,0 +1,17 @@
+
+ * ajouter un div pour le score : #play-score
+ * ajouter un div pour les vies :  #play-lives
+
+ * faire le CSS correspondant pour afficher le score en bas à gauche
+ * faire le CSS correspondant pour afficher les vies en bas à droite
+
+(utiliser les pseudo-classes :before si possible ^_^ )
+
+ * quand la balle dépasse par le bas, perdre une vie (et mettre à jour le div #play-lives)
+
+
+----
+
+  * définir un objet jsBrick.Brick
+  * faire en sorte que le constructeur prenne en parametre la position de la brique et un objet dom/html
+  * gérer les collisions avec la balle ;)

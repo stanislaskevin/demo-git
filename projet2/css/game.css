@@ -9,7 +9,23 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: black;
+    overflow: hidden;
+
+	background-image: linear-gradient(bottom, rgb(255,120,0) 1%, rgb(0,0,0) 5%, rgb(0,145,158) 98%);
+	background-image: -o-linear-gradient(bottom, rgb(255,120,0) 1%, rgb(0,0,0) 5%, rgb(0,145,158) 98%);
+	background-image: -moz-linear-gradient(bottom, rgb(255,120,0) 1%, rgb(0,0,0) 5%, rgb(0,145,158) 98%);
+	background-image: -webkit-linear-gradient(bottom, rgb(255,120,0) 1%, rgb(0,0,0) 5%, rgb(0,145,158) 98%);
+	background-image: -ms-linear-gradient(bottom, rgb(255,120,0) 1%, rgb(0,0,0) 5%, rgb(0,145,158) 98%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.01, rgb(255,120,0)),
+		color-stop(0.05, rgb(0,0,0)),
+		color-stop(0.98, rgb(0,145,158))
+	);
+*/
+/*	box-shadow: inset 0em -1em 2em rgba(255,105,0,0.7); */
 }
 
 #play-racket {
@@ -22,4 +38,57 @@
     left: 50%;
     border-radius: 0em 0em 1em 1em;
     box-shadow: 0em -0.2em 0.2em #fff;
+}
+
+#play-ball {
+    display: block;
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    background-color: yellow;
+    /*
+    top: 50%;
+    left: 50%;
+    */
+}
+
+#play-score:before {
+	content: "score : ";
+	color: #aaa;
+}
+
+#play-score {
+	position: absolute;
+	display: block;
+	left: 1em;
+	bottom: 1em;
+	color: white;
+	height: 1em;
+	font-weight: bold;
+}
+
+#play-lives:before {
+	content: "lives : ";
+	color: #aaa;
+}
+
+#play-lives {
+	position: absolute;
+	display: block;
+	right: 1em;
+	bottom: 1em;
+	color: white;
+	height: 1em;
+	font-weight: bold;
+}
+
+.play-brick {
+	position: absolute;
+	display: block;
+	width: 5%;
+	height: 3%;
+	background-color: green;
+	outline: 0.1em solid white;
+    box-shadow: 0em 0.2em 0.5em #000;
 }

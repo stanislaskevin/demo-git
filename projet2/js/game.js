@@ -1,57 +1,77 @@
-var jsBrick = {};
+var jsBrick;
+jsBrick = (jsBrick) ? jsBrick : {};
 
-jsBrick.Ball = function() {
-}
+jsBrick.Game = function() {
+	var livesDom = $("#play-lives");
+	var lives = 3;
+	var scoreDom = $("#play-score");
+	var score = 0;
+	var racket;
+	var ball;
+	var brick;
 
-jsBrick.Racket = function() {
-	var dom = $("#play-racket");
-	var width = dom.width();
-	var height = dom.height();
-	var left = dom.offset().left;
-	var top = dom.offset().top;
-	var leftMax = $(document).width();
+	this.reset = function() {
+		ball.reset();
+		racket.reset();
+	};
 
-	var self = this;
+	this.kill = function() {
+		// perdre une vie
+		lives = lives - 1;
+		if (lives < 1) {
+			this.lose();
+		}
+	};
 
-	this.move = function(ev) {
-		left = ev.pageX - (width / 2);
-		left = (left < 0) ? 0 : left;
-		left = ((left + width) > leftMax ) ? (leftMax - width) : left;
+	this.win = function() {
+		// gagner la partie
+	};
+
+	this.lose = function() {
+		// perdre la partie (game over !)
+		alert("Game Over");
 	};
 
 	this.draw = function() {
-		dom.css("left", left);
+		scoreDom.text( score );
+		livesDom.text( lives );
 	};
 
-	this.collide = function( obj ) {
-		// if ((obj.left > this.left) && (obj.right < this.right)) {
-		//}
+	this.loop = function() {
+		// gestion des input
+	
+		ball.move();
+		ball.collide( racket );
+		ball.collide( brick );
+
+		racket.draw();
+		ball.draw();
+		brick.draw();
+		this.draw();
+
+		if ( ball.lost() ) {
+			this.kill();
+			this.reset();
+		}
 	};
 
 	this.initialize = function() {
-		$(document).on("mousemove.jsbrick", function(ev){
-			self.move(ev);
-		});
+		racket = new jsBrick.Racket();
+		ball = new jsBrick.Ball(); 
+		brick = new jsBrick.Brick( self, $('#play-brick') );
 	};
 
 	this.initialize();
-};
+}
+
 
 $(document).ready( function() {
-	var racket = new jsBrick.Racket();
-	// var ball = new jsBrick.Ball(); 
-
 	var interval = Math.floor(1000/60);
+	var game = new jsBrick.Game();
 
 	window.setTimeout(function gameLoop() {
-		// ball.move();
-
-		racket.draw();
-		// ball.draw();
-
+		game.loop();
 		window.setTimeout(gameLoop, interval);
 	}, interval);
 });
-
-// glenux@glenux.net
 
