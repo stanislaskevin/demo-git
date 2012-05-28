@@ -5,6 +5,7 @@ jsBrick.Racket = function() {
 	this.type = 'racket';
 	var dom = $("#play-racket");
 	this.width = dom.width();
+	this.halfWidth = this.width / 2;
 	this.height = dom.height();
 	this.x = 0;
 	this.y = 0;
@@ -14,8 +15,10 @@ jsBrick.Racket = function() {
 	var self = this;
 
 	this.move = function(ev) {
-		var nextx = ev.pageX - (this.width / 2);
-		this.x = (.7 * this.x) + (.3 * nextx);
+		// set x to cursor location
+		this.x = ev.pageX - this.halfWidth;
+
+		// verify left & right boundaries
 		this.x = (this.x < 0) ? 0 : this.x;
 		this.x = ((this.x + this.width) > xMax ) ? (xMax - this.width) : this.x;
 	};
@@ -32,6 +35,7 @@ jsBrick.Racket = function() {
 
 	this.resize = function() {
 		this.width = dom.width();
+		this.halfWidth = this.width / 2;
 		this.height = dom.height();
 		xMax = $(document).width();
 		yMax = $(document).height();
