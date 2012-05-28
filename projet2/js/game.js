@@ -59,6 +59,12 @@ jsBrick.Game = function() {
 		racket = new jsBrick.Racket();
 		ball = new jsBrick.Ball(); 
 		brick = new jsBrick.Brick( self, $('#play-brick') );
+
+		$(window).resize( function() {
+			racket.resize();
+			ball.resize();
+			brick.resize();
+		} );
 	};
 
 	this.initialize();

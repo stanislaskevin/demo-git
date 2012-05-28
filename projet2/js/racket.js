@@ -30,6 +30,14 @@ jsBrick.Racket = function() {
 		this.y = 0.9 * yMax;
 	}
 
+	this.resize = function() {
+		this.width = dom.width();
+		this.height = dom.height();
+		xMax = $(document).width();
+		yMax = $(document).height();
+		this.y = 0.9 * yMax;
+	}
+
 	this.initialize = function() {
 		this.reset();
 		$(document).on("mousemove.jsbrick", function(ev){

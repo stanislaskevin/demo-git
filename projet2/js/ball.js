@@ -207,6 +207,13 @@ jsBrick.Ball = function() {
 
 	};
 
+	this.resize = function() {
+		width = dom.width();
+		height = dom.height();
+		xMax = $(document).width();
+		yMax = $(document).height();
+	}
+
 	this.reset = function() {
 		x = xMax / 2;
 		y = yMax / 2;

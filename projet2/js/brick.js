@@ -24,6 +24,13 @@ jsBrick.Brick = function( game, dom ) {
 		  this.y = 0.1 * yMax;
 	  };
 
+	  this.resize = function() {
+		  this.width = dom.width();
+		  this.height = dom.height();
+		  xMax = $(document).width();
+		  yMax = $(document).height();    
+	  }
+
 	  this.destroy = function() {
 		  dom.remove();
 		  // game.destroy( self );
