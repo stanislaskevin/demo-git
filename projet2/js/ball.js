@@ -85,7 +85,8 @@ jsBrick.Ball = function() {
 
 	function collideBrick( brick ) {
 		if ( 
-				((y + rayon) > brick.y)
+				(! brick.broken ) 
+				&& ((y + rayon) > brick.y)
 				&& ((y - rayon) < (brick.y + brick.height) )
 				&& ((x + rayon) > brick.x)
 				&& ((x - rayon) < (brick.x + brick.width) ) 

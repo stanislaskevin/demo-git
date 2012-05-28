@@ -1,14 +1,33 @@
- var jsBrick;
- jsBrick = (jsBrick) ? jsBrick : {};
+var jsBrick;
+jsBrick = (jsBrick) ? jsBrick : {};
             
-jsBrick.Brick = function( game, dom ) {
+/*
+ * params is a struct that should contain:
+ *  - dom
+ *  - game
+ *  - x
+ *  - y
+ */
+jsBrick.Brick = function( params ) {
       this.type = 'brick';
       // var dom = $(".play-brick");
-      var dom = dom;
+
+	  var settings = $.extend({}, {
+		  dom: null,
+		  game: null,
+		  x: 0,
+		  y: 0
+	  }, params );
+
+      var dom = settings.dom;
+	  var game = settings.game;
+
       this.width = dom.width();
       this.height = dom.height();
-      this.x = 0;
-      this.y = 0;
+      this.x = null;
+      this.y = null;
+	  this.z = null;
+	  this.broken = null;
       var xMax = $(document).width();
       var yMax = $(document).height();    
 
@@ -17,12 +36,16 @@ jsBrick.Brick = function( game, dom ) {
 	  this.draw = function() {
 		  dom.css('top', this.y);
 		  dom.css('left', this.x);
+		  dom.css('z-index', this.z);
 	  };
 
 	  this.initialize = function() {
-		  this.x = 0.2 * xMax;
-		  this.y = 0.1 * yMax;
+		  this.x = dom.width() * settings.x;
+		  this.y = dom.height() * settings.y;
+		  this.z = (30 - settings.z);
+		  this.broken = false;
 	  };
+	  
 
 	  this.resize = function() {
 		  this.width = dom.width();
@@ -32,8 +55,8 @@ jsBrick.Brick = function( game, dom ) {
 	  }
 
 	  this.destroy = function() {
-		  dom.remove();
-		  // game.destroy( self );
+		  dom.hide();
+		  this.broken = true;
 	  }
 
 	  this.initialize();
