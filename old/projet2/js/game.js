@@ -50,13 +50,13 @@
 		this.draw = function() {
 			$score.text( score );
 
-			var heart = "C",
+			var heart = "&hearts;",
 				hearts = "",	
 				i;
-	//		for(i = 0; i < lives; i += 1) {
-	//			hearts += heart;
-	//		}
-	//		$lives.text( hearts );
+			for(i = 0; i < lives; i += 1) {
+				hearts += heart;
+			}
+			$lives.text( hearts );
 		};
 
 		this.loop = function() {
