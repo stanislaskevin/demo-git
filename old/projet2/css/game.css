@@ -1,4 +1,6 @@
 
+@import url(http://fonts.googleapis.com/css?family=Syncopate);
+
 * {
      padding: 0;
      margin: 0;
@@ -56,6 +58,8 @@
 #play-score:before {
 	content: "score : ";
 	color: #aaa;
+	font-family: Syncopate, sans-serif;
+	text-transform: uppercase;
 }
 
 #play-score {
@@ -71,6 +75,8 @@
 #play-lives:before {
 	content: "lives : ";
 	color: #aaa;
+	font-family: Syncopate, sans-serif;
+	text-transform: uppercase;
 }
 
 #play-lives {
@@ -90,4 +96,8 @@
 	height: 5%;
 	background-color: green;
 	box-shadow: 0em 0.2em 0.5em #000;
+	box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
