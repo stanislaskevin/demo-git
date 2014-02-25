@@ -66,21 +66,105 @@
 	%section
 		%h2 Structure du langage
 
+
 	%section
 		%h3 Les instructions
+
+		%pre
+			%code.javascript
+				:preserve
+					instruction1;
+					instruction2; instruction3;
+					
+					instruction3;
+		%br
+
+		%p Un point virgule sépare chaque instruction.
 
 	%section
 		%h3 Les espaces
 
+		%pre
+			%code.javascript
+				:preserve
+					instruction_1;
+					    instruction_1_1;
+					        instruction_1_2;
+					        instruction_2;     instruction_3;
+		%br
+
+		%p Le langage n'est pas sensible aux espaces
+
 	%section
 		%h3 Indentation et présentation
+		%pre
+			%code.javascript
+				:preserve
+					function toggle(elemID) {
+					var elem = document.getElementById(elemID);
+
+					if (elem.style.display == 'block') {
+					elem.style.display = 'none';	
+					} else {
+					elem.style.display = 'block';	
+					}
+					}
+		%br
+		%p 
+			Le code doit être facile à lire et comprendre :
+			une seule instruction par ligne, des blocs clairs, etc. 
 
 	%section
 		%h3 Commentaires
 
+		%p Commentaire sur une seule ligne
+		%pre
+			%code.javascript
+				:preserve
+					instruction_1; // Ceci est ma première instruction
+					instruction_2;
+					// La troisième instruction ci-dessous :
+					instruction_3;
+		%br
+		%p Commentaires multi-lignes
+		%pre
+			%code.javascript
+				:preserve
+					/* Ce script comporte 2 instructions :
+						- Instruction 1 qui fait autre chose
+						- Instruction 2 qui termine le script
+					*/ 
+					instruction_1; 
+					instruction_2;
+
+	%section
+		%h3 Utilisation des fonctions
+
+		%pre
+			%code.javascript
+				:preserve
+					myFunction();
+					
+					alert('Hello world!');
+
+		%p
+			%em Usage: nomDeLaFonction(parametre1, parametre2, ...)
+
 %section
 	%section
-		%h3 La syntaxe
+		%h2 Les variables
+
+	%section
+		%h3 Déclaration 
+
+		%p Noms de variables
+		%p Assignation de valeur
+		%p Sensibilité à la casse
+		%p Déclaration &amp; assignation
+		%p Déclarations multiples
+
+	%section
+		%h3 Types de variables
 
 	%section
 		%h3 Boites de dialogue
