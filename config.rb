@@ -2,6 +2,7 @@
 # Compass
 ###
 
+
 # Susy grids in Compass
 # First: gem install susy
 # require 'susy'
@@ -49,13 +50,17 @@ end
 # end
 
 set :css_dir, 'css'
-
 set :js_dir, 'js'
-
 set :images_dir, 'images'
+
+require "middleman-livereload"
+activate :livereload, :host => 'localhost', :grace_period => 0.25
+#activate :directory_indexes
+#activate :listpages
 
 # Build-specific configuration
 configure :build do
+
   # For example, change the Compass output style for deployment
   # activate :minify_css
 
@@ -72,6 +77,7 @@ configure :build do
   # First: gem install middleman-smusher
   # require "middleman-smusher"
   # activate :smusher
+
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
