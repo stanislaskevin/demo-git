@@ -15,6 +15,7 @@
 		%link#theme{:href => "css/theme/default.css", :rel => "stylesheet"}/
 		/ For syntax highlighting
 		%link{:href => "css/ext/zenburn.css", :rel => "stylesheet"}/
+		%script(src = "js/ext/jquery-latest.js")
 		/ If the query includes 'print-pdf', use the PDF print sheet
 		:javascript
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -31,6 +32,7 @@
 
 		%script{:src => "js/ext/head.min.js"}
 		%script{:src => "js/reveal.min.js"}
+
 		:javascript
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
@@ -55,5 +57,15 @@
 					// { src: 'js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
+
+			$(document).ready(function() {
+				$('pre code.javascript').prop('contentEditable','true').each( function() {
+					var codeElem = this;
+					$("<input type='button' value='Run!' class='runbutton'></input>")
+						.click(function(){ eval(codeElem.textContent)})
+						.insertAfter(this);
+				});
+			});
+		/end
 
 		
