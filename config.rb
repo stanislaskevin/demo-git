@@ -59,6 +59,7 @@ activate :livereload, :host => 'localhost', :grace_period => 0.25
 #activate :listpages
 
 ignore 'css/theme/template/*'
+ignore 'css/theme/README.html'
 
 # Build-specific configuration
 configure :build do
