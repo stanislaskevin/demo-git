@@ -58,6 +58,8 @@ activate :livereload, :host => 'localhost', :grace_period => 0.25
 #activate :directory_indexes
 #activate :listpages
 
+ignore 'css/theme/template/*'
+
 # Build-specific configuration
 configure :build do
 
