@@ -53,8 +53,11 @@ set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'images'
 
-require "middleman-livereload"
-activate :livereload, :host => 'localhost', :grace_period => 0.25
+#require "middleman-livereload"
+activate :livereload, :host => 'localhost', 
+	:grace_period => 0.25, 
+	:apply_js_live => false
+
 #activate :directory_indexes
 #activate :listpages
 
