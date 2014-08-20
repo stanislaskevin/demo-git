@@ -1,7 +1,7 @@
 Gemfile.lock
 .bundle
 vendor/bundle
-
+build
 public
 bin
 source/css/theme/.sass-cache
