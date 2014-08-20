@@ -3,7 +3,8 @@
 
 $(document).ready(function () {
 
-	//$("p").css('color', 'red');
+	// on change la couleur d'un élément
+	$("p").css('color', 'red');
 
 	// - on attrape l'élément p avec classe "red"
 	// - on récupère son contenu texte avec sa 
