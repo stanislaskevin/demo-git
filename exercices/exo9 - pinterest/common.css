@@ -1,0 +1,17 @@
+
+#pinterest {
+	width: 960px;
+	box-sizing: border-box;
+	padding: 20px;
+	margin: 0 auto;
+}
+
+#pinterest p {
+	width: 210px;
+	box-sizing: border-box;
+
+	padding: 10px;
+	border: 1px solid grey;
+	
+	margin: 0 0 20px 0;
+}
