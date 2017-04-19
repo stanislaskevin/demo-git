@@ -1,0 +1,250 @@
+/**
+ * A simple theme for reveal.js presentations, similar 
+ * to the default theme. The accent color is darkblue.
+ * 
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+@import url(http://fonts.googleapis.com/css?family=Marmelad:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+/* line 8, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+body {
+  background-color: #fff; }
+
+/* line 13, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal {
+  font-family: "Lato", Times, "Times New Roman", serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  color: #000; }
+
+/* line 21, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+::selection {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.99);
+  text-shadow: none; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+/* line 31, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #000;
+  font-family: "Marmelad", Impact, sans-serif;
+  line-height: 0.9em;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  text-shadow: none; }
+
+/* line 48, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal h1 {
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+/* line 57, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal a:not(.image) {
+  color: #be0926;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  -ms-transition: color .15s ease;
+  -o-transition: color .15s ease;
+  transition: color .15s ease; }
+
+/* line 67, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal a:not(.image):hover {
+  color: #f63756;
+  text-shadow: none;
+  border: none; }
+
+/* line 74, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal .roll span:after {
+  color: #fff;
+  background: #750617; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+/* line 84, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
+
+/* line 98, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #be0926;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+/* line 110, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #be0926; }
+
+/* line 115, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #be0926; }
+
+/* line 120, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #be0926; }
+
+/* line 125, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #be0926; }
+
+/* line 130, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #f63756; }
+
+/* line 134, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #f63756; }
+
+/* line 138, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #f63756; }
+
+/* line 142, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #f63756; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+/* line 151, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+/* line 154, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/template/theme.scss */
+.reveal .progress span {
+  background: #be0926;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/* line 44, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+html body {
+  background-image: url("../../images/bg-gnuside.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: auto 80%; }
+  /* line 50, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+  html body:after {
+    opacity: 0;
+    height: 100%;
+    width: 12%;
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    content: "";
+    background-image: url("../../images/logo-gnuside.png");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25 ease;
+    transition: all .25s ease; }
+/* line 74, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+html.title body:after {
+  opacity: 1; }
+
+/* line 84, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+.reveal h1 {
+  font-size: 200%; }
+/* line 88, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+.reveal h1, .reveal h2, .reveal h3 {
+  text-transform: none; }
+/* line 92, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+.reveal pre code {
+  font-size: 140%;
+  line-height: 115%; }
+/* line 105, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+.reveal section img {
+  border: none;
+  background: none; }
+/* line 110, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+.reveal ul.iconbullet li {
+  list-style: none; }
+/* line 114, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+.reveal ul.iconbullet img {
+  width: 48px;
+  height: 48px;
+  padding-right: 0.5em;
+  vertical-align: bottom; }
+/* line 121, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+.reveal .column-left {
+  width: 45%;
+  float: left; }
+/* line 126, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+.reveal .column-right {
+  float: right;
+  width: 45%; }
+/* line 131, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+.reveal .column-right:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  overflow: hidden; }
+/* line 140, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+.reveal tt {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 90%;
+  color: #812735; }
+/* line 147, /home/grolland/src/Glenux/formation-javascript-jquery/source/css/theme/source/gnuside.scss */
+.reveal b {
+  color: #812735; }
+
+/*
+#reveal a {
+    color: red;
+}
+*/
+/*
+#reveal .controls a.enabled {
+    color: red;
+ //    color: #be0926;
+}
+
+#reveal a:not(.image) {
+    color: red;
+ //    color: #be0926;
+}
+
+#reveal a:hover:not(.image) {
+    color: red;
+ //    color: #be0926;
+}
+*/

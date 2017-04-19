@@ -1,0 +1,200 @@
+/**
+ * A simple theme for reveal.js presentations, similar 
+ * to the default theme. The accent color is darkblue.
+ * 
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(http://fonts.googleapis.com/css?family=Marmelad:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+
+// Override theme settings (see ../template/settings.scss)
+$gnusideRed: #be0926;
+$gnusideGrey: #444;
+$mainFont: 'Lato', Times, 'Times New Roman', serif;
+$mainColor: #000;
+$headingFont: 'Marmelad', Impact, sans-serif;
+$headingColor: #000;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #fff;
+$linkColor: $gnusideRed;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+html {
+
+    body {
+	background-image: url('../../images/bg-gnuside.png');
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	background-size: auto 80%;
+
+	&:after {
+	    opacity: 0;
+
+	    height: 100%;
+	    width: 12%;
+	    position: fixed;
+	    top: 1%;
+	    right: 1%;
+	    content: "";
+	    background-image: url('../../images/logo-gnuside.png');
+	    background-position: top left;
+	    background-repeat: no-repeat;
+	    background-size: 100%;
+
+	    -webkit-transition: all .25s ease;
+	    -moz-transition: all .25s ease;
+	    -ms-transition: all .25s ease;
+	    -o-transition: all .25 ease;
+	    transition: all .25s ease;
+	}
+    }
+
+    &.title {
+	body {
+	    &:after {
+		opacity: 1;
+	    }
+	}
+    }
+
+}
+
+
+.reveal {
+    h1 {
+	font-size: 200%;
+    }
+
+    h1, h2, h3 {
+	text-transform: none;
+    }
+
+    pre code {
+	//background-color: rgba(255, 255, 255, 0.2);
+	//-webkit-border-radius: 1em;
+	//-moz-border-radius: 1em;
+	//-ms-border-radius: 1em;
+	//-o-border-radius: 1em;
+	//border-radius: 1em;
+	font-size: 140%;
+	line-height: 115%;
+	//overflow:hidden;
+    }
+    
+
+    section img {
+	border: none;
+	background: none;
+    }
+
+    ul.iconbullet li {
+	list-style: none;
+    }
+
+    ul.iconbullet img {
+	width: 48px;
+	height: 48px;
+	padding-right: 0.5em;
+	vertical-align: bottom;
+    }
+
+    .column-left {
+	width: 45%;
+	float: left;
+    }
+
+    .column-right {
+	float: right;
+	width: 45%;
+    }
+
+    .column-right:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow:hidden;
+    }
+
+	table {
+		margin: 0 auto;
+  		border: 1px solid black;
+
+		& > tr,
+		& > tbody > tr,
+		& > thead > tr {
+  			border: 1px solid black;
+
+			& > td,
+			& > th {
+  				border: 1px solid black;
+			}
+
+			& > th {
+				font-weight: bold;
+			}
+		}
+
+	}
+
+    code {
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 90%;
+	color: mix($gnusideRed, $gnusideGrey);
+    }
+
+    b {
+	color: mix($gnusideRed, $gnusideGrey);
+    }
+
+}
+
+
+
+/*
+#reveal a {
+    color: red;
+}
+*/
+
+/*
+#reveal .controls a.enabled {
+    color: red;
+ //    color: #be0926;
+}
+
+#reveal a:not(.image) {
+    color: red;
+ //    color: #be0926;
+}
+
+#reveal a:hover:not(.image) {
+    color: red;
+ //    color: #be0926;
+}
+*/
+
+
+

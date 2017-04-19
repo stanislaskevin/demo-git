@@ -4,12 +4,15 @@
 		<title>Exemple JS + html</title>
 	</head>
 	<body>
-		<h1>Avant le JS</h1>
+		<h1 id="titre">Avant le JS</h1>
 		
-		<p id="superParagraphe">
+		<div id="desc">
 			Du texte qui fait des trucs
-		</p>
+		</div>
 		
+		<div >
+			Toto tata titi 
+		</div>
 		<h2>
 			Apres le JS
 		</h2>
@@ -18,11 +21,12 @@
 			var elem;
 			// attraper un élément par son id
 			// l'afficher dans un alert
-			elem = document.getElementById("superParagraphe");
-			alert(elem);
+			elem = document.getElementById("desc");
+			console.log(elem);
 			// ...
 			// et demain on lui fera subir 
 			// des choses (plus utiles/droles)
 		</script>
 	</body>
 </html>
+
