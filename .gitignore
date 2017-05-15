@@ -1,6 +1,7 @@
 Gemfile.lock
 .bundle
 vendor/bundle
+/node_modules
 build
 public
 bin

@@ -2,14 +2,11 @@
 
 ### Write less, do more
 
-  
-  
-
 2013-02
 
-  
-  
-_ [Gnuside](http://www.gnuside.com) / [@gnuside](http://twitter.com/gnuside) _
+_[Gnuside](http://www.gnuside.com) / [@gnuside](http://twitter.com/gnuside)_
+
+----
 
 ## Où trouver JQuery ?
 
@@ -18,6 +15,8 @@ _ [Gnuside](http://www.gnuside.com) / [@gnuside](http://twitter.com/gnuside) _
 Minifiée ?
 
 ... ou pas ?
+
+----
 
 ## Utiliser JQuery
 
@@ -31,15 +30,21 @@ Minifiée ?
                 	src="chemin-vers-mes-js/jquery.js">
                 </script>
 
+----
+
 ### À partir d'un site distant
 
-### Commencer les traitements
+Utiliser un CDN 
 
-    
+----
+
+### Commencer les traitements
     
     $(document).ready(function(){
                 	// faire des choses quand DOM sera prêt
                 });
+
+----
 
 ## Préambule
 
@@ -48,11 +53,15 @@ Minifiée ?
   * Alias de la fonction `jQuery`
   * Utilisé pour construire les objets de type `jQuery`
 
+----
+
 ### Le type jQuery
 
   * Equivaut à une requête
   * Une collection d'éléments
   * Peut être vide ( `.length == 0` ) 
+
+----
 
 ## Selecteurs
 
@@ -61,11 +70,15 @@ Minifiée ?
   * Référence à des éléments
   * Ressemble aux sélecteurs CSS
 
+----
+
 ### Types
 
 `$("tagname")`
 
 où _tagname_ est le nom de la balise
+
+----
 
 ### Classes
 
@@ -73,11 +86,15 @@ où _tagname_ est le nom de la balise
 
 où _classname_ est le nom de la classe
 
+----
+
 ### Identifiants
 
 `$("#identifier")`
 
 où _identifier_ est l'id de l'element
+
+----
 
 ### Attributs
 
@@ -86,19 +103,23 @@ où _identifier_ est l'id de l'element
 où _attr_ est l'attribut choisi  
 et _val_ la valeur souhaitée
 
+----
+
 ### Universel
 
 `$("*")`
 
+----
+
 ### Pseudo-classes
 
 `$(":something")`  
-
   
-
   * Position - `:first` , `:last` , `:even` , `:odd` , `:eq(index)` ... 
   * Formulaires - `:text` , `:password` , `:radio` , `:checkbox` ... 
   * Attributs - `:enabled` , `:disabled` , `:selected` , `:checked` ... 
+
+----
 
 ### Combinaisons de selecteurs
 
@@ -108,20 +129,30 @@ et _val_ la valeur souhaitée
   * Element adjacent - `prev + next`
   * Element suivant - `prev ~ siblings`
 
+----
+
 ### Demo !
 
 [jQuery Selector Test
 Bed](http://files.sawmac.com/js1e/chapter05/selectors.html)
 
+----
+
 ## Filtres et parcours
+
+----
 
 ### Selon un sélecteur
 
-`.filter( selector )`
+`.filter( selector )`    
+    
+```
+$('section')
+    .filter('#filter-selector')
+    .css('background-color', 'red');
+```
 
-    
-    
-    $('section').filter('#filter-selector').css('background-color', 'red');
+----
 
 ### Selon une fonction
 
@@ -133,15 +164,17 @@ Bed](http://files.sawmac.com/js1e/chapter05/selectors.html)
     	return $(this).hasClass('filter-function');
     }).css('background-color', 'red');
 
+----
+
 ### Selon un element
 
-`.filter( element )`
-
-    
+`.filter( element )`    
     
     $("section")
     	.filter( document.getElementById('filter-element') )
     	.css('background-color', 'red');
+
+----
 
 ### Selon une autre collection d'objets
 
@@ -151,14 +184,18 @@ Bed](http://files.sawmac.com/js1e/chapter05/selectors.html)
     
     $('section').filter( $('#filter-jquery') ).css('background-color', 'red');
 
+----
+
 ### Recherche
 
 `.find( expr )`  
 Cherche parmi les elements fils
 
-    
-    
+```javascript
     $('section').find('tt#find-tt').css('background-color','red');
+```
+
+----
 
 ## Itérateurs
 
@@ -170,7 +207,9 @@ Cherche parmi les elements fils
     
     $('section > h2').each( function() { 
                 	console.log(this.textContent); 
-                	} );
+    } );
+
+----
 
 ### Association
 
@@ -183,12 +222,17 @@ Cherche parmi les elements fils
                 	} ).get();
                 console.log(result);
                 
+----
 
 ## Fin
+
+----
 
 ### Références
 
   * [TutorialPoint - jQuery - Selectors](http://www.tutorialspoint.com/jquery/jquery-selectors.htm)
+
+----
 
 ### Des questions ?
 

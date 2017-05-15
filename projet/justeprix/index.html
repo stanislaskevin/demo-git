@@ -3,23 +3,25 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Le juste prix !</title>
-		<link rel="stylesheet" href="justeprix.css" />
+		<link rel="stylesheet" href="assets/css/justeprix.css" />
 	</head>
 	<body>
+		<h1>Juste Prix</h1>
+
 		<!-- affichage du nombre de coups restants -->
 		<p id="nombreDeCoups"></p>
 
 		<!-- affichage du message (plus grand/petit, gagné/perdu) -->
 		<p id="message"></p>
 		
-		<form>
+		<form action="#">
 			<input id="nombreUtilisateur" 
 			       type="text" 
 			       placeholder="Un nombre de 0 à 999" />
 
-			<input type="submit" onclick="alert('toto');" />
+			<input type="submit" onclick="jouer();" />
 		</form>
 
-		<script src="justeprix.js"></script>
+		<script src="assets/js/justeprix.js"></script>
 	</body> 
 </html>

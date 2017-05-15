@@ -1,9 +1,13 @@
 ## À propos de Javascript
 
+----
+
 ### Coté client
 
 Navigateurs web  
 (Firefox, Chrome, etc.)
+
+----
 
 ### Coté serveur
 
@@ -11,7 +15,11 @@ Navigateurs web
 
 [PhantomJS](http://phantomjs.org/) - navigateur _headless_
 
+----
+
 ## Bonnes pratiques
+
+----
 
 ### Les logs
 
@@ -21,6 +29,8 @@ Navigateurs web
 
 `document.write()` c'est TRÈS mal !
 
+----
+
 ### Quelques outils
 
   * DOM Inspector (Firefox)
@@ -28,25 +38,41 @@ Navigateurs web
   * Developper Tool (Firefox)
   * Inspector (Chrome)
 
+----
+
 ### Coté asynchrone
 
+----
+
 ## Optimiser son code
+
+----
 
 ### Javascript non intrusif
 
 Eviter les scripts autres que ceux de chargement
 
+----
+
 ### Accélerer le chargement
 
 Chargement les bibliotheques en fin de page
 
+----
+
 ## Manipuler le HTML
 
+----
+
 ### DOM
+
+----
 
 ### Manipuler un élément
 
 `document.getElementById( name )`
+
+----
 
 ### Naviguer dans le document
 
@@ -56,15 +82,23 @@ Chargement les bibliotheques en fin de page
 `Node.childNodes.length`  
 pratique pour vérifier le contenu
 
+----
+
 ### Editer les elements
 
 `Node.innerText`
 
 `Node.textContent`
 
+----
+
 ### Vérifier la présence d'un noeud
 
+----
+
 ### Créer des noeuds
+
+----
 
 ### Insérer des noeuds
 
@@ -72,15 +106,27 @@ pratique pour vérifier le contenu
 
 `Node.insertAfter()`
 
+----
+
 ### Cloner
+
+----
 
 ### Remplacer
 
+----
+
 ### Supprimer
+
+----
 
 ### Notions sur les références
 
+----
+
 ## Cadre applicatif
+
+----
 
 ### Définition
 
@@ -90,11 +136,15 @@ _(= Framework)_
   * Faciliter le travail
   * Evite de réinventer la roue
 
+----
+
 ### Pourquoi en utiliser ?
 
 ![](images/jobgraph.png)
 
 Permet de trouver du travail !
+
+----
 
 ### Pourquoi ne pas en utiliser ?
 
@@ -102,6 +152,8 @@ Permet de trouver du travail !
   * Répondre à un _objectif précis_
   * Passer moins de temps à _adapter le fonctionnement_
   * Ne pas charger une bibliothèque _pour une seule fonction utile !_
+
+----
 
 ### Quelques possibilités
 
@@ -112,6 +164,8 @@ Permet de trouver du travail !
   * Ext.JS
   * **JQuery**
 
+----
+
 ### JQuery
 
   * GPL/MIT
@@ -119,7 +173,11 @@ Permet de trouver du travail !
   * Autant utilitaire que graphique
   * Avec de nombreux plugins !
 
+----
+
 ## Fin
+
+----
 
 ### Références
 
@@ -131,5 +189,9 @@ Permet de trouver du travail !
   * [Prototype](FIXME)
   * [ ExtJS ](http://www.sencha.com/products/extjs/)
 
+----
+
 ### Des questions ?
+
+----
 
