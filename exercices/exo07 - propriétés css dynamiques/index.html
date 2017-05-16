@@ -14,18 +14,48 @@
 	</head>
 	<body>
 		
-		<p id="contenu-texte">Un texte de la vie quotidienne...</p>
-		
-		<input type="button" id="bouton-agrandir"
-			value="Agrandir"
-		/>
-		
-		<input type="button" id="bouton-reduire"
-			value="Réduire"
-		/>
-	
 		<script type="text/javascript" 
 		        src="common.js">
 		</script>
+		
+		<input type="button" 
+                      value="+"
+                      onclick="agrandir('#article1')"
+		/>
+		
+		<input type="button" 
+                      value="-"
+                      onclick="reduire('#article1')"
+		/>
+		<input type="button" 
+                      value="reset"
+                      onclick="reset('#article1')"
+		/>
+		<div id="article1">
+		  <h1>Titre principal</h1>
+                  <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut gravida ipsum in nibh semper fringilla. Duis elit tortor, hendrerit a neque sed, ultricies pellentesque urna. Duis eget quam dui. Quisque ornare ante augue, at sodales massa placerat sit amet. Quisque molestie nulla quis tortor suscipit pretium. Nunc pellentesque tristique ipsum a eleifend. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti.
+                  </p>
+                </div>
+
+                <input type="button" 
+                      value="+"
+                      onclick="agrandir('#article2')"
+		/>
+		
+		<input type="button" 
+                      value="-"
+                      onclick="reduire('#article2')"
+		/>
+		<input type="button" 
+                      value="reset"
+                      onclick="reset('#article2')"
+		/>
+                <div id="article2">
+		  <h1>Titre principal</h1>
+                  <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut gravida ipsum in nibh semper fringilla. Duis elit tortor, hendrerit a neque sed, ultricies pellentesque urna. Duis eget quam dui. Quisque ornare ante augue, at sodales massa placerat sit amet. Quisque molestie nulla quis tortor suscipit pretium. Nunc pellentesque tristique ipsum a eleifend. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse potenti.
+                  </p>
+                </div>
 	</body>
 </html>

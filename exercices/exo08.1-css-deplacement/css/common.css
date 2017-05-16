@@ -1,0 +1,61 @@
+ 
+#terrain {
+	float: left;
+  position: relative;
+  width: 800px;
+  height: 600px;
+  background-color: #afa;
+  overflow: hidden;
+}
+
+#personnage {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: 200px;
+  top: 100px;
+  /*background-color: red;*/
+  
+  background-color: transparent;
+  background-image: url('../images/last-guardian-sprites.png');
+  
+}
+
+#controles {
+	width: 150px;
+	height: 150px;
+	position: relative;
+	background-color: blue;
+}
+
+#controles .left,
+#controles .right,
+#controles .top,
+#controles .bottom
+{
+	display: block;
+	position: absolute;
+	background-color: grey;
+	width: 50px;
+	height: 50px;
+}
+
+#controles .left {
+	top: 50px;
+	left: 0;
+}
+
+#controles .right {
+	top: 50px;
+	left: 100px;
+}
+
+#controles .top {
+	top: 0px;
+	left: 50px;
+}
+
+#controles .bottom {
+	top: 100px;
+	left: 50px;
+}

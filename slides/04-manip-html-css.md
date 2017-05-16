@@ -11,20 +11,26 @@
   
 _ [Gnuside](http://www.gnuside.com) / [@gnuside](http://twitter.com/gnuside) _
 
+----
+
 ## Texte et contenu
+
+----
 
 ### Récupérer le contenu
 
 `.html()` et `.text()`
 
     
+```javascript
+alert($("#get-text p:first").html());
+```           
     
-    alert($("#get-text p:first").html());
-                
-    
-    
-    alert($("#get-text p:first").text());
-                
+```javascript
+alert($("#get-text p:first").text());
+```            
+
+----
 
 ### Changer du contenu
 
@@ -32,15 +38,17 @@ _ [Gnuside](http://www.gnuside.com) / [@gnuside](http://twitter.com/gnuside) _
 Changent le contenu (innerHTML) des éléments sélectionnés
 
     
+```javascript
+$("#change-content").html("Hello brother, i'm here as html !");
+```            
     
-    $("#change-content").html("Hello brother, i'm here as html !");
-                
-    
-    
-    $("#change-content").text("Hello brother, i'm here as text !");
-                
+```javascript
+$("#change-content").text("Hello brother, i'm here as text !");
+```
 
 > Ô brother, where art thou ?
+
+----
 
 ### Ajouter du contenu dedans
 
@@ -49,13 +57,15 @@ Changent le contenu (innerHTML) des éléments sélectionnés
 Ajoute du contenu avant ou après celui de l'element sélectionnés
 
     
-    
-    $("#add-content-inside")
-    	.prepend("Ô rage ! ")
-    	.append(" Ô vieillesse ennemie !")
-                
+```javascript
+$("#add-content-inside")
+  .prepend("Ô rage ! ")
+  .append(" Ô vieillesse ennemie !")
+```           
 
 > Ô désespoir !
+
+----
 
 ### Ajouter du contenu autour
 
@@ -64,15 +74,19 @@ Ajoute du contenu avant ou après celui de l'element sélectionnés
 Ajoute du contenu avant ou après l'élément sélectionné
 
     
-    
-    $("#add-content-after")
-                	.before("<p>Hamlet (Act 3 scene 1)</p>")
-                	.after("<small>by Shakespeare</small>");
-                
+```javascript
+$("#add-content-after")
+                    .before("<p>Hamlet (Act 3 scene 1)</p>")
+                    .after("<small>by Shakespeare</small>");
+```            
 
 > &amp;dash; To be or not to be, that is the question...
 
+----
+
 ## Noeuds DOM
+
+----
 
 ### Créer des noeuds
 
@@ -81,9 +95,11 @@ Ajoute du contenu avant ou après l'élément sélectionné
   
 
     
-    
-    $("<p>Something to add somewhere</p>")
-                
+```javascript
+$("<p>Something to add somewhere</p>")
+```            
+
+----
 
 ### Cloner des noeuds
 
@@ -92,9 +108,11 @@ Ajoute du contenu avant ou après l'élément sélectionné
   
 
     
-    
-    $("h3#clone-node").clone();
-                
+```javascript
+$("h3#clone-node").clone();
+```            
+
+----
 
 ### Insérer des noeuds
 
@@ -102,10 +120,12 @@ Ajoute du contenu avant ou après l'élément sélectionné
 et `.appendTo(selector)`
 
     
-    
-    $('<em>Deus dixit :</em>').insertBefore('#insert-nodes');
-                $('<span>Et lux facta est.</span>').appendTo('#insert-nodes');
-                
+```javascript
+$('<em>Deus dixit :</em>').insertBefore('#insert-nodes');
+            $('<span>Et lux facta est.</span>').appendTo('#insert-nodes');
+```            
+
+----
 
 > Lux fact !
 
@@ -115,13 +135,15 @@ et `.appendTo(selector)`
 `.empty()` , `.remove()` et `.detach()`
 
     
-    
-    $('#suppress-demo').empty();
-    $('#suppress-demo').detach().insertAfter('#suppress-demo-prev');
-    $('#suppress-demo').remove();
-                
+```javascript
+$('#suppress-demo').empty();
+$('#suppress-demo').detach().insertAfter('#suppress-demo-prev');
+$('#suppress-demo').remove();
+```            
 
 > In the beginning was the Word
+
+----
 
 ### Remplacer des noeuds
 
@@ -129,13 +151,15 @@ et `.appendTo(selector)`
 ou `.replaceWith( function )`
 
     
-    
-    $('#replace-demo button').click(function(){
-                	$(this).replaceWith( "<div>" + $(this).text() + "</div>" );
-                });
-                
+```javascript
+$('#replace-demo button').click(function(){
+                    $(this).replaceWith( "<div>" + $(this).text() + "</div>" );
+            });
+  ```           
 
 First Second Third
+
+----
 
 ### Attributs
 
@@ -143,7 +167,11 @@ First Second Third
 `.attr( attrName, [value] )`  
 `.removeAttr( attrName )`
 
+----
+
 ## Propriétés CSS
+
+----
 
 ### Récupérer les propriétés
 
@@ -154,12 +182,14 @@ de la propriété _name_ sélectionnée
   
 
     
-    
-    var result = $("#css-get-style").css('color');
-                alert(result);
-                
+```javascript
+var result = $("#css-get-style").css('color');
+            alert(result);
+  ```           
 
 > À vaincre sans péril, on triomphe sans gloire
+
+----
 
 ### Changer une propriété
 
@@ -169,11 +199,13 @@ Change la valeur de la propriété _name_ à la valeur _value_
   
 
     
-    
-    $("#css-change-property").css('color','red');
-                
+```javascript
+$("#css-change-property").css('color','red');
+```            
 
 > Va, je ne te hais point.
+
+----
 
 ### Changer plusieurs propriétés
 
@@ -183,21 +215,27 @@ Change plusieurs propriétés CSS en même temps
   
 
     
-    
-    $("#css-change-properties").css({
-                	'color' :'red',
-                	'background-color': 'black'
-                });
-                
+```javascript
+$("#css-change-properties").css({
+                    'color' :'red',
+                    'background-color': 'black'
+            });
+  ```           
 
 > Rodrigue, as-tu du coeur ?
+
+----
 
 ### Les classes
 
 `.addClass()` , `.removeClass()`  
 et `.toggleClass()`
 
+----
+
 ## Tailles &amp; et positions
+
+----
 
 ### Changer les dimensions
 
@@ -210,17 +248,19 @@ Retourne ou change les dimensions de l'objet
 ![](images/enlargeyourpeniche.png)
 
     
+```javascript
+$('#css-change-dimensions')
+.width('300px')
+.height('300px');
+```              
     
-    $('#css-change-dimensions')
-    .width('300px')
-    .height('300px');
-                  
-    
-    
-    $('#css-change-dimensions')
-    .width('50px')
-    .height('50px');
-                  
+```javascript
+$('#css-change-dimensions')
+.width('50px')
+.height('50px');
+```              
+
+----
 
 ### Position
 
@@ -231,25 +271,32 @@ Relatifs (respectivement) à l'élément parent ou au document
 Possèdent les attributs `.top` et `.left`
 
     
-    
-    $('#css-position-demo').click(function(){
-    	var offset = $(this).offset();
-    	$(this).offset( { 
-    		top: offset.top, 
-    		left: ( offset.left + 200 ) % $(document).width() 
-    	});
+```javascript
+$('#css-position-demo').click(function(){
+    var offset = $(this).offset();
+    $(this).offset( { 
+            top: offset.top, 
+            left: ( offset.left + 200 ) % $(document).width() 
     });
-                
+});
+    ```            
 
-Click me !
+----
 
 ## Fin
+
+----
 
 ### Références
 
   * [JQuery API](http://api.jquery.com/)
 
+----
+
 ### Des questions ?
+
+
+----
 
 ### Merci !
 
