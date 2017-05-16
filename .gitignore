@@ -4,7 +4,6 @@ vendor/bundle
 /node_modules
 build
 public
-bin
 source/css/theme/.sass-cache
 **/*~
 references/*
