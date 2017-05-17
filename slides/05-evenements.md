@@ -1,5 +1,7 @@
 ## Notions
 
+----
+
 ### Définitions
 
 ** Evenement (= _event_ ) **   
@@ -12,6 +14,9 @@ Méthodes appelées pour la gestion de l'évènement
 
 (aka _trigger_ , _fire_ , etc.)
 
+
+----
+
 ### Sources possibles
 
   * touche du clavier
@@ -20,9 +25,15 @@ Méthodes appelées pour la gestion de l'évènement
   * envoi d'une requête
   * appui de doigts sur un touchscreen
 
+
+----
+
 ### Exemples
 
 `.ready( function )` ou `.click( function )`
+
+
+----
 
 ### Types d'évenements
 
@@ -49,7 +60,13 @@ Méthodes appelées pour la gestion de l'évènement
   * _submit_ - lorsqu'un formulaire est envoyé 
   * _unload_ - le document est déchargé 
 
+
+----
+
 ## Gestion d'évènements
+
+
+----
 
 ### Association
 
@@ -75,6 +92,9 @@ associe _handler_ au type d'évenement _eventType_
     $( "#members" ).delegate( "li a", "click", function( e ) {} );
                 
 
+----
+
+
 ### Désassociation
 
 `.unbind(eventType[, handler])`  
@@ -82,6 +102,9 @@ associe _handler_ au type d'évenement _eventType_
 `off(eventType, selector, handler);`
 
 désassocie _handler_ du type d'évenement _eventType_
+
+
+----
 
 ### (Dés)association - exemple
 
@@ -104,6 +127,9 @@ désassocie _handler_ du type d'évenement _eventType_
 
 > I handle no events...
 
+
+----
+
 ### Occurence unique
 
 `.one(eventType, handler)`
@@ -121,6 +147,9 @@ désassocie _handler_ du type d'évenement _eventType_
                 
 
 > I handle no events...
+
+----
+
 
 ### Déclancheur
 
@@ -140,6 +169,9 @@ déclanche l'évènement _eventType_
 
 > I'm not really a button
 
+----
+
+
 ### Nom des évènements
 
 Tout ça fonctionne aussi  
@@ -149,7 +181,13 @@ sur des évenements non-prédéfinis !
 
 Les évenements peuvent être précisés par des namespaces
 
+----
+
+
 ## L'objet Event
+
+----
+
 
 ### Attributs d'évènements
 
@@ -162,6 +200,9 @@ Les évenements peuvent être précisés par des namespaces
   * `type` - type d'évènement 
   * `data` - paramètres optionnels 
 
+----
+
+
 ### Méthodes
 
   * `preventDefault()` \- empêche l'action par défaut 
@@ -171,9 +212,18 @@ Les évenements peuvent être précisés par des namespaces
   * `stopImmediatePropagation()` \- empêche les autres handlers de gérer cet évènement 
   * `isImmediatePropagationStopped()` \- indique si `stopImmediatePropagation()` a été appelé 
 
+
+----
+
 ## Evenements dynamiques
 
+----
+
+
 ## Fin
+
+----
+
 
 ### Références
 
@@ -184,7 +234,13 @@ Les évenements peuvent être précisés par des namespaces
   * [ Jimmy Cuadra - Understanding jQuery 1.4's $.proxy() method ](http://jimmycuadra.com/posts/understanding-jquery-14s-proxy-method)
   * [ JQuery - Namespaced Events ](http://docs.jquery.com/Namespaced_Events)
 
+----
+
+
 ### Des questions ?
+
+----
+
 
 ### Merci !
 

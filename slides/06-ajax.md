@@ -1,5 +1,8 @@
 ## AJAX
 
+
+----
+
 ### Définition
 
 **Asynchronous JavaScript And XML**
@@ -13,6 +16,9 @@
 
 **... mais XML tend à être replacé par JSON**
 
+
+----
+
 ### Historique
 
 AJAX existait avant ajax...
@@ -22,6 +28,9 @@ AJAX existait avant ajax...
   * jusqu'à `XMLHttpRequest`   
 (issu à l'origine d'un ActiveX pour MSIE)
 
+----
+
+
 ### Site traditionnel
 
   1. Requête unique sur un serveur
@@ -29,6 +38,9 @@ AJAX existait avant ajax...
 (img, css, scripts, frames)
 
   3. Changement de page (retour à [1])
+
+----
+
 
 ### Site avec AJAX
 
@@ -43,7 +55,13 @@ AJAX existait avant ajax...
 
   6. Changement de page (retour à [1])
 
+----
+
+
 ## Requêtes AJAX
+
+----
+
 
 ### Rappels sur HTTP
 
@@ -54,6 +72,9 @@ AJAX existait avant ajax...
   * DELETE
   * ...
 
+----
+
+
 ### Types de réponses
 
   * Texte simple
@@ -61,10 +82,16 @@ AJAX existait avant ajax...
   * XML
   * JSON
 
+----
+
+
 ### Réponse texte
 
   * simple...
   * pas adapté pour des données formatées
+
+----
+
 
 ### Réponse HTML
 
@@ -79,6 +106,9 @@ AJAX existait avant ajax...
                 </ul>
                 
 
+----
+
+
 ### Réponse XML
 
     
@@ -90,6 +120,9 @@ AJAX existait avant ajax...
     	
     
                 
+
+----
+
 
 ### Réponse JSON
 
@@ -104,15 +137,27 @@ AJAX existait avant ajax...
     ]
                 
 
+----
+
+
 ### Rappels sur l'asynchronisme
 
+----
+
+
 ## Utiliser AJAX
+
+----
+
 
 ### XMLHTTPRequest
 
     
     
     var xhr = new XMLHttpRequest();
+
+----
+
                 
 
 ### Dans la vraie vie
@@ -137,13 +182,22 @@ AJAX existait avant ajax...
     }
                 
 
+----
+
+
 ### Requetes
 
 `xhr.open(sMethod, sUrl, bAsync)`
 
+----
+
+
 ### Headers
 
 `xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");`
+
+----
+
 
 ### Requete GET
 
@@ -152,6 +206,9 @@ AJAX existait avant ajax...
     xhr.open("GET", "handlingData.php?variable1=truc&variable2;=bidule", true);
     xhr.send(null);
                 
+
+----
+
 
 ### Requete POST
 
@@ -162,9 +219,15 @@ AJAX existait avant ajax...
     xhr.send("variable1=truc&variable2;=bidule");
                 
 
+----
+
+
 ### Protection des données
 
 `encodeURIComponent("contenu avec des espaces");`
+
+----
+
 
 ### Récupération des données
 
@@ -179,6 +242,9 @@ AJAX existait avant ajax...
     };
                 
 
+----
+
+
 ### Restrictions
 
 > Permission denied to call method XMLHttpRequest.open
@@ -188,9 +254,18 @@ Solutions
   * Cross-origin resource sharing
   * Proxy (mod_proxy dans apache, script de redirection)
 
+----
+
+
 ## Utiliser AJAX et JQuery
 
+----
+
+
 ## Fin
+
+----
+
 
 ### Références
 
@@ -199,7 +274,13 @@ Solutions
   * [ Wikipedia : Same origin policy ](http://en.wikipedia.org/wiki/Same_origin_policy)
   * [ How to bypass cross-domain restrictions when developing AJAX applications ](http://www.ghidinelli.com/2008/12/27/how-to-bypass-cross-domain-restrictions-when-developing-ajax-applications)
 
+----
+
+
 ### Des questions ?
+
+----
+
 
 ### Merci !
 
