@@ -4,7 +4,8 @@
 (function () {
   "use strict";
   
-  var $personnage,
+  var $body,
+ 	  $personnage,
       $terrain,
       $controles,
       position = {};
@@ -46,6 +47,7 @@
   }
   
   function initialiseObjets() {
+  	  $body = $('body');
     $personnage = $('#personnage');
     $terrain = $('#terrain');
     $controles = $('#controles');
@@ -59,6 +61,25 @@
     $controles.find('.right').click(moveRight);
     $controles.find('.top').click(moveTop);
     $controles.find('.bottom').click(moveBottom);
+
+    $body.on('keydown', function(ev) {
+		console.log(ev.keyCode);
+		switch (ev.keyCode) {
+			case 39: // droite
+				moveRight();
+				break;
+			case 37: // gauche
+				moveLeft();
+				break;
+			case 38: // haut
+				moveTop();
+				break;
+			case 40: // bas
+				moveBottom();
+				break;
+		}
+
+    });
   }
 
   $(document).ready(function (){
