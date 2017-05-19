@@ -38,14 +38,14 @@ body {
 	text-align: center;
 }
 
-/* à terme je voudrai plutot avoir : 
-   .snake .head { ... }
-   .snake .body { ... }
-*/
-.snake {
+.snake .body {
 	position: absolute;
 	width: 20px;
 	height: 20px;
+	background-color: rgba(0,255,255,0.5);
+}
+
+.snake .body:first-child {
 	background-color: cyan;
 }
 

@@ -17,6 +17,8 @@
 	    $terrain,
 	    $message,
 	    $snake,
+	    $snakeHead,
+	    $snakeTail,
 	    gameState = STATE_INTRO,
 	    bonusSize = 20,
 	    terrainSize = 400,
@@ -78,13 +80,22 @@
 	}
 
 	function ajouteSnake() {
+		// je crée un snake en mémoire
 		$snake = $('<div></div>')
-			.addClass('snake')
-			.appendTo($terrain)
+			.addClass('snake');
+
+		// je créer un corps pour le snake
+		$snakeHead = $('<div></div>').addClass('body')
 			.css({
 				top: '100px',
 				left: '100px'
-			});
+			})
+			.appendTo($snake);
+		$snakeTail = $snakeHead;
+
+		// j'ajoute mon snake au terrain
+		$snake.appendTo($terrain);
+
 	}
 
 	function gameOver() {
@@ -92,7 +103,11 @@
 
 		console.log("SNAKE - Fin du jeu");
 		gameState = STATE_FINISH;
-		$message.text('Perdu !');
+		$message.html(
+			'Perdu !<br/>' +
+			'SCORE = ' + score + '<br/><br/>' +
+			'Appuyez sur ESPACE<br/>' +
+			'pour démarrer');
 		$message.show();
 	}
 
@@ -101,20 +116,24 @@
 		$('.bonus').each(function () {
 			var $bonus = $(this);
 
-			if (collision($snake, $bonus)) {
-				// youpi, j'ai une collision ;)
+			if (collision($snakeHead, $bonus)) {
+				// on fait disparaitre le bonus et on le recrée
 				$bonus.hide();
 				$bonus.remove();
 				ajouteBonus();
 				score += 1;
 
+				// on ralonge le snake
+				$snakeTail.clone().appendTo($snake);
+
+				// on change l'intervale
 				intervalDelay = Math.floor(intervalDelay * 0.9);
 			} 
 		});
 	}
 
 	function gereDepassements() {
-		var pos = $snake.position();
+		var pos = $snakeHead.position();
 		if (pos.left < 0) { gameOver(); }
 		if (pos.left >= $terrain.width()) { gameOver(); }
 		if (pos.top < 0) { gameOver(); }
@@ -123,31 +142,35 @@
 
 	function moveAuto() {
 		if (gameState !== STATE_RUNNING) { return; } 
-		var position = $snake.position();
-	
+		var position = $snakeHead.position();
 
+		$snakeTail.detach();
 		switch (direction) {
 			case DIR_TOP: 
-				$snake.css({
-					top: (position.top - 20) + 'px'
+				$snakeTail.css({
+					top: (position.top - 20) + 'px',
+					left: position.left
 				});
 				break;
 
 			case DIR_LEFT: 
-				$snake.css({
+				$snakeTail.css({
+					top: position.top,
 					left: (position.left - 20) + 'px'
 				});
 				break;
 
 			case DIR_RIGHT:
-				$snake.css({
+				$snakeTail.css({
+					top: position.top,
 					left: (position.left + 20) + 'px'
 				});
 				break;
 
 			case DIR_BOTTOM: 
-				$snake.css({
-					top: (position.top + 20) + 'px'
+				$snakeTail.css({
+					top: (position.top + 20) + 'px',
+					left: position.left
 				});
 				gereCollisions();
 				gereDepassements();
@@ -156,6 +179,10 @@
 			default: 
 				// erreur - c'est quoi cette valeur de direction bizarre ?
 		}
+		$snake.prepend($snakeTail);
+		$snakeHead = $snakeTail;
+		$snakeTail = $snake.find('.body:last');
+		
 		gereCollisions();
 		gereDepassements();
 
@@ -164,16 +191,24 @@
 
 	function gameStart() {
 		// on ne restart pas si le jeu est déjà en cours
-		if (gameState !== STATE_INTRO) { return; } 
+		if ((gameState !== STATE_INTRO) && 
+			(gameState !== STATE_FINISH)) { 
+			return; 
+		} 
 
 		console.log("SNAKE - démarrage du jeu...");
 		gameState = STATE_RUNNING;
 		direction = DIR_RIGHT;
 		intervalDelay = 500;
+		score = 0;
 
 		$message.hide();
+
+		$('.bonus').remove();
 		ajouteBonus();
 		ajouteBonus();
+
+		$('.snake').remove();
 		ajouteSnake();
 		
 		setTimeout(moveAuto, intervalDelay);
