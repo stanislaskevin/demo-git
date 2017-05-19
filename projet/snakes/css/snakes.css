@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url('../images/bg.png');
+}
+
+#terrain {
+	border: 5px solid #888;
+	position: relative;
+	width: 410px;
+	height: 410px;
+	background-color: black;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+#message {
+	font-family: 'Press Start 2P', cursive;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 10;
+	height: 410px;
+	font-size: 20px;
+	background-color: rgba(255,255,255,0.5);
+	width: 410px;
+	margin: 0 auto;
+	margin-top: -410px;
+	padding: 20px;
+	color: white;
+	font-weight: bold;
+	line-height 60px;
+	text-align: center;
+}
+
+/* à terme je voudrai plutot avoir : 
+   .snake .head { ... }
+   .snake .body { ... }
+*/
+.snake {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: cyan;
+}
+
+.bonus {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: magenta;
+}
