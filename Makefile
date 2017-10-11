@@ -36,12 +36,12 @@ install-style:
 
 
 live:
-	$(REVEALMD) --disableAutoOpen -h 0.0.0.0 $(THEME_OPT) $(SLIDES_DIR)
+	$(REVEALMD) --disable-auto-open --host 0.0.0.0 $(THEME_OPT) $(SLIDES_DIR)
 
 .PHONY: build
 build: $(SLIDES_PDF)
 
-DOCKER_IP=$(shell ip addr show dev docker0 |awk '/\<inet\>/{ print $2; }')
+DOCKER_IP=$(shell ip addr show dev docker0 |sed -n 's|^.*\<inet\>\s\+\([^/]\+\)/.*|\1|p' )
 $(BUILD_DIR)/%.pdf: $(SLIDES_DIR)/%.md
 	# $(REVEALMD) $(THEME_OPT) -r $@ $<
 	docker run --rm -v `pwd`:/pwd astefanutti/decktape http://$(DOCKER_IP):1948/$(notdir $(<)) /pwd/$@ || true
