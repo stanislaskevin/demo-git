@@ -1,9 +1,0 @@
-$("p").bind( "click", function() {
-   $(this).css( 'color','grey');
-    alert("hop, encore du gris");
-});
-
-$("p").one( "click", function() {
-   alert( $(this).text() );
-});
-

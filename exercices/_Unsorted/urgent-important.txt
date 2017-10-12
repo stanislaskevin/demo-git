@@ -1,4 +1,0 @@
-$("<button>Important</button>").click( function() {
-  $(this).parent()
-    .toggleClass("important");
-}).appendTo("p");

@@ -43,8 +43,9 @@ build: $(SLIDES_PDF)
 
 DOCKER_IP=$(shell ip addr show dev docker0 |sed -n 's|^.*\<inet\>\s\+\([^/]\+\)/.*|\1|p' )
 $(BUILD_DIR)/%.pdf: $(SLIDES_DIR)/%.md
+	mkdir -p build
 	# $(REVEALMD) $(THEME_OPT) -r $@ $<
-	docker run --rm -v `pwd`:/pwd astefanutti/decktape http://$(DOCKER_IP):1948/$(notdir $(<)) /pwd/$@ || true
+	docker run --rm -v `pwd`:/slides astefanutti/decktape http://$(DOCKER_IP):1948/$(notdir $(<)) /slides/$@ || true
 
 
 clean:

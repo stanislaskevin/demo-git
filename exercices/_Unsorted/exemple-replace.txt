@@ -1,9 +1,0 @@
-
-var par1 = $("p:first");
-var par2 = par1.parent(); 
-par1.remove();
-par2.prepend("<p>Pas Login, nananèreuh</p>");
-
-
-
-
