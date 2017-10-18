@@ -10,7 +10,7 @@ REVEALJS_DIR=node_modules/reveal.js
 BUILD_DIR=build
 #BUILD_DIR=slides
 SLIDES_DIR=slides
-SLIDES_MD=$(wildcard $(SLIDES_DIR)/*.md)
+SLIDES_MD=$(wildcard $(SLIDES_DIR)/**/*.md)
 #SLIDES_PDF=$(patsubst %.md,%.pdf,$(SLIDES_MD)),
 SLIDES_PDF=$(patsubst $(SLIDES_DIR)/%,$(BUILD_DIR)/%,$(patsubst %.md,%.pdf,$(SLIDES_MD)))
 
@@ -43,7 +43,7 @@ build: $(SLIDES_PDF)
 
 DOCKER_IP=$(shell ip addr show dev docker0 |sed -n 's|^.*\<inet\>\s\+\([^/]\+\)/.*|\1|p' )
 $(BUILD_DIR)/%.pdf: $(SLIDES_DIR)/%.md
-	mkdir -p build
+	mkdir -p "$$(dirname "$@")"
 	# $(REVEALMD) $(THEME_OPT) -r $@ $<
 	docker run --rm -v `pwd`:/slides astefanutti/decktape http://$(DOCKER_IP):1948/$(notdir $(<)) /slides/$@ || true
 
