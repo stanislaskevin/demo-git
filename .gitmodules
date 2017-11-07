@@ -1,0 +1,3 @@
+[submodule "libs/jcalculator"]
+	path = libs/jcalculator
+	url = https://github.com/balajmarius/jcalculator

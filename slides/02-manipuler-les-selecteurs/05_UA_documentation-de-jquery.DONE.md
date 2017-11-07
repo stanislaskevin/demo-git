@@ -15,7 +15,7 @@
 
 jQuery, comme n'importe laquelle des bibliothèques, possède de nombreuses fonctionnalités et méthodes dans son API.  Il est difficile de retenir tous ces noms et se souvenir de leur mise en pratique. 
 
-Heureusement, comme tous les grands projets, jQuery est bien documenté et supporté. Voici quelques __références documentaires pour retrouver rapidement l'information sur tout ce qui concerne le fonctionnement jQuery__.
+Heureusement, comme tous les grands projets, jQuery est bien documenté et supporté. Voici quelques __références documentaires__ pour retrouver rapidement l'information sur tout __ce qui concerne le fonctionnement jQuery__.
 
 ----
 
@@ -23,8 +23,8 @@ Heureusement, comme tous les grands projets, jQuery est bien documenté et suppo
 
 La documentation de jQuery est riche et détaillée. Vous y trouverez notamment : 
 
-* __la référence de l'API__, qui détaille chacune des méthodes et ses paramètres : <https://api.jquery.com> 
-* __des tutoriels pour apprendre__ à la bibliothèque : <http://learn.jquery.com>
+* __la référence de l'API__, qui explique en détail chacune des méthodes : <https://api.jquery.com> 
+* __des tutoriels pour apprendre__ le fonctionnement de la bibliothèque : <http://learn.jquery.com>
 
 <small>
 
@@ -38,19 +38,32 @@ La documentation de jQuery est riche et détaillée. Vous y trouverez notamment 
 
 ## Format de la documentation
 
-Chaque méthode est comporte deux sections :  _forme_  et  _description_ . C'est le cas sur toutes les pages, comme par exemple sur <http://api.jquery.com/css/>
+Chaque méthode est comporte deux sections :  _forme_  et  _description_. Voir par exemple sur <http://api.jquery.com/css/>
 
 ### Forme de la méthode
 
 Il arrive qu'une méthode puisse avoir plusieurs formes, avec un nombre différent de paramètres : cela veut dire que certains d'entre eux sont optionnels. 
 
-Par exemple, `css(  propertyName );` s'écrit aussi `css( propertyName, value );`, donc `value` est un paramètre optionnel.
+Par exemple :  `css( propertyName );` s'écrit aussi `css( propertyName, value );` donc `value` est un paramètre optionnel.
 
-En cliquant sur une forme ou un autre, cela vous mènera droit vers l'explication correspondante dans la section "description"
+<small>
+
+:arrow_right: En cliquant sur une forme ou un autre, cela vous mènera droit vers l'explication correspondante dans la section "description"
+
+</small>
+
+----
+
+## Format de la documentation (suite)
 
 ### Description de la méthode
 
-Pour chaque forme de la méthode, on retrouvera sa description en terme de fonctionnalités, ses valeurs de retours, une explication et des exemples détaillés.
+Pour chaque forme de la méthode, on retrouvera : 
+
+* sa description en terme de fonctionnalités, 
+* ses valeurs de retours, 
+* une explication de son fonctionnement 
+* et des exemples détaillés.
 
 ----
 
