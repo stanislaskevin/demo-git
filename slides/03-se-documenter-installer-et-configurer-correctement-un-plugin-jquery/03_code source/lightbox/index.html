@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Démo lightbox</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+ 
+    <!-- le chargement JS / CSS du slider -->
+    <link href="css/lightbox.css" rel="stylesheet">
+    <script src="js/lightbox.js"></script>
+    
+    <!-- style de la galerie -->
+    <style>
+    .cats { 
+     width: 650px;
+      margin: 50px auto;
+    }
+    img { 
+      width: 30%;
+    }
+    </style>
+    
+    <!-- paramétrage de la lightbox -->
+    <script>
+    lightbox.option({
+      'resizeDuration': 100,
+      'wrapAround': true
+    })
+    </script>
+  </head>
+
+  <body>
+   <!-- ... le haut de la page ... -->    
+    <h1>Démo lightbox</h1>
+    
+    <!-- le contenu HTML de la galerie -->
+    <div class="cats">
+    <a href="images/image-1.jpg" data-lightbox="cat"><img src="images/image-1.jpg"></a>
+    <a href="images/image-2.jpg" data-lightbox="cat"><img src="images/image-2.jpg"></a>
+    <a href="images/image-3.jpg" data-lightbox="cat"><img src="images/image-3.jpg"></a>
+    </div>
+  </body>
+</html>
