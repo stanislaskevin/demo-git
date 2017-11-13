@@ -36,13 +36,7 @@ install-style:
 		css/theme/netcat.css \
 
 zip:
-	git archive \
-		--format=zip \
-		--prefix="$(NAME)/" \
-		--output="$(NAME)-latest.zip" \
-		HEAD \
-	&& zip -d "$(NAME)-latest.zip" "$(NAME)/assets" \
-	&& zip -r "$(NAME)-latest.zip" assets
+	(git ls-files ; find assets) |grep -v '^ext' | zip -r "$(NAME)-latest.zip" -@
 
 live:
 	$(REVEALMD) --disable-auto-open --host 0.0.0.0 $(THEME_OPT) $(SLIDES_DIR)
