@@ -1,3 +1,6 @@
 [submodule "libs/jcalculator"]
 	path = libs/jcalculator
 	url = https://github.com/balajmarius/jcalculator
+[submodule "assets"]
+	path = assets
+	url = git@bitbucket.org:glenux/marp-assets.git
