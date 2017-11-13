@@ -34,6 +34,13 @@ install-style:
 		css/theme/source/netcat.scss \
 		css/theme/netcat.css \
 
+zip:
+	export NAME="$$(basename "$$(pwd)")" && \
+	git archive \
+		--format=zip \
+		--prefix="$$NAME/" \
+		--output="$$NAME-latest.zip" \
+		HEAD
 
 live:
 	$(REVEALMD) --disable-auto-open --host 0.0.0.0 $(THEME_OPT) $(SLIDES_DIR)
