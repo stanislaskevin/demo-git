@@ -1,0 +1,280 @@
+,B. Créer des sites web intéractifs,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,B2 : Jean-Maris Clery,Gagner en productivité avec jQuery,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Objectifs du module,Compétences,Codename,"Nom du module
+",Présentiel,Autonomie,Classe virtuelle,Dispositif tutoral,Activités,Titre des ressources et description,Type de ressources,Disponibilités des ressources,"Ressources (liens, sites…)",Ressources video,Ressources complémentaires,"Date de validation des road map
+VR > FB > VR","Temps de rédaction des textes et production des images, illustrations…","Temps de rédaction des questions, des feed back… ","Temps de rédaction de l’énoncé du cas + grille d’évaluation, critères, type d’évaluation (présenté, rendu…), par qui…","Temps de rédaction de l’énoncé du cas + grille d’évaluation, critères, type d’évaluation (présenté, rendu…), par qui…
+Consignes au au fur et à mesure
+","Relecture 1
+VR >FB",Retour des correction des formateurs,Date de validation des contenus rédigés,"Temps de extraction des textes sons (10 mn), 
+> Enregistrement de la voix (30 mn)
+",Date d'enregistement par lot (prévoir des journées entières),"Temps de production dans l’outil auteur:
+> Animation des slides,  
+> Synchronisation voix texte
+> Créeaion des évaluation formatives
+","Date de production dans outil auteur (aide de FB, puis Kelly ou formateurs)","Relecture 2
+par FB, puis corrections par Kelly","Date de validation 2
+VR",,"Temps d'intégration, test dans la plateforme",Date d'intégration plateforme,Temps de travail estimé de l’apprenant ,Auteur,Validation,Rédaction Formateur,Relecture,Correction formateur,Validation Rédaction,Production dans outil auteur,"Validation Production 
+"
+,,,01-contextualiser-l-utilisation-de-jquery-et-retracer-l-historiquejquery-langage-librairie-ou-framework.md,"Contextualiser l'utilisation de jQuery, et retracer l'historique",X,,,,,"jQuery : Langage, librairie ou framework ?",Document,A faire,https://stackoverflow.com/questions/7062775/is-jquery-a-javascript-library-or-framework,https://www.lynda.com/fr/jQuery-tutoriels/Presentation-jQuery/193138/342959-4.html,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,02-contextualiser-l-utilisation-de-jquery-et-retracer-l-historiquejquery-aujourd-hui-quelle-utilisation.md,"Contextualiser l'utilisation de jQuery, et retracer l'historique.",X,,,,,jQuery aujourd'hui : quelle utilisation ?,Document,A faire,http://www.mathieurobin.com/2014/09/il-est-temps-davoir-deja-quitte-jquery/,NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,03-contextualiser-l-utilisation-de-jquery-et-retracer-l-historiqueinstaller-jquery-sur-une-page-web.md,"Contextualiser l'utilisation de jQuery, et retracer l'historique.",X,,,,,Installer jQuery sur une page web,Vidéo (screencast),A faire,"https://www.w3schools.com/jquery/jquery_get_started.asp
+
+https://www.digitalocean.com/community/tutorials/an-introduction-to-jquery
+
+https://www.youtube.com/watch?v=YbkIbT1bcUI
+","https://www.lynda.com/fr/jQuery-tutoriels/Mise-place-installation-jQuery/193138/342962-4.html
+
+https://www.lynda.com/fr/jQuery-tutoriels/Chargement-DOM/193138/342968-4.html",,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,04-contextualiser-l-utilisation-de-jquery-et-retracer-l-historiqueverifier-la-presence-de-jquery.md,"Contextualiser l'utilisation de jQuery, et retracer l'historique.",X,,,,,Verifier la présence de jquery,TD,A faire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,05-contextualiser-l-utilisation-de-jquery-et-retracer-l-historiqueles-differentes-versions-de-jquery.md,"Contextualiser l'utilisation de jQuery, et retracer l'historique",,X,,,,Les différentes versions de jQuery,Document,A faire,"https://jquery.org/history/
+
+http://developer.telerik.com/featured/whats-new-in-jquery-3/
+",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,06-contextualiser-l-utilisation-de-jquery-et-retracer-l-historiqueretour-vers-le-passe-la-dominance-d-ie6.md,"Contextualiser l'utilisation de jQuery, et retracer l'historique.",,X,,,,"Retour vers le passé, la dominance d'IE6",Document,A faire,"https://framablog.org/2009/02/20/stop-internet-explorer-6/
+
+http://www.pompage.net/traduction/envoyons-paitre-les-mauvais",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,07-contextualiser-l-utilisation-de-jquery-et-retracer-l-historiquejquery-et-ses-concurrents-a-la-rescousse.md,"Contextualiser l'utilisation de jQuery, et retracer l'historique.",,X,,,,jQuery et ses concurrents à la rescousse,Document,A faire,"https://openclassrooms.com/courses/un-site-web-dynamique-avec-jquery/d-autres-frameworks-javascript-1
+
+https://www.developpez.com/actu/46700/jQuery-est-utilise-par-un-site-sur-deux-le-Framework-JavaScript-a-enregistre-la-croissance-la-plus-rapide-dans-les-technologies-du-Web-en-2011/
+
+https://www.sitepoint.com/top-5-jquery-ui-alternatives/
+
+http://youmightnotneedjquery.com/
+
+http://vanilla-js.com/",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,08-contextualiser-l-utilisation-de-jquery-et-retracer-l-historiqueculture-web-javascript-jquery.md,"Contextualiser l'utilisation de jQuery, et retracer l'historique.",,X,,,,Culture web / javascript / jQuery,QCM,A faire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,09-manipuler-les-selecteursdefinition-et-ecriture-d-un-selecteur-jquery.md,Manipuler les sélecteurs,X,,,,,Définition et écriture d'un sélecteur jQuery,Vidéo (screencast),A faire,"https://api.jquery.com/category/selectors/
+
+https://openclassrooms.com/courses/simplifiez-vos-developpements-javascript-avec-jquery/plus-loin-dans-la-selection-d-elements
+
+https://openclassrooms.com/courses/jquery-dynamisez-vos-pages-plus-simplement/les-selecteurs-2
+
+https://www.w3schools.com/jquery/jquery_ref_selectors.asp
+
+https://learn.jquery.com/performance/optimize-selectors/","https://www.lynda.com/fr/jQuery-tutoriels/selecteurs-peuvent-etre-affines/193138/342971-4.html
+
+https://www.lynda.com/fr/jQuery-tutoriels/selecteurs-jQuery/193138/342974-4.html
+
+https://www.lynda.com/fr/jQuery-tutoriels/contextes-selection-jQuery/193138/342979-4.html",,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,10-manipuler-les-selecteursappliquer-des-fonctions-simples-sur-des-elements.md,Manipuler les sélecteurs,X,,,,,Appliquer des fonctions simples sur des éléments,Vidéo (screencast),A faire,https://www.w3schools.com/jquery/jquery_examples.asp,https://www.lynda.com/fr/jQuery-tutoriels/chainage-jQuery/193138/342985-4.html,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,11-manipuler-les-selecteursstocker-un-selecteur-dans-une-variable.md,Manipuler les sélecteurs,X,,,,,Stocker un sélecteur dans une variable,Document,A faire,"https://forum.jquery.com/topic/syntax-for-variable-as-selector
+
+https://stackoverflow.com/questions/5891840/how-to-use-javascript-variables-in-jquery-selectors",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,12-manipuler-les-selecteursselectionner-des-elements-et-changer-leur-css-avec-jquery.md,Manipuler les sélecteurs,,,,,,Sélectionner des élements et changer leur CSS avec jQuery,EXERCICE,A faire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,13-manipuler-les-selecteursdocumentation-de-jquery.md,Manipuler les sélecteurs,,X,,,,Documentation de jQuery,Document,A faire,"https://api.jquery.com/
+
+http://jqapi.com/
+
+http://www.jquery-fr.com/forum/
+
+https://openclassrooms.com/courses/un-site-web-dynamique-avec-jquery/la-documentation-de-jquery
+",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,14-se-documenter-installer-et-configurer-correctement-un-plugin-jquerydefinition-d-un-plugin-jquery.md,"Se documenter, installer et configurer correctement un plugin jQuery",,X,X,,,Définition d'un plugin jQuery,Document,A faire,"https://learn.jquery.com/plugins/
+
+https://www.tutorialspoint.com/jquery/jquery-plugins.htm
+",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,15-se-documenter-installer-et-configurer-correctement-un-plugin-jquerychoisir-correctement-son-plugin-jquery-parmi-tous-ceux-existants.md,"Se documenter, installer et configurer correctement un plugin jQuery",,X,X,,,Choisir correctement son plugin jQuery parmi tous ceux existants,Document,A faire,"https://www.npmjs.com/browse/keyword/jquery-pluginhttps://plugins.jquery.com/
+
+https://github.com/petk/awesome-jquery
+",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,16-se-documenter-installer-et-configurer-correctement-un-plugin-jqueryinstaller-un-slider-anime-avec-bxslider.md,"Se documenter, installer et configurer correctement un plugin jQuery",,X,X,,,"Installer un slider animé avec ""bxSlider""",Document,A faire,http://bxslider.com/,NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,17-se-documenter-installer-et-configurer-correctement-un-plugin-jqueryinstaller-une-galerie-d-images-avec-lightbox.md,"Se documenter, installer et configurer correctement un plugin jQuery",,X,X,,,"Installer une galerie d'images avec ""lightbox""",Document,A faire,"https://plugins.jquery.com/tag/lightbox/
+
+http://lokeshdhakar.com/projects/lightbox2/#getting-started
+
+http://fancybox.net/howto
+",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,18-se-documenter-installer-et-configurer-correctement-un-plugin-jqueryinstaller-et-parametrer-un-plugin-de-slider.md,"Se documenter, installer et configurer correctement un plugin jQuery",,X,X,,,Installer et paramètrer un plugin de slider,EXERCICE,A faire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,19-manipuler-le-dom-avec-jqueryrecuperer-et-modifier-le-contenu-de-balises-html-text-et-html.md,Manipuler le DOM avec jQuery,,X,,X,,Récupérer et modifier le contenu de balises HTML : text() et html(),Vidéo (screencast),A faire,"http://api.jquery.com/text/
+
+http://api.jquery.com/html/","https://www.lynda.com/fr/jQuery-tutoriels/text-val/193138/343004-4.html
+
+https://www.lynda.com/fr/jQuery-tutoriels/html/193138/343007-4.html",,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,20-manipuler-le-dom-avec-jquerygerer-les-attributs-de-balises-html-attr-prop-removeattr-et-removeprop.md,Manipuler le DOM avec jQuery,,X,,X,,"Gérer les attributs de balises HTML : attr() , prop() , removeAttr() et removeProp()",Vidéo (screencast),A faire,"http://api.jquery.com/attr/
+
+http://api.jquery.com/prop/
+
+https://stackoverflow.com/questions/5874652/prop-vs-attr
+",https://www.lynda.com/fr/jQuery-tutoriels/Attributs-proprietes/193138/343014-4.html,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,21-manipuler-le-dom-avec-jquerygerer-les-classes-css-addclass-removeclass-toggleclass-hasclass.md,Manipuler le DOM avec jQuery,,X,,X,,"Gérer les classes CSS : addClass() , removeClass() , toggleClass() , hasClass()",Vidéo (screencast),A faire,"https://api.jquery.com/addclass/
+
+https://api.jquery.com/removeclass/
+
+http://api.jquery.com/toggleclass/",https://www.lynda.com/fr/jQuery-tutoriels/addClass-removeClass-toggleClass/193138/343013-4.html,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,22-manipuler-le-dom-avec-jquerymanipuler-les-attributs-des-balises.md,Manipuler le DOM avec jQuery,,X,X,,,Manipuler les attributs des balises,QCM,A faire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,23-manipuler-le-dom-avec-jqueryrecuperer-et-definir-les-dimensions-d’elements-html-width-height-outerwidth-outerheight.md,Manipuler le DOM avec jQuery,,X,,X,,"Récupérer et définir les dimensions d’éléments HTML : width() , height() , outerWidth() , outerHeight()",Document,A faire,"https://www.w3schools.com/jquery/jquery_dimensions.asp
+
+http://api.jquery.com/height/
+
+http://api.jquery.com/outerheight/
+
+http://api.jquery.com/width/
+
+http://api.jquery.com/outerwidth/",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,24-manipuler-le-dom-avec-jqueryrecuperer-la-position-d’elements-html-offset-et-position.md,Manipuler le DOM avec jQuery,,X,,X,,Récupérer la position d’éléments HTML : offset() et position(),Document,A faire,"http://api.jquery.com/offset/
+
+https://api.jquery.com/position/
+
+https://stackoverflow.com/questions/3202008/jquery-difference-between-position-and-offset
+",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,25-manipuler-le-dom-avec-jqueryinserer-du-contenu-a-l’interieur-d’elements-html-avec-text-html-insertbefore-insertafter.md,Manipuler le DOM avec jQuery,,X,,X,,"Insérer du contenu à l’intérieur d’éléments HTML avec text(), html(), insertBefore(), insertAfter(), ...",Vidéo (screencast),A faire,"http://api.jquery.com/insertafter/
+
+http://api.jquery.com/insertbefore/
+
+http://api.jquery.com/append/
+
+http://api.jquery.com/after/
+
+http://api.jquery.com/before/
+
+https://jsperf.com/jquerhttp://api.jquery.com/before/-insert-before-insert-after-appendto-html-replace",https://www.lynda.com/fr/jQuery-tutoriels/Autour-avant-apres-etc/193138/343010-4.html,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,26-manipuler-le-dom-avec-jquerymaanipuler-la-structure-du-dom.md,Manipuler le DOM avec jQuery,,X,X,,,Maanipuler la structure du DOM,QCM,A faire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,27-reagir-aux-actions-utilisateurs-avec-les-gestionnaires-d’evenementattendre-le-chargement-du-dom-ready.md,Réagir aux actions utilisateurs avec les gestionnaires d’évènement.,,,X,X,,Attendre le chargement du DOM : ready(),Document,A faire,"http://api.jquery.com/ready/
+
+https://learn.jquery.com/using-jquery-core/document-ready/
+
+https://www.w3schools.com/jquery/event_ready.asp
+
+https://blog.lesieur.name/eviter-les-multiples-jquery-document-ready-dans-vos-pages-web/",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,28-reagir-aux-actions-utilisateurs-avec-les-gestionnaires-d’evenementles-evenements-souris.md,Réagir aux actions utilisateurs avec les gestionnaires d’évènement.,,,X,X,,Les évènements souris,Document,A faire,"https://api.jquery.com/category/events/mouse-events/
+
+http://culttt.com/2012/11/28/jquery-mouse-events/
+",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,29-reagir-aux-actions-utilisateurs-avec-les-gestionnaires-d’evenementles-evenements-clavier.md,Réagir aux actions utilisateurs avec les gestionnaires d’évènement.,,,X,X,,Les évènements clavier,Document,A faire,"https://api.jquery.com/category/events/keyboard-events/
+
+https://api.jquery.com/event.which/",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,30-reagir-aux-actions-utilisateurs-avec-les-gestionnaires-d’evenementevenements-globaux.md,Réagir aux actions utilisateurs avec les gestionnaires d’évènement.,,,X,X,,Evènements globaux,Document,A faire,"https://www.w3schools.com/jquery/jquery_ref_events.asp
+
+https://openclassrooms.com/courses/un-site-web-dynamique-avec-jquery/jquery-et-les-evenements",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,31-reagir-aux-actions-utilisateurs-avec-les-gestionnaires-d’evenementbonnes-pratiques-avec-on-off.md,Réagir aux actions utilisateurs avec les gestionnaires d’évènement.,,,X,X,,"Bonnes pratiques avec on() , off()",Vidéo (screencast),A faire,"https://www.w3schools.com/jquery/event_off.asp
+
+https://www.w3schools.com/jquery/event_on.asp",https://www.lynda.com/fr/jQuery-tutoriels/bind-click-on/193138/343034-4.html,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,32-reagir-aux-actions-utilisateurs-avec-les-gestionnaires-d’evenementdeclancher-programmatiquement-des-evenements-avec-trigger.md,Réagir aux actions utilisateurs avec les gestionnaires d’évènement.,,,X,X,,Déclancher programmatiquement des évènements avec trigger(),Document,A faire,"http://api.jquery.com/trigger/
+
+https://www.w3schools.com/jquery/event_trigger.asp
+
+https://openclassrooms.com/courses/simplifiez-vos-developpements-javascript-avec-jquery/plus-loin-dans-la-gestion-evenementielle
+
+https://stackoverflow.com/questions/9584892/can-you-set-event-data-with-jquery-trigger",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,33-reagir-aux-actions-utilisateurs-avec-les-gestionnaires-d’evenementmettre-en-oeuvre-la-gestion-et-le-declanchement-d’evenements.md,Réagir aux actions utilisateurs avec les gestionnaires d’évènement.,,X,X,,,Mettre en oeuvre la gestion et le déclanchement d’évènements,TD,A faire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,34-parcourir-le-dom-avec-les-methodes-de-traversingatteindre-les-noeuds-enfants-d’un-element-html-children-et-find.md,Parcourir le DOM avec les méthodes de traversing.,,X,,X,,Atteindre les noeuds enfants d’un élément HTML : children() et find(),Document,A faire,"https://api.jquery.com/children/
+
+https://api.jquery.com/find/
+
+https://sutterlity.gitbooks.io/apprendre-jquery/content/parcourir_le_dom/les_enfants.html
+
+https://www.w3schools.com/jquery/jquery_traversing_descendants.asp",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,35-parcourir-le-dom-avec-les-methodes-de-traversingatteindre-les-noeuds-parents-d’un-element-html-parent-et-parents.md,Parcourir le DOM avec les méthodes de traversing.,,X,,X,,Atteindre les noeuds parents d’un élément HTML : parent() et parents(),Document,A faire,"http://api.jquery.com/parent/
+
+http://api.jquery.com/parents/
+
+http://api.jquery.com/parentsUntil/
+
+http://api.jquery.com/closest/
+
+https://sutterlity.gitbooks.io/apprendre-jquery/content/parcourir_le_dom/les_parents.html",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,36-parcourir-le-dom-avec-les-methodes-de-traversingatteindre-les-noeuds-freres-d’un-element-html-next-et-prev.md,Parcourir le DOM avec les méthodes de traversing.,,X,,X,,Atteindre les noeuds frères d’un élément HTML : next() et prev(),Document,A faire,"http://api.jquery.com/siblings/
+
+http://api.jquery.com/next/
+
+http://api.jquery.com/nextAll/
+
+http://api.jquery.com/nextUntil/
+
+http://api.jquery.com/prev/
+
+http://api.jquery.com/prevAll/
+
+http://api.jquery.com/prevUntil/
+
+https://sutterlity.gitbooks.io/apprendre-jquery/content/parcourir_le_dom/les_freres.html",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,37-parcourir-le-dom-avec-les-methodes-de-traversingrecuperer-un-enfant-d’un-element-html-eq-first-et-last.md,Parcourir le DOM avec les méthodes de traversing.,,X,,X,,"Récupérer un enfant d’un élément HTML : eq(), first() et last()",Document,A faire,"http://api.jquery.com/last/
+
+http://api.jquery.com/first/
+
+http://api.jquery.com/eq/
+
+http://api.jquery.com/filter/
+
+https://sutterlity.gitbooks.io/apprendre-jquery/content/parcourir_le_dom/les_filtres.html",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,38-parcourir-le-dom-avec-les-methodes-de-traversingcontroler-l’etat-d’un-element-html-is-et-has.md,Parcourir le DOM avec les méthodes de traversing.,,X,,X,,Contrôler l’état d’un élément HTML : is() et has(),Document,A faire,"https://api.jquery.com/has/
+
+https://api.jquery.com/has/
+
+",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,39-parcourir-le-dom-avec-les-methodes-de-traversingtraiter-et-filtrer-les-elements-html-d’une-collection-each-map-filter-et-not.md,Parcourir le DOM avec les méthodes de traversing.,,X,,X,,"Traiter et filtrer les éléments HTML d’une collection : each() , map() , filter() et not()",Document,A faire,"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/filter
+
+http://codeblog.cz/vanilla/filtering.html#filter",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,40-parcourir-le-dom-avec-les-methodes-de-traversingrealiser-une-galerie-d’images.md,Parcourir le DOM avec les méthodes de traversing.,,X,,X,,Réaliser une galerie d’images,EXERCICE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,41-interagir-avec-les-elements-de-formulaire-et-gerer-les-erreursles-evenements-de-formulaire.md,Interagir avec les éléments de formulaire et gérer les erreurs.,,X,,X,,Les évènements de formulaire,Document,A faire,"https://api.jquery.com/category/events/form-events/
+
+https://www.w3schools.com/TAGS/ref_eventattributes.asp",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,42-interagir-avec-les-elements-de-formulaire-et-gerer-les-erreursrecuperer-les-valeurs-d’un-champs-val.md,Interagir avec les éléments de formulaire et gérer les erreurs.,,X,,X,,Récupérer les valeurs d’un champs : val(),Document,A faire,"http://api.jquery.com/val/
+
+
+https://www.w3schools.com/jquery/html_val.asp
+
+DEMO: https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_dom_html_set",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,43-interagir-avec-les-elements-de-formulaire-et-gerer-les-erreursempecher-la-validation-d’un-formulaire-preventdefault.md,Interagir avec les éléments de formulaire et gérer les erreurs.,,X,,X,,Empêcher la validation d’un formulaire : preventDefault(),Vidéo (screencast),A faire,"https://api.jquery.com/event.preventdefault/
+
+https://css-tricks.com/return-false-and-prevent-default/
+
+RAPPEL: https://www.alsacreations.com/article/lire/578-La-gestion-des-evenements-en-JavaScript.html",https://www.lynda.com/fr/jQuery-tutoriels/gestion-evenement/193138/343032-4.html,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,44-interagir-avec-les-elements-de-formulaire-et-gerer-les-erreursutiliser-le-plugin-jquery-validation-pour-une-gestion-avancee-des-erreurs.md,Interagir avec les éléments de formulaire et gérer les erreurs.,,X,,X,,Utiliser le plugin “jQuery validation” pour une gestion avancée des erreurs,Document,A faire,"https://jqueryvalidation.org/
+
+DEMO: https://jqueryvalidation.org/files/demo/
+
+",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,45-interagir-avec-les-elements-de-formulaire-et-gerer-les-erreursrealiser-un-formulaire-interactif.md,Interagir avec les éléments de formulaire et gérer les erreurs.,,X,,X,,Réaliser un formulaire intéractif,EXERCICE,A faire,NC,NC,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,46-communiquer-avec-un-serveur-rest-grace-a-ajaxdefinition-d’un-serveur-rest.md,Communiquer avec un serveur REST grâce à AJAX.,X,,,,,Définition d’un serveur REST,Document,A faire,"https://fr.wikipedia.org/wiki/Representational_state_transfer
+
+https://www.projet-plume.org/ressource/les-services-web-de-type-rest
+
+https://openclassrooms.com/courses/utilisez-des-api-rest-dans-vos-projets-web/pourquoi-rest
+",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,47-communiquer-avec-un-serveur-rest-grace-a-ajaxpresentation-d’ajax.md,Communiquer avec un serveur REST grâce à AJAX.,X,,,,,Présentation d’AJAX,Document,A faire,"https://fr.wikipedia.org/wiki/Ajax_(informatique)
+
+https://openclassrooms.com/courses/dynamisez-vos-sites-web-avec-javascript/l-ajax-qu-est-ce-que-c-est
+
+https://www.w3schools.com/js/js_ajax_intro.asp",https://www.lynda.com/fr/AJAX-tutoriels/Presentation-formation-AJAX-jQuery/193220/331599-4.html,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,48-communiquer-avec-un-serveur-rest-grace-a-ajaxrecuperer-des-donnees-depuis-un-serveur-rest-avec-jquery-get-getjson-et-ajax.md,Communiquer avec un serveur REST grâce à AJAX.,X,,,,,"Récupérer des données depuis un serveur REST avec jQuery : $.get , $.getJSON et $.ajax",Vidéo (screencast),A faire,"REF: http://api.jquery.com/jquery.ajax/
+
+https://www.w3schools.com/jquery/jquery_ref_ajax.asp
+
+https://sutterlity.gitbooks.io/apprendre-jquery/content/la_methode_ajax.html
+
+https://openclassrooms.com/courses/un-site-web-dynamique-avec-jquery/le-fonctionnement-de-ajax
+
+https://openclassrooms.com/courses/simplifiez-vos-developpements-javascript-avec-jquery/premiers-pas-avec-ajax
+
+","https://www.lynda.com/fr/AJAX-tutoriels/approche-rapide-load/193220/331605-4.html
+
+https://www.lynda.com/fr/AJAX-tutoriels/ajax-mode-abrege/193220/331616-4.html
+
+https://www.lynda.com/fr/AJAX-tutoriels/diverses-fonctions-rappel/193220/331623-4.html
+
+https://www.lynda.com/fr/AJAX-tutoriels/proprietes-requete/193220/331630-4.html",,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,49-communiquer-avec-un-serveur-rest-grace-a-ajaxenvoyer-des-donnees-vers-un-serveur-rest-avec-jquery-post-et-ajax.md,Communiquer avec un serveur REST grâce à AJAX.,X,,,,,Envoyer des données vers un serveur REST avec jQuery : $.post et $.ajax,Vidéo (screencast),A faire,IDEM au dessus,https://www.lynda.com/fr/AJAX-tutoriels/alternatives-post-get/193220/331610-4.html,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,50-communiquer-avec-un-serveur-rest-grace-a-ajaxrealiser-un-mini-player-audio-en-utilisant-l-api-de-deezer.md,Communiquer avec un serveur REST grâce à AJAX.,X,,,,,Réaliser un mini-player audio en utilisant l'API de Deezer,EXERCICE,A faire,"https://stackoverflow.com/questions/19123656/calling-deezer-api-using-ajax-jquery-datatype-json-return-null-jsonp-retur
+
+https://stackoverflow.com/questions/23185964/how-do-i-use-the-deezer-api
+
+",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,51-mettre-en-place-des-animations-et-effets-simplesretour-sur-le-fading-et-sliding-de-jquery.md,Mettre en place des animations et effets simples.,X,,,,,Retour sur le fading et sliding de jQuery,Document,A faire,"https://api.jquery.com/category/effects/fading/
+
+https://www.w3schools.com/jquery/jquery_fade.asp
+
+https://stackoverflow.com/questions/10863000/is-it-better-to-use-jquery-fadein-or-css3-animations",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,52-mettre-en-place-des-animations-et-effets-simplesanimer-des-proprietes-css-avec-animate.md,Mettre en place des animations et effets simples.,X,,,,,Animer des propriétés CSS avec animate(),Vidéo (screencast),A faire,http://api.jquery.com/animate/,"https://www.lynda.com/fr/jQuery-tutoriels/divers-modes-animation/193138/343046-4.html
+
+https://www.lynda.com/fr/jQuery-tutoriels/Mise-place-animations/193138/343047-4.html
+
+https://www.lynda.com/fr/jQuery-tutoriels/callbacks-apres-animation/193138/343050-4.html",,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,53-mettre-en-place-des-animations-et-effets-simplesdes-animations-plus-poussees-et-performantes-avec-velocity-js.md,Mettre en place des animations et effets simples.,X,,,,,Des animations plus poussées et performantes avec “Velocity.js”,Document,A faire,"http://velocityjs.org/
+
+https://codepen.io/collection/tIjGb/",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,54-creer-un-plugin-jquerycreer-le-squelette-de-son-plugin.md,Créer un plugin jQuery.,X,,,,,Créer le squelette de son plugin,Document,A faire,"https://openclassrooms.com/courses/developpez-votre-propre-plug-in-jquery
+
+https://learn.jquery.com/plugins/basic-plugin-creation/",NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,55-creer-un-plugin-jqueryun-plugin-jquery-simple.md,Créer un plugin jQuery.,X,,,,,Un plugin jQuery simple,TD,A faire,IDEM au dessus,NON,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,56-creer-un-plugin-jquerytransformer-la-galerie-d-image-en-plugin-reutilisable.md,Créer un plugin jQuery.,X,,,,,Transformer la galerie d'image en plugin réutilisable,EXERCICE,A faire,NC,NC,,,,,,,,,,,,,,,,,,,,,,,,,,,
