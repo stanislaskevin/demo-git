@@ -13,6 +13,7 @@ SLIDES_DIR=slides
 SLIDES_MD=$(wildcard $(SLIDES_DIR)/**/*.md)
 #SLIDES_PDF=$(patsubst %.md,%.pdf,$(SLIDES_MD)),
 SLIDES_PDF=$(patsubst $(SLIDES_DIR)/%,$(BUILD_DIR)/%,$(patsubst %.md,%.pdf,$(SLIDES_MD)))
+NAME=$(shell basename "$$(pwd)")
 
 REVEALMD=node_modules/.bin/reveal-md
 all: live
@@ -35,12 +36,13 @@ install-style:
 		css/theme/netcat.css \
 
 zip:
-	export NAME="$$(basename "$$(pwd)")" && \
 	git archive \
 		--format=zip \
-		--prefix="$$NAME/" \
-		--output="$$NAME-latest.zip" \
-		HEAD
+		--prefix="$(NAME)/" \
+		--output="$(NAME)-latest.zip" \
+		HEAD \
+	&& zip -d "$(NAME)-latest.zip" "$(NAME)/assets" \
+	&& zip -r "$(NAME)-latest.zip" assets
 
 live:
 	$(REVEALMD) --disable-auto-open --host 0.0.0.0 $(THEME_OPT) $(SLIDES_DIR)
