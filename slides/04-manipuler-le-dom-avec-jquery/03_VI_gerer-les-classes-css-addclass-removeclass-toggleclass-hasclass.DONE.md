@@ -5,9 +5,19 @@
 
 # Manipuler le DOM avec jQuery
 
-### Gérer les classes CSS : addClass() , removeClass() , toggleClass() , hasClass()
+### Gérer les classes CSS
 
 <!-- 04/03 Vidéo (screencast) -->
 
 ----
+
+## Gérer les classes CSS
+
+Découvrons tout cela en vidéo
+
+https://www.lynda.com/fr/jQuery-tutoriels/addClass-removeClass-toggleClass/193138/343013-4.html
+
+----
+
+## Merci pour votre attention
 

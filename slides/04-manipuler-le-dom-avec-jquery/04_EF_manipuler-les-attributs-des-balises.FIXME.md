@@ -5,9 +5,17 @@
 
 # Manipuler le DOM avec jQuery
 
-### Insérer du contenu à l’intérieur d’éléments HTML avec text(), html(), insertBefore(), insertAfter(), ...
+### Manipuler les attributs des balises
 
-<!-- 04/07 Vidéo (screencast) -->
+<!-- 04/04 QCM -->
 
 ----
+
+
+FIXME
+
+
+----
+
+## Merci pour votre attention
 

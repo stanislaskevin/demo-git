@@ -18,13 +18,16 @@ NAME=$(shell basename "$$(pwd)")
 REVEALMD=node_modules/.bin/reveal-md
 all: live
 
-install: install-reveal install-style
+configure: configure-assets configure-reveal configure-style
 
-install-reveal:
+configure-assets:
+	$(MAKE) -C assets build 
+
+configure-reveal:
 	npm install reveal-md # -v 0.0.19
 	npm install node-sass
 
-install-style:
+configure-style:
 	# cp -a themes/gnuside.css $(REVEALJS_THEMES)
 	cp -a themes/gnuside.scss $(REVEALJS_THEMES)/source
 	cp -a themes/netcat.scss $(REVEALJS_THEMES)/source
