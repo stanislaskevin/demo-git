@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>EM Task Manager</title>
+
+    <!-- j'inclus jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- j'inclus mon code à moi pour javascript / jquery -->
+    <script src="app.js"></script>
+    <!-- j'inclus ma feuille de style CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/template" id="task-template" >
+    	<p class="task active">
+    	<input type="checkbox" id="TOTO"/>
+    	<label for="TOTO">TOTO</label>
+    	</p>
+	</script>
+  </head>
+
+  <body>
+    <h1>EM Task Manager</h1>
+    <nav>
+      Afficher les tâches :
+      <ul>
+        <li><input type="button" value="en cours" id="show-active"></li>
+        <li><input type="button" value="terminées" id="show-completed"></li>
+        <li><input type="button" value="toutes" id="show-all"></li>
+      </ul>
+    </nav>
+
+    <form action="#" method="get">
+      <div>
+        <input id="future-task" type="text" placeholder="Nouvelle tâche" />
+        <input id="add-future-task" type="submit" value="Ajouter" />
+      </div>
+
+      <div id="task-list" class="mode-active">
+      </div>
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+
+* { box-sizing: border-box; }
+
+#task-list.mode-all .task {
+	display: block;
+}
+
+/* quand je suis dans le mode "active", je n'affiche
+ * que les taches en cours
+ */
+#task-list.mode-active .task.active {
+	display: block;
+}
+#task-list.mode-active .task.completed {
+	display: none;
+}
+
+/* quand je suis dans le mode "completed", je n'affiche
+ * que les taches complétées
+ */
+#task-list.mode-completed .task.active {
+	display: none;
+}
+#task-list.mode-completed .task.completed {
+	display: block;
+}
+
