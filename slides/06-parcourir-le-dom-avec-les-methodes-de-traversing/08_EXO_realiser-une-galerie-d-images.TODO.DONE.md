@@ -11,6 +11,9 @@
 
 ----
 
+TODO: ajouter les boutons qui permettent de passer à l'élément suivant  ou à l'élément précédent
+
+
 ----
 
 ## Merci pour votre attention

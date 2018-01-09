@@ -8,6 +8,7 @@
 ### Contrôler l’état d’un élément HTML
 
 <!-- 06/05 Document -->
+<!-- is et has -->
 
 ----
 

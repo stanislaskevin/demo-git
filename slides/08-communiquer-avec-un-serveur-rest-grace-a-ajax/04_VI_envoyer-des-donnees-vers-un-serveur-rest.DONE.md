@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="../../assets/style.css" />
 
-# Communiquer avec un serveur REST grâce à AJAX.
+# Communiquer avec un serveur REST grâce à AJAX
 
 ### Envoyer des données vers un serveur REST avec jQuery
 
@@ -12,25 +12,37 @@
 ----
 
 
-## En vidéo
+## Envoyer des données vers un serveur REST avec jQuery
 
-https://www.lynda.com/fr/AJAX-tutoriels/ajax-mode-abrege/193220/331616-4.html
+Nous avons vu les différentes méthodes pour récupérer du contenu depuis un serveur REST.
 
+Cependant, si l'on veut que le serveur réagisse ou enregistre les informations de l'utilisateur, il nous faut également des fonctions pour lui envoyer des données.
 
-<!--
+Voyons les méthodes pour ce faire.
 
 ----
 
 ## La méthode POST
 
-La méthode `$.post(url [,datas] [,function] [,type])` effectue une requête AJAX avec une méthode HTTP POST
+La méthode `$.post(url,data, function, type)` effectue une requête AJAX avec une méthode HTTP POST :
 
-* url : ressource à charger
-* datas : paires clé/valeur envoyées au serveur
-* function : fonction à exécuter en cas de réussite de la
-requête
-* type : type de la réponse fournie à la fonction callback pouvant être : xml, html, script, json, jsonp, text
+* _url_: ressource à charger
+* _data_ : paires clé/valeur envoyées au serveur
+* _function_ : fonction à exécuter en cas de réussite de la requête
+* _type_ : type de la réponse fournie à la fonction callback pouvant être : xml, html, script, json, jsonp, text
 
+----
+
+## En vidéo
+
+Voyons, en vidéo, comment mettre cela en pratique :
+
+<https://www.lynda.com/fr/AJAX-tutoriels/ajax-mode-abrege/193220/331616-4.html>
+
+
+<!--
+
+----
 
 ----
 

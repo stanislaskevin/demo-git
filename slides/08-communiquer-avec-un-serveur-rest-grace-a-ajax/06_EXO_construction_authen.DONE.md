@@ -1,4 +1,6 @@
- 
+
+FIXME: rédiger l'exercice
+
  construction d'une popup
 ●
  Pour illustrer la prise en main de jQuery, nous

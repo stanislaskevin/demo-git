@@ -13,14 +13,25 @@
 
 ## Définition et écriture d'un sélecteur jQuery
 
-Comprendre la notion de sélecteur est essentiel pour utiliser les fonctions jQuery, car tout jQuery repose sur une seule fonction `jQuery()` ou plus simplement `$()`.
+Comprendre la notion de sélecteur est essentiel pour utiliser les fonctions jQuery, car tout jQuery repose sur une seule fonction `jQuery()`, qui s'écrit également `$()` .
 
-__Cette fonction peut prendre deux types de paramètres :__
+__Cette fonction sert à trois choses :__
 
-- __soit un sélecteur pour trouver un ensemble d'élements__ sur la page (on parlera de _requête_ et d'une _collection_ d'objet en résultat)
-- __soit une fonction qui sera exécutée lorsque le DOM sera chargé__
+- trouver un ensemble d'éléments
+- executer une fonction lorsque le DOM sera chargé
+- transformer un objet DOM en objet jQuery
 
-Voyons les principaux types de sélecteurs.
+----
+
+## Définition et écriture d'un sélecteur jQuery
+
+Comprendre la notion de sélecteur est essentiel pour utiliser les fonctionalités de jQuery, car la majeure partie de jQuery fonctionne sur le schéma suivant :
+
+1. demander un certain type d'objets sur la page (on parlera de _requête_),
+2. trouver un ensemble d'éléments sur la page (on parlera de _collection_ d'objet en résultat),
+3. appliquer une ou plusieurs fonctions aux éléments trouvés.
+
+Les sélecteurs en jQuery ressemblent énormément aux sélecteurs CSS. Voyons ensemble leur syntaxe.
 
 ----
 
@@ -32,7 +43,7 @@ Voyons les principaux types de sélecteurs.
 $("tagname")
 ```
 
-où _tagname_ est le nom de la balise de l'élément visé
+... où _tagname_ est le nom de la balise de l'élément visé (ex: `h1`, `h2`, `ul`, `li`...)
 
 ### Par classes CSS
 
@@ -40,7 +51,7 @@ où _tagname_ est le nom de la balise de l'élément visé
 $(".classname")
 ```
 
-où _classname_ est le nom de la classe CSS de l'élément visé
+... où _classname_ est le nom de la classe CSS de l'élément visé.
 
 ----
 
@@ -85,7 +96,7 @@ Comme CSS, jQuery accepte aussi des pseudo-classes, pour
 
 Maintenant que vous avez quelques notions, voyons comment utiliser cette syntaxe dans des cas réels, en vidéo :
 
-<https://www.lynda.com/fr/jQuery-tutoriels/Principe-utilisation-jQuery/193138/342964-4.html>
+:arrow_forward: <https://www.lynda.com/fr/jQuery-tutoriels/Principe-utilisation-jQuery/193138/342964-4.html>
 
 
 <!--

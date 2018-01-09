@@ -56,7 +56,7 @@ Microsoft est vainqueur et impose son rythmer au web... cela sera une stagnation
 * **2001-2006 : IE5 puis IE6 dominent. Les sites sont développés selon les standards de Microsoft.** Et aucune nouvelle version d'IE ne sort.
 * __2003__ : Apple dévoile son propre navigateur, Safari, avec un moteur rapide et leger : Webkit.
 * __2005__ : Mozilla sort Firefox, qui est un succès immédiat.
-* __2008__ : Google lance son Chrome, son navigateur à l'interface simpliste mais ultra rapide.
+* __2008__ : Google lance Chrome, son navigateur à l'interface simpliste mais ultra rapide.
 
 ----
 

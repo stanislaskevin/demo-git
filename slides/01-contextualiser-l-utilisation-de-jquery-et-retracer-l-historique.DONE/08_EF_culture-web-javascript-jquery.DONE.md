@@ -5,7 +5,7 @@
 
 # Contextualiser l'utilisation de jQuery et retracer l'historique
 
-### Culture web / javascript / jQuery
+### Culture web : Javascript et jQuery
 
 <!-- 01/08 QCM -->
 
@@ -17,15 +17,15 @@
 
 _Cochez LA ou LES bonnes réponses, puis cliquez sur VALIDER pour continuer_
 
-### Uncompressed
+:radio_button: Uncompressed
 
 > BONNE RÉPONSE
 
-### Minified
+:radio_button:  Minified
 
 > BONNE RÉPONSE
 
-### Slim
+:radio_button:  Slim
 
 > ERREUR : Malheureusement c'est une mauvaise réponse . Slim est justement une version qui supprime le support des fonctionalités non essentielles de jQuery, dont AJAX.
 
@@ -38,22 +38,17 @@ _Cochez LA ou LES bonnes réponses, puis cliquez sur VALIDER pour continuer_
 <small>
 
 ```
-<html>
-  <head>
-    <script src="https://code.jquery.com/jquery-1.11.3.js">
-    </script>
-  </head>
-  <!-- ... --->
-</html>
+<script src="https://code.jquery.com/jquery-1.11.3.js">
+</script>
 ```
 
 _Cochez LA ou LES bonnes réponses, puis cliquez sur VALIDER pour continuer_
 
-### Utilisation d'un CDN (Content Delivery Network)
+:radio_button:  Utilisation d'un CDN (Content Delivery Network)
 
 > BONNE RÉPONSE
 
-### Utilisation d'une version locale
+:radio_button:  Utilisation d'une version locale
 
 > ERREUR : Malheureusement c'est une mauvaise réponse . On peut voir à l'URL du script que la version utilisée est distante et hébergée sur le site de jQuery. Il s'agit donc de l'utilisation d'un CDN.
 

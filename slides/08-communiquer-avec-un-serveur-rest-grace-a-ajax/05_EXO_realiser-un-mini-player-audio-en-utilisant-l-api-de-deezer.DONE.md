@@ -3,13 +3,15 @@
 
 <link rel="stylesheet" href="../../assets/style.css" />
 
-# Interagir avec les éléments de formulaire et gérer les erreurs.
+# Communiquer avec un serveur REST grâce à AJAX.
 
-### Récupérer les valeurs d’un champs : val()
+### Réaliser un mini-player audio en utilisant l'API de Deezer
 
-<!-- 07/02 Document -->
+<!-- 08/05 EXERCICE -->
 
 ----
+
+FIXME: TODO: rédiger exercice
 
 ----
 

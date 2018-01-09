@@ -3,13 +3,15 @@
 
 <link rel="stylesheet" href="../../assets/style.css" />
 
-# Interagir avec les éléments de formulaire et gérer les erreurs.
+# Créer un plugin jQuery.
 
-### Empêcher la validation d’un formulaire : preventDefault()
+### Transformer la galerie d'image en plugin réutilisable
 
-<!-- 07/03 Vidéo (screencast) -->
+<!-- 10/03 EXERCICE -->
 
 ----
+
+TODO: FIXME: rédiger l'exercice
 
 ----
 

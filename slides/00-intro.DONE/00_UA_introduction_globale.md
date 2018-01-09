@@ -12,7 +12,7 @@
 
 Développer des applications web avec Javascript n'est pas toujours facile : il est souvent souvent nécessaire de s'adapter aux technologies changeantes et aux bugs spécifiques des navigateurs.
 
-__Le framework jQuery est une solution très répandue pour répondre à ce genre de problématiques.__
+__Le framework jQuery est une solution très répandue, parmi d'autres, pour répondre à ce genre de problématiques.__
 
 __Ce cours vous apprendra la façon de le mettre en oeuvre et d'améliorer l'ergonomie et l'interactivité de vos sites.__
 

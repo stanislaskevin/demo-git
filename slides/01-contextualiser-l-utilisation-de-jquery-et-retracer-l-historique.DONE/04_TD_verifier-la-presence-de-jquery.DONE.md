@@ -15,7 +15,9 @@
 
 Vous avez suivi pas à pas la démarche pour installer jQuery sur votre page web en cours de création. Excellent ! 
 
-Mais un bug est si vite arrivé... Comment __vérifier vous-même que jQuery est bien installé et prêt à l'emploi__ avant de commencer à développer ?
+Mais un premier bug est si vite arrivé... 
+
+__Comment vérifier vous-même que jQuery est bien installé ? Comment être sûr qu'il est prêt à l'emploi__ avant de commencer à développer ?
 
 ----
 
@@ -26,22 +28,23 @@ Mais un bug est si vite arrivé... Comment __vérifier vous-même que jQuery est
 
 __La réponse du navigateur doit être `"function"`__, comme illustré ci-dessous :
 
-![125%](images/04_verifier_l_installation_de_jquery_avec_console.png)
+![125% border center](images/04_verifier_l_installation_de_jquery_avec_console.png)
 
 ----
 
 ## Vérifier la présence de jQuery avec du code
 
-```html5
+<gx-label>HTML</gx-label>
+
+```html
 <html>
   <head>
-    <script type="text/javascript"  
-    src="bower_components/jquery/dist/jquery.min.js">  
+    <script type="text/javascript" 
+            src="./js/jquery-3.2.1.min.js"></script>
     <!-- ... -->
   </head>
   <body>
     <!-- ... -->
-    
     <!-- insérez dans votre page le code suivant -->
     <script>
       $(document).ready(function () { 
@@ -49,7 +52,6 @@ __La réponse du navigateur doit être `"function"`__, comme illustré ci-dessou
       });
     </script>
     <!-- jusqu'ici. STOP -->
-    
   </body>
 </html>
 ```
@@ -57,11 +59,13 @@ __La réponse du navigateur doit être `"function"`__, comme illustré ci-dessou
 ----
 
 
-## Vérifier la présence de jQuery avec du code (suite)
+## Vérifier la présence de jQuery avec du code 
+
+### Résultat
 
 Lorsque vous chargez votre page HTML dans le navigateur, la _pop-up_ suivante doit apparaître :
 
-![190%](images/04_verifier_l_installation_de_jquery_avec_code.png)
+![195% center](images/04_verifier_l_installation_de_jquery_avec_code.png)
 
 ----
 

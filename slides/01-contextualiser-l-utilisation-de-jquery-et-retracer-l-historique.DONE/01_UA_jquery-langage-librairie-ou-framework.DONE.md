@@ -13,16 +13,11 @@
 
 __jQuery est un projet open source__, développé à l'origine par John RESIG. Sa première version sort en 2006. 
 
-Depuis il est __soutenu par une grande communauté__ et utilisé par de nombreux grands groupes (IBM, Google, etc.).
+__Le projet est depuis soutenu par une grande communauté__ et utilisé par de nombreux grands groupes (IBM, Google, etc.).
 
 Mais... en quoi va-t-il pouvoir nous aider dans nos projets ?
 
-Dans la littérature technique, __on attribue à jQuery de nombreuses qualités__ et adjectifs. Voici une petite introduction pour déméler le faux du vrai et s'y retrouver.
-
-----
-
-## Histoire
-
+__On attribue à jQuery de nombreuses qualités__ et adjectifs, dans la littérature technique. Voici une petite introduction pour déméler le faux du vrai et s'y retrouver.
 
 ----
 
@@ -49,7 +44,8 @@ __C'est une surcouche du langage Javascript__, dont il dépend pour fonctionner 
 <small>
 
 > Un langage de programmation est une notation conventionnelle  __destinée à formuler des algorithmes__ et produire des programmes informatiques. D'une manière similaire à une langue naturelle, un langage de programmation est __composé d'un alphabet, d'un vocabulaire, de règles de grammaire__ et de significations.
-> – _Source: [Wikipedia](https://fr.wikipedia.org/wiki/Langage_de_programmation)_
+
+:blue_book: Voir la définition complète sur [Wikipedia](https://fr.wikipedia.org/wiki/Langage_de_programmation)
 
 </small>
 
@@ -83,6 +79,8 @@ Cependant __jQuery possède tout un écosysteme d'extensions__ (jquery-ui, jquer
 <small>
 
 > Un framework est un __ensemble de composant logiciels__ (des bibliothèques) reliés par une certaine logique pour former le __squelette d'un programme__.  Il __facilite ainsi la construction d'un certain type__ de projets (ex: des application web) mais ce faisant, il __impose des contraintes sur l'organisation__ de votre projet.
+
+:blue_book: Voir la définition complète sur [Wikipedia](https://fr.wikipedia.org/wiki/Framework)
 
 </small>
 

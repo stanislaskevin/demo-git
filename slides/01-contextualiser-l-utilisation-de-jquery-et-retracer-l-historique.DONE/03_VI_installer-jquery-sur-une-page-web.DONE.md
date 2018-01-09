@@ -15,9 +15,9 @@
 
 Pour utiliser jQuery, il est nécessaire de l'intégrer à votre page web, c'est à dire faire un lien entre la bibliothèque et le code de votre page. 
 
-Découvrons comment faire cela en vidéo
+Découvrons comment faire cela en vidéo :
 
-<https://www.lynda.com/fr/jQuery-tutoriels/Principe-utilisation-jQuery/193138/342964-4.html>
+:arrow_forward: <https://www.lynda.com/fr/jQuery-tutoriels/Principe-utilisation-jQuery/193138/342964-4.html>
 
 ----
 

@@ -5,11 +5,15 @@
 
 # Interagir avec les éléments de formulaire et gérer les erreurs.
 
-### Utiliser le plugin “jQuery validation” pour une gestion avancée des erreurs
+### Réaliser un formulaire intéractif
 
-<!-- 07/04 Document -->
+<!-- 07/05 EXERCICE -->
 
 ----
+
+<!-- 
+TODO:  ajotuer exercice formulaire interactif
+-->
 
 ----
 
