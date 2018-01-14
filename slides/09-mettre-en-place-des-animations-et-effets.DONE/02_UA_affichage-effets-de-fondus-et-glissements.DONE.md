@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="../../assets/style.css" />
 
-# Mettre en place des animations et effets simples.
+# Mettre en place des animations et effets simples
 
 ### Affichage, effets de fondus et glissements
 
