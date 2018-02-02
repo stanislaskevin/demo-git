@@ -4,7 +4,7 @@
 
 # Contextualiser l'utilisation de jQuery et retracer l'historique
 
-### <span style="font-size: 70% !important;">jQuery : langage, bibliothèque ou framework ?</span>
+### <span style="font-size: 65% !important;">jQuery : langage, bibliothèque ou framework ?</span>
 
 ----
 
