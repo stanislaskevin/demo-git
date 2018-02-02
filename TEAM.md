@@ -10,4 +10,3 @@
 - Axel Cqn
 - Pierre Saigot
 - Julien JOVY
-- Axel Cqn
