@@ -6,6 +6,6 @@
 
 ## Developpers
 
-- ...
+- Louis Bon first
 - ...
 Julien JOVY
