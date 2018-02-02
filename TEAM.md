@@ -7,4 +7,4 @@
 ## Developpers
 
 - Louis Bon first
-- ...
+- Fanny Blandenet
