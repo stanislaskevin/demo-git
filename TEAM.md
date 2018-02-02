@@ -16,3 +16,14 @@
 - git pull => MARRANT => PERSO J'TROUVE QUE NON
 - git clone => PAS MARRANT => PERSO J'TROUVE QUE SI
 - Felixzilla
+
+                              (_)(_)
+                             /     \
+                            /       |
+                           /   \  * |
+             ________     /    /\__/
+     _      /        \   /    /
+    / \    /  ____    \_/    /
+   //\ \  /  /    \         /
+   V  \ \/  /      \       /
+       \___/        \_____/
