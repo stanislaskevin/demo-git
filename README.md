@@ -4,14 +4,16 @@ README
 Usage
 -----
 
+Please install first npm on your system, then run the following command 
 
-First install stasis via bundle
+  make configure 
+  
+Then run either the live version 
 
-  bundle install --path vendor/bundle
+  make live 
+  
+or build PDF files with 
 
-Then run stasis once or in devel mode
-
-  bundle exec middleman
-
-And get the result into the public/ directory !
+  make build 
+  
 
