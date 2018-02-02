@@ -13,6 +13,6 @@
 - Julien JOVY 
 - TROLL
 - Clément DUSSOL
-- git pull => MARRANT
-- git clone => PAS MARRANT
+- git pull => MARRANT => PERSO J'TROUVE QUE NON
+- git clone => PAS MARRANT => PERSO J'TROUVE QUE SI
 - Felixzilla
