@@ -7,8 +7,9 @@
 ## Developpers
 
 - Louis Bon first
+- Axel Coquin
 - Fanny Blandenet
-- Axel Cqn
 - Pierre Saigot
 - Julien JOVY 
 - TROLL
+- Clément DUSSOL
