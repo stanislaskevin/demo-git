@@ -10,6 +10,7 @@
 - Axel Coquin
 - Fanny Blandenet
 - Pierre Saigot
-- Julien JOVY
+- Julien JOVY 
+- TROLL
 - Clément DUSSOL
 - git pull
