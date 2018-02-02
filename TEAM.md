@@ -13,5 +13,5 @@
 - Julien JOVY 
 - TROLL
 - Clément DUSSOL
-- git pull
-- git clone
+- git pull => MARRANT
+- git clone => PAS MARRANT
