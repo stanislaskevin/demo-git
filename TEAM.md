@@ -9,4 +9,3 @@
 - Louis Bon first
 - ...
 Julien JOVY
-Le troller de la mort
