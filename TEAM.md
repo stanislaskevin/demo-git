@@ -7,6 +7,5 @@
 ## Developpers
 
 - Louis Bon first
-- ...
-Julien JOVY
+- Julien JOVY
 - Axel Cqn
