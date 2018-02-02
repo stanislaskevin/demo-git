@@ -8,5 +8,6 @@
 
 - Louis Bon first
 - ...
-Julien JOVY
 - Axel Coquin
+- Pierre Saigot
+- Julien JOVY 
