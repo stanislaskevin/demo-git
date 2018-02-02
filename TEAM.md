@@ -10,3 +10,4 @@
 - Axel Cqn
 - Pierre Saigot
 - Julien JOVY
+- Clément DUSSOL
