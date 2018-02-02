@@ -15,3 +15,4 @@
 - Clément DUSSOL
 - git pull
 - Felixzilla
+- git clone
