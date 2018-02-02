@@ -15,3 +15,4 @@
 - Clément DUSSOL
 - git pull => MARRANT
 - git clone => PAS MARRANT
+- Felixzilla
