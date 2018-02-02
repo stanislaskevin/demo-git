@@ -6,5 +6,5 @@
 
 ## Developpers
 
-- ...
+- Pierre Grand
 - ...
