@@ -14,3 +14,4 @@
 - TROLL
 - Clément DUSSOL
 - git pull
+- git clone
