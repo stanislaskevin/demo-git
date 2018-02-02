@@ -6,5 +6,5 @@
 
 ## Developpers
 
-- ...
+- Louis Bon first
 - ...
