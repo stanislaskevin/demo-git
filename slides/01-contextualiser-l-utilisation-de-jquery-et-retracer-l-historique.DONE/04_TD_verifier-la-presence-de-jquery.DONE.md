@@ -40,7 +40,7 @@ __La réponse du navigateur doit être `"function"`__, comme illustré ci-dessou
 <html>
   <head>
     <script type="text/javascript" 
-            src="./js/jquery-3.2.1.min.js"></script>
+            src="./js/jquery-3.3.1.min.js"></script>
     <!-- ... -->
   </head>
   <body>
