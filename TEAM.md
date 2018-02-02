@@ -7,4 +7,6 @@
 ## Developpers
 
 - Louis Bon first
-- Pierre Saigot 
+- ... Julien JOVY
+- Axel Cqn
+- Pierre Saigot
