@@ -7,7 +7,8 @@
 ## Developpers
 
 - Louis Bon first
-- Axel Cqn
+- Axel Coquin
+- Fanny Blandenet
 - Pierre Saigot
 - Julien JOVY
 - Clément DUSSOL
